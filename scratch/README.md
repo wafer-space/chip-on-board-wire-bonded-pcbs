@@ -1,3 +1,5 @@
+## !!Warning: Still WIP!!
+
 ## History
 
 Over the past few weeks we have been considering a number of different designs. 
@@ -44,6 +46,7 @@ Worries over positional tolerances with multiple connectors
 <img width="735" height="872" alt="image" src="https://github.com/user-attachments/assets/2f3a4fb1-18cc-4ce9-9b49-f47abaca73bc" />
 
 Some projects want this, but has low pin count. Some hybrid castellated versions have also been considered. 
+
 
 
 
