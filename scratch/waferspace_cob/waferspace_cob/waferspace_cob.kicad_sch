@@ -2402,7 +2402,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "WafeSpace:caravel_gfmpw_1_0_asap"
+		(property "Footprint" "WafeSpace:waferspace_default_padring_v0"
 			(at 223.52 93.98 0)
 			(effects
 				(font
