@@ -94,6 +94,11 @@ All GND are tied together in Default Breakout COB package
 
 We have also allocated space for components if desired, like decoupling capactitors or others. 
 
+Proposed mezzanine connectors are 70pin 0.4mm pitch
+[https://www.lcsc.com/product-detail/C19089236.html](https://www.lcsc.com/product-detail/C19089236.html)
+
+[https://www.lcsc.com/product-image/C19089262.html](https://www.lcsc.com/product-image/C19089262.html)
+
 ## Default Designs
 Default breakouts must share
 - wirebonding layout
