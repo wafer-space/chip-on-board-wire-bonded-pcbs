@@ -4,6 +4,12 @@
 	(generator_version "9.0")
 	(uuid "ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8")
 	(paper "A4")
+	(title_block
+		(title "wafer.space default digital chip-on-board mezzanine")
+		(date "2025-10-23")
+		(rev "0")
+		(company "Evezor Inc")
+	)
 	(lib_symbols
 		(symbol "Device:C_Small"
 			(pin_numbers
@@ -3988,6 +3994,16 @@
 	)
 	(wire
 		(pts
+			(xy 138.43 123.19) (xy 138.43 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b5b40c4-5142-41fb-a624-92e76ff5af5f")
+	)
+	(wire
+		(pts
 			(xy 242.57 66.04) (xy 247.65 66.04)
 		)
 		(stroke
@@ -4038,6 +4054,16 @@
 	)
 	(wire
 		(pts
+			(xy 144.78 120.65) (xy 144.78 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c532940-656b-4fb0-b2ad-b365f430a924")
+	)
+	(wire
+		(pts
 			(xy 102.87 105.41) (xy 118.11 105.41)
 		)
 		(stroke
@@ -4078,6 +4104,16 @@
 	)
 	(wire
 		(pts
+			(xy 133.35 114.3) (xy 144.78 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5bc8c46f-7f3f-4953-94ee-f7928e0e8819")
+	)
+	(wire
+		(pts
 			(xy 64.77 72.39) (xy 52.07 72.39)
 		)
 		(stroke
@@ -4115,6 +4151,16 @@
 			(type default)
 		)
 		(uuid "6d51f03b-6454-443e-9499-271a7d865225")
+	)
+	(wire
+		(pts
+			(xy 133.35 109.22) (xy 128.27 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "779fe18e-111a-4cef-92bc-40b7482f2698")
 	)
 	(wire
 		(pts
@@ -4245,6 +4291,16 @@
 			(type default)
 		)
 		(uuid "b2833cd2-cfaa-47eb-8169-f08d94ef4061")
+	)
+	(wire
+		(pts
+			(xy 133.35 121.92) (xy 133.35 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b54465e3-3ce5-450e-af54-9bbc3b7b09ad")
 	)
 	(wire
 		(pts
@@ -4438,6 +4494,16 @@
 	)
 	(wire
 		(pts
+			(xy 142.24 124.46) (xy 142.24 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e125d334-bd9b-4a07-9ba2-5c4c71d5c3e6")
+	)
+	(wire
+		(pts
 			(xy 242.57 114.3) (xy 267.97 114.3)
 		)
 		(stroke
@@ -4455,6 +4521,16 @@
 			(type default)
 		)
 		(uuid "e3b3eb22-40b5-4e9c-88a1-1da25348c732")
+	)
+	(wire
+		(pts
+			(xy 142.24 119.38) (xy 138.43 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e582e550-d707-48d6-a3f6-70f1e16f3422")
 	)
 	(wire
 		(pts
