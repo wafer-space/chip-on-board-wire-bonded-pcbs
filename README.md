@@ -97,7 +97,7 @@ We have also allocated space for components if desired, like decoupling capactit
 Proposed mezzanine connectors are 70pin 0.4mm pitch
 [https://www.lcsc.com/product-detail/C19089236.html](https://www.lcsc.com/product-detail/C19089236.html)
 
-[https://www.lcsc.com/product-image/C19089262.html](https://www.lcsc.com/product-image/C19089262.html)
+The mating connector can be found here: [https://www.lcsc.com/product-image/C19089262.html](https://www.lcsc.com/product-image/C19089262.html)
 
 ## Default Designs
 Default breakouts must share
