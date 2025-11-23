@@ -32,7 +32,7 @@ All ground (GND) connections are tied together in the **Default Breakout COB pac
 | 26–72    | 27–73        | *(see full table for details)*                             | —                                                          |
 | 73       | 74           | <span style="color:red; font-weight:bold;">VDD IO</span>   | <span style="color:red; font-weight:bold;">VDD IO</span>   |
 
-> For the complete mapping and color-coded reference, please refer to the full pad table above.
+> For the complete mapping and color-coded reference, please refer to this [spreadsheet](https://docs.google.com/spreadsheets/d/1pI2BAEWEexXcXN3vah3SR85zPIV6eAXPGXc2bcvoSGU)
 
 ---
 
