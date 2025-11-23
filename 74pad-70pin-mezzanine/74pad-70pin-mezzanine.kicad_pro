@@ -141,7 +141,7 @@
         "min_via_diameter": 0.45,
         "solder_mask_clearance": 0.0,
         "solder_mask_min_width": 0.0,
-        "solder_mask_to_copper_clearance": 0.0,
+        "solder_mask_to_copper_clearance": 0.005,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
@@ -473,7 +473,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "mezzanine.kicad_pro",
+    "filename": "74pad-70pin-mezzanine.kicad_pro",
     "version": 3
   },
   "net_settings": {
