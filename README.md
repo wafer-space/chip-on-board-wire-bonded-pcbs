@@ -1,7 +1,3 @@
-Here’s a more **professional and polished** version of your Markdown — ready to paste directly into your README.md:
-
----
-
 # Chip-on-Board Wire-Bonded PCBs
 
 > **Status:** Work in Progress
