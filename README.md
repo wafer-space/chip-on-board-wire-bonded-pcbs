@@ -48,6 +48,13 @@ Space has been allocated for optional components such as decoupling capacitors a
 
 ---
 
+## Wirebonding Detail
+
+![](./74pad-70pin-mezzanine/wirebonding/wirebonding2.png)
+
+![](./74pad-70pin-mezzanine/wirebonding/wirebonding.png)
+
+
 ## Default KiCad Symbols
 
 We have developed several **KiCad symbols** to support design and integration with our COB layouts.
