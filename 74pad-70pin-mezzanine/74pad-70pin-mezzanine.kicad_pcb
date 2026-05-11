@@ -101,7 +101,7 @@
 		(allow_soldermask_bridges_in_footprints no)
 		(tenting
 			(front yes)
-			(back yes)
+			(back no)
 		)
 		(covering
 			(front no)
@@ -5695,6 +5695,17 @@
 				(xyz -0 -0 -0)
 			)
 		)
+	)
+	(gr_rect
+		(start 163.77 90.69)
+		(end 173.77 92.69)
+		(stroke
+			(width 0.01)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "f6c46fa0-15c6-4280-b402-40ea55498d59")
 	)
 	(gr_rect
 		(start 162.25 77.625)
