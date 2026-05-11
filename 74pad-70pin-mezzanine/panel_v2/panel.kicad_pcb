@@ -1,0 +1,3365 @@
+(kicad_pcb
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(general
+		(thickness 1.6)
+		(legacy_teardrops no)
+	)
+	(paper "A4")
+	(layers
+		(0 "F.Cu" signal)
+		(4 "In1.Cu" signal)
+		(6 "In2.Cu" signal)
+		(2 "B.Cu" signal)
+		(9 "F.Adhes" user "F.Adhesive")
+		(11 "B.Adhes" user "B.Adhesive")
+		(13 "F.Paste" user)
+		(15 "B.Paste" user)
+		(5 "F.SilkS" user "F.Silkscreen")
+		(7 "B.SilkS" user "B.Silkscreen")
+		(1 "F.Mask" user)
+		(3 "B.Mask" user)
+		(17 "Dwgs.User" user "User.Drawings")
+		(19 "Cmts.User" user "User.Comments")
+		(21 "Eco1.User" user "User.Eco1")
+		(23 "Eco2.User" user "User.Eco2")
+		(25 "Edge.Cuts" user)
+		(27 "Margin" user)
+		(31 "F.CrtYd" user "F.Courtyard")
+		(29 "B.CrtYd" user "B.Courtyard")
+		(35 "F.Fab" user)
+		(33 "B.Fab" user)
+		(39 "User.1" user)
+		(41 "User.2" user)
+		(43 "User.3" user)
+		(45 "User.4" user)
+	)
+	(setup
+		(stackup
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 1"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 2"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 3"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 4"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 5"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 6"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 7"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 8"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 9"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 10"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 11"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 12"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 13"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 14"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 15"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 16"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 17"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 18"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 19"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 20"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 21"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 22"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 23"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 24"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 25"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 26"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 27"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 28"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 29"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 30"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 31"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 32"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 33"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 34"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 35"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 36"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 37"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 38"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 39"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 40"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 41"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 42"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 43"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 44"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 45"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 46"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 47"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 48"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 49"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 50"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 51"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 52"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 53"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 54"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 55"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 56"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 57"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 58"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 59"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 60"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 61"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 62"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 63"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 64"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 65"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 66"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 67"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 68"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 69"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 70"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 71"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 72"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 73"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 74"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 75"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 76"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 77"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 78"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 79"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 80"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 81"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 82"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 83"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 84"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "dielectric 85"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In1.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 86"
+				(type "core")
+				(thickness 0.23)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "In2.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 87"
+				(type "prepreg")
+				(thickness 0.196)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.0175)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 88"
+				(type "core")
+				(thickness 1.51)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 89"
+				(type "core")
+				(thickness 1.51)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 90"
+				(type "core")
+				(thickness 1.51)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(copper_finish "None")
+			(dielectric_constraints no)
+		)
+		(pad_to_mask_clearance 0)
+		(allow_soldermask_bridges_in_footprints no)
+		(tenting
+			(front yes)
+			(back no)
+		)
+		(covering
+			(front no)
+			(back no)
+		)
+		(plugging
+			(front no)
+			(back no)
+		)
+		(capping no)
+		(filling no)
+		(aux_axis_origin 63.82 50.39)
+		(grid_origin 193.82 70.39)
+		(pcbplotparams
+			(layerselection 0x00000000_00000000_55555555_5755f5ff)
+			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
+			(disableapertmacros no)
+			(usegerberextensions no)
+			(usegerberattributes yes)
+			(usegerberadvancedattributes yes)
+			(creategerberjobfile yes)
+			(dashed_line_dash_ratio 12)
+			(dashed_line_gap_ratio 3)
+			(svgprecision 4)
+			(plotframeref no)
+			(mode 1)
+			(useauxorigin no)
+			(pdf_front_fp_property_popups yes)
+			(pdf_back_fp_property_popups yes)
+			(pdf_metadata yes)
+			(pdf_single_document no)
+			(dxfpolygonmode yes)
+			(dxfimperialunits yes)
+			(dxfusepcbnewfont yes)
+			(psnegative no)
+			(psa4output no)
+			(plot_black_and_white yes)
+			(sketchpadsonfab no)
+			(plotpadnumbers no)
+			(hidednponfab no)
+			(sketchdnponfab yes)
+			(crossoutdnponfab yes)
+			(subtractmaskfromsilk no)
+			(outputformat 1)
+			(mirror no)
+			(drillshape 1)
+			(scaleselection 1)
+			(outputdirectory "")
+		)
+	)
+	(gr_line
+		(start 59.82 125.89)
+		(end 135.82 125.89)
+		(stroke
+			(width 0.3)
+			(type dash_dot_dot)
+		)
+		(layer "F.SilkS")
+		(uuid "1641e2c9-1a6c-4522-9be7-cf2ff00c46db")
+	)
+	(gr_rect
+		(start 60.32 50.89)
+		(end 63.30373 65.893236)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "7bb8ad33-b12b-4d44-88de-62a5496c2e35")
+	)
+	(gr_rect
+		(start 60.32 66.89)
+		(end 63.32 81.89)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "b3e09624-0756-4028-a95c-db427c632c76")
+	)
+	(gr_line
+		(start 60.32 87.89)
+		(end 136.32 87.89)
+		(stroke
+			(width 0.3)
+			(type dash_dot_dot)
+		)
+		(layer "F.SilkS")
+		(uuid "2303d4cc-be53-49cc-84f3-c5866201dc7f")
+	)
+	(gr_rect
+		(start 60.328135 88.888382)
+		(end 63.311865 103.891618)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "73209fd7-a987-44fb-a4e1-4b15a8b373f2")
+	)
+	(gr_rect
+		(start 60.328135 104.888382)
+		(end 63.328135 119.888382)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "f8973592-a9d3-40d3-aa48-30e3e563f09b")
+	)
+	(gr_line
+		(start 60.82 49.89)
+		(end 136.82 49.89)
+		(stroke
+			(width 0.3)
+			(type dash_dot_dot)
+		)
+		(layer "F.SilkS")
+		(uuid "03005097-8d12-4d33-8878-483cd6b5b6c3")
+	)
+	(gr_line
+		(start 61.32 121.39)
+		(end 61.32 125.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c6d26826-7c9f-465d-9182-95d8c7903d97")
+	)
+	(gr_line
+		(start 61.32 125.39)
+		(end 60.32 124.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "213d1474-5340-4bfd-add0-6bc222c548c0")
+	)
+	(gr_line
+		(start 61.32 125.39)
+		(end 62.32 124.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "f1805087-2dc9-4c5b-bc11-5ae290269982")
+	)
+	(gr_line
+		(start 61.82 83.39)
+		(end 61.82 87.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b7ab7854-cbce-43ee-a843-5513a1406bbc")
+	)
+	(gr_line
+		(start 61.82 87.39)
+		(end 60.82 86.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "51f2b8fb-6ca7-4aa9-94c1-11da27d3b2b8")
+	)
+	(gr_line
+		(start 61.82 87.39)
+		(end 62.82 86.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "1df9499d-14c8-42c6-bc3f-b3f620980006")
+	)
+	(gr_line
+		(start 62.32 45.39)
+		(end 62.32 49.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c62e3b49-4810-4f38-a755-06f2e2cc5747")
+	)
+	(gr_line
+		(start 62.32 49.39)
+		(end 61.32 48.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "f534deee-a57c-4006-bd45-5ee2759afaff")
+	)
+	(gr_line
+		(start 62.32 49.39)
+		(end 63.32 48.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "17fd09d9-e5d1-480c-a178-d2d3b54f2697")
+	)
+	(gr_line
+		(start 87.82 121.39)
+		(end 87.82 125.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "f42b45ff-83a5-45fd-beee-e077110e8038")
+	)
+	(gr_line
+		(start 87.82 125.39)
+		(end 86.82 124.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "57bda407-7944-43f8-b91f-d324d2592bb3")
+	)
+	(gr_line
+		(start 87.82 125.39)
+		(end 88.82 124.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "0fbd3bca-8289-44a4-b5f0-4277c0975855")
+	)
+	(gr_line
+		(start 88.32 83.39)
+		(end 88.32 87.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "591e36f1-8c2d-4883-8f4b-3411fa3aa7ab")
+	)
+	(gr_line
+		(start 88.32 87.39)
+		(end 87.32 86.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b4b432d7-82fb-465b-a08d-ef4f2aca725b")
+	)
+	(gr_line
+		(start 88.32 87.39)
+		(end 89.32 86.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "8ecf1e23-eda6-4543-af44-245ff907311a")
+	)
+	(gr_line
+		(start 88.82 45.39)
+		(end 88.82 49.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "3da1c73e-9787-49c5-b66b-d635338ef36e")
+	)
+	(gr_line
+		(start 88.82 49.39)
+		(end 87.82 48.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "84ecbbd5-ab4b-46dc-b364-4e2ba95eeedd")
+	)
+	(gr_line
+		(start 88.82 49.39)
+		(end 89.82 48.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "431361e9-5b68-4e9a-b4f6-b61084714d25")
+	)
+	(gr_line
+		(start 110.32 121.39)
+		(end 110.32 125.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "86c1c0cf-70ff-4663-93c9-086b1eb6c640")
+	)
+	(gr_line
+		(start 110.32 125.39)
+		(end 109.32 124.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "8cc680ce-8e02-4e04-baeb-ddf36b765037")
+	)
+	(gr_line
+		(start 110.32 125.39)
+		(end 111.32 124.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c8422343-1656-4030-9efd-26ef147fd50e")
+	)
+	(gr_line
+		(start 110.82 83.39)
+		(end 110.82 87.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b547cd20-682a-4c5d-8cbd-e77e552c6a8f")
+	)
+	(gr_line
+		(start 110.82 87.39)
+		(end 109.82 86.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b8071377-2bbe-455b-a3c5-ed948485118d")
+	)
+	(gr_line
+		(start 110.82 87.39)
+		(end 111.82 86.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "359f4aab-87b1-4cff-a402-d3ca4ffef959")
+	)
+	(gr_line
+		(start 111.32 45.39)
+		(end 111.32 49.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "88ea4341-d783-4567-a3ad-429fbd35fcdd")
+	)
+	(gr_line
+		(start 111.32 49.39)
+		(end 110.32 48.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a73266c5-6636-49db-b9c9-46f927923459")
+	)
+	(gr_line
+		(start 111.32 49.39)
+		(end 112.32 48.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "0eec4bfb-4d94-4fcf-a8ca-16e44e3429cb")
+	)
+	(gr_line
+		(start 134.32 121.39)
+		(end 134.32 125.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "eb454d60-5b27-44fc-9bb3-2661f37d3305")
+	)
+	(gr_line
+		(start 134.32 125.39)
+		(end 133.32 124.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "66ec0997-fb05-406e-a006-0a36a5751807")
+	)
+	(gr_line
+		(start 134.32 125.39)
+		(end 135.32 124.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "16cfd04f-5809-4b41-ba19-f3b0fd7c8d5e")
+	)
+	(gr_rect
+		(start 134.328135 50.888382)
+		(end 137.311865 65.891618)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "bfb48c23-e620-45b1-a246-193ee440d68e")
+	)
+	(gr_rect
+		(start 134.328135 66.888382)
+		(end 137.328135 81.888382)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "15b04f35-541b-42c8-baa8-a711fb4da001")
+	)
+	(gr_rect
+		(start 134.33627 88.886764)
+		(end 137.32 103.89)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "60652992-6bed-4d8f-aa78-0317faaefcae")
+	)
+	(gr_rect
+		(start 134.33627 104.886764)
+		(end 137.33627 119.886764)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "c8722b7a-e7b2-46f1-9d4f-557751caaef0")
+	)
+	(gr_line
+		(start 134.82 83.39)
+		(end 134.82 87.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "79e5ab5c-0454-41d1-9409-98e90d382b7a")
+	)
+	(gr_line
+		(start 134.82 87.39)
+		(end 133.82 86.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a7258541-c1e9-4ec0-892b-9c3345959032")
+	)
+	(gr_line
+		(start 134.82 87.39)
+		(end 135.82 86.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "fb88bd76-9a8a-4b92-8703-a45d90ef8770")
+	)
+	(gr_line
+		(start 135.32 45.39)
+		(end 135.32 49.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "2d1e5c47-378d-4068-af86-d18cf987898b")
+	)
+	(gr_line
+		(start 135.32 49.39)
+		(end 134.32 48.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "0cf8d99f-ae27-49f9-8190-80bca9d509a7")
+	)
+	(gr_line
+		(start 135.32 49.39)
+		(end 136.32 48.39)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "bbd220a7-f981-4748-8ad5-470c26734238")
+	)
+	(gr_rect
+		(start 60.32 50.89)
+		(end 63.30373 65.893236)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "B.SilkS")
+		(uuid "91b004fe-a83a-4507-bca3-f981fbd51b55")
+	)
+	(gr_rect
+		(start 60.32 66.89)
+		(end 63.32 81.89)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "B.SilkS")
+		(uuid "ca88307e-ee9f-4a99-b8aa-a560db0d4dc0")
+	)
+	(gr_rect
+		(start 60.328134 104.886764)
+		(end 63.328134 119.886764)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "B.SilkS")
+		(uuid "42dbff09-6015-4ea1-8e33-b5b14d98e808")
+	)
+	(gr_rect
+		(start 60.344404 88.886764)
+		(end 63.328134 103.89)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "B.SilkS")
+		(uuid "774d4d2f-1d58-4be0-98a4-296be1bfb7e6")
+	)
+	(gr_rect
+		(start 134.328135 66.888382)
+		(end 137.328135 81.888382)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "B.SilkS")
+		(uuid "ac3c118c-02ba-4407-802e-8d85002b7386")
+	)
+	(gr_rect
+		(start 134.336269 104.888382)
+		(end 137.336269 119.888382)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "B.SilkS")
+		(uuid "a4cdf3ec-6932-43d3-abba-b5cee622a85d")
+	)
+	(gr_rect
+		(start 134.344405 50.888382)
+		(end 137.328135 65.891618)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "B.SilkS")
+		(uuid "2ddb0d84-b680-4a9f-aa59-4b677a520536")
+	)
+	(gr_rect
+		(start 134.352539 88.888382)
+		(end 137.336269 103.891618)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "B.SilkS")
+		(uuid "0b606ec0-6539-4c68-89d3-fb7c49b9dcd1")
+	)
+	(gr_rect
+		(start 60.32 44.39)
+		(end 137.32 126.39)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "901e54a0-9795-47ce-9700-c3dd2ff06d92")
+	)
+	(gr_line
+		(start 55 50.39)
+		(end 140.32 50.39)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "User.1")
+		(uuid "f54f89e2-8bfc-4076-96bc-06406511fd53")
+	)
+	(gr_line
+		(start 55 66.39)
+		(end 140.32 66.39)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "User.1")
+		(uuid "b817bd98-3d9d-44d7-9b3e-be773070351f")
+	)
+	(gr_line
+		(start 55 82.39)
+		(end 140.32 82.39)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "User.1")
+		(uuid "d9756fb5-d000-47a1-b9f9-4ef6dc34a064")
+	)
+	(gr_line
+		(start 55 88.39)
+		(end 140.32 88.39)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "User.1")
+		(uuid "14a19934-43c4-433e-97d5-1574bb60f6d0")
+	)
+	(gr_line
+		(start 55 104.39)
+		(end 140.32 104.39)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "User.1")
+		(uuid "76df137e-dd76-4e31-8d55-3c9e7140080c")
+	)
+	(gr_line
+		(start 55 120.39)
+		(end 140.32 120.39)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "User.1")
+		(uuid "70393f0b-64cd-43e5-8f95-4cf1bacec54a")
+	)
+	(gr_line
+		(start 63.82 130.39)
+		(end 63.82 41.39)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "User.1")
+		(uuid "1dfb0b9b-1e2e-4da6-8131-af8918753713")
+	)
+	(gr_line
+		(start 77.82 130.39)
+		(end 77.82 41.39)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "User.1")
+		(uuid "4b4a18dd-c870-4e0b-8341-7711184a4b22")
+	)
+	(gr_line
+		(start 91.82 130.39)
+		(end 91.82 41.39)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "User.1")
+		(uuid "45f5d474-9542-429c-bd3b-198ec6cd023c")
+	)
+	(gr_line
+		(start 105.82 130.39)
+		(end 105.82 41.39)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "User.1")
+		(uuid "6c8eb387-6c10-4dd2-aa6a-06144b18443b")
+	)
+	(gr_line
+		(start 119.82 130.39)
+		(end 119.82 41.39)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "User.1")
+		(uuid "58822306-77d0-4588-82ae-b85ebd703850")
+	)
+	(gr_line
+		(start 133.82 130.39)
+		(end 133.82 41.39)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "User.1")
+		(uuid "ac5c815e-dc73-444f-a001-8b9bc67179ae")
+	)
+	(gr_text "BREAK ALONG DASHED EDGES"
+		(at 63.82 122.39 0)
+		(layer "F.SilkS")
+		(uuid "731435cf-e489-4a1c-90f9-545dfc7f4c2a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "BREAK ALONG DASHED EDGES"
+		(at 64.32 84.39 0)
+		(layer "F.SilkS")
+		(uuid "4febbb08-71b4-4cfc-9936-8c772135029f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "BREAK ALONG DASHED EDGES"
+		(at 64.82 46.39 0)
+		(layer "F.SilkS")
+		(uuid "cfb5e94d-908d-4566-90b0-323690a9e619")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "wafer.space COB\nGF180MCU Run 1\nrev 0"
+		(at 89.32 125.39 0)
+		(layer "F.SilkS")
+		(uuid "f64b3d29-8904-4dfa-aba5-9833984a098b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "wafer.space COB\nGF180MCU Run 1\nrev 0"
+		(at 89.82 87.39 0)
+		(layer "F.SilkS")
+		(uuid "27668405-285e-41a6-bb8a-019ad999a89e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "BREAK ALONG DASHED EDGES"
+		(at 110.82 122.39 0)
+		(layer "F.SilkS")
+		(uuid "9e1cf291-f894-46a3-a72b-273fa0bb47fa")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "BREAK ALONG DASHED EDGES"
+		(at 111.32 84.39 0)
+		(layer "F.SilkS")
+		(uuid "afb9a731-fa60-4d0a-99e7-f14a17457205")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "BREAK ALONG DASHED EDGES"
+		(at 111.82 46.39 0)
+		(layer "F.SilkS")
+		(uuid "1b973942-817b-4a74-8dc7-819b413d996a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "R1C1"
+		(at 66.32 53.39 0)
+		(layer "F.SilkS")
+		(uuid "e2697c5e-7405-48c9-afa8-4ea8db091a7e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "R2C1"
+		(at 66.32 69.39 0)
+		(layer "F.SilkS")
+		(uuid "cf2a0e12-08b1-4138-b437-50c7b99ec763")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "R1C1"
+		(at 66.32 91.39 0)
+		(layer "F.SilkS")
+		(uuid "76834e47-1e0b-406a-bbb5-b19b2e772296")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "R2C1"
+		(at 66.32 107.39 0)
+		(layer "F.SilkS")
+		(uuid "0de9dc81-8322-4258-b745-fea8281e15e9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "R1C2"
+		(at 80.32 53.39 0)
+		(layer "F.SilkS")
+		(uuid "237eba12-13b5-4cd4-8c9d-f112fa26f41c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "R2C2"
+		(at 80.32 69.39 0)
+		(layer "F.SilkS")
+		(uuid "ff576b92-497f-4837-83cc-cd65e2d4011a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "R1C2"
+		(at 80.32 91.39 0)
+		(layer "F.SilkS")
+		(uuid "909637ad-b5ae-409b-9b73-da94394475b2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "R2C2"
+		(at 80.32 107.39 0)
+		(layer "F.SilkS")
+		(uuid "a5fe33a8-f184-4d1b-ad77-b44c546eac31")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "R1C3"
+		(at 94.32 53.39 0)
+		(layer "F.SilkS")
+		(uuid "490d252d-0081-4490-b92e-bb307e92c34a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "R2C3"
+		(at 94.32 69.39 0)
+		(layer "F.SilkS")
+		(uuid "7dc3bb9b-7464-4c84-8607-76d7105c7ee0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "R1C3"
+		(at 94.32 91.39 0)
+		(layer "F.SilkS")
+		(uuid "8de44663-392d-4a6e-98be-cd554216a1b2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "R2C3"
+		(at 94.32 107.39 0)
+		(layer "F.SilkS")
+		(uuid "5fab3baa-846f-43fe-bee2-988d0ae03158")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "R1C4"
+		(at 108.32 53.39 0)
+		(layer "F.SilkS")
+		(uuid "ee5d6518-0ac3-4785-8bed-2e90839aafcd")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "R2C4"
+		(at 108.32 69.39 0)
+		(layer "F.SilkS")
+		(uuid "20b6b173-ddef-47ab-a979-cae8cf001251")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "R1C4"
+		(at 108.32 91.39 0)
+		(layer "F.SilkS")
+		(uuid "7ddaea0d-353c-4d47-9077-03f45dce2938")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "R2C4"
+		(at 108.32 107.39 0)
+		(layer "F.SilkS")
+		(uuid "1c35d621-d344-4136-9787-da6a838048b6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "R1C5"
+		(at 122.32 53.39 0)
+		(layer "F.SilkS")
+		(uuid "dc718510-9270-4a57-9ca5-815fff36bb89")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "R2C5"
+		(at 122.32 69.39 0)
+		(layer "F.SilkS")
+		(uuid "d28f4598-80e8-45a5-810a-38cc93fc3e21")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "R1C5"
+		(at 122.32 91.39 0)
+		(layer "F.SilkS")
+		(uuid "a588ecc3-11e2-4a10-9ec6-d47d4470987e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "R2C5"
+		(at 122.32 107.39 0)
+		(layer "F.SilkS")
+		(uuid "08a3a186-4715-42fa-87c1-9604d401bb4c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "沿虚线边缘断开"
+		(at 67.82 124.89 0)
+		(layer "F.SilkS")
+		(uuid "1076b550-40bd-4bec-8db1-e549ed97214d")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "沿虚线边缘断开"
+		(at 68.32 86.89 0)
+		(layer "F.SilkS")
+		(uuid "e47487bc-3cf8-4554-8f35-f101ef39be22")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "沿虚线边缘断开"
+		(at 68.82 48.89 0)
+		(layer "F.SilkS")
+		(uuid "bf8f7e04-f51b-4467-96f6-4145e02ac42d")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "沿虚线边缘断开"
+		(at 114.82 124.89 0)
+		(layer "F.SilkS")
+		(uuid "42ef82ac-0b08-44fe-af90-ec04c27f7eba")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "沿虚线边缘断开"
+		(at 115.32 86.89 0)
+		(layer "F.SilkS")
+		(uuid "b4dc1c92-83ae-4f5d-8e82-7201bb0237a8")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "沿虚线边缘断开"
+		(at 115.82 48.89 0)
+		(layer "F.SilkS")
+		(uuid "83265421-0eaa-46b3-a480-2946a7175ebe")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "1x0.5"
+		(at 102.82 123.39 0)
+		(layer "F.SilkS")
+		(uuid "68cc9330-08fb-4180-b13c-5291efb65f79")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.375)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "1x0.5"
+		(at 103.82 85.39 0)
+		(layer "F.SilkS")
+		(uuid "7188c2c5-9ea8-4c4a-9c34-b17bc16399dc")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.375)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "V-CUT"
+		(at 140.32 50.89 0)
+		(layer "User.1")
+		(uuid "be1ffdb6-cd16-4c61-abd6-7338a30687b3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "V-CUT"
+		(at 140.32 66.89 0)
+		(layer "User.1")
+		(uuid "b524c1cd-d799-4097-92e4-cbc3e7b0ad06")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "V-CUT"
+		(at 140.32 82.89 0)
+		(layer "User.1")
+		(uuid "3c50e1e8-a842-4a8a-b218-01ad760ea5f3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "V-CUT"
+		(at 140.32 88.89 0)
+		(layer "User.1")
+		(uuid "0545d9bd-1413-4f9e-bb86-33b5a2501b2e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "V-CUT"
+		(at 140.32 104.89 0)
+		(layer "User.1")
+		(uuid "05affac5-7972-4a48-a63c-b8a9a2145a6d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "V-CUT"
+		(at 140.32 120.89 0)
+		(layer "User.1")
+		(uuid "873cc192-0c84-4819-8e2e-be9b3502f639")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "V-CUT"
+		(at 64.32 41.39 90)
+		(layer "User.1")
+		(uuid "4db0de92-9918-46f8-a930-b32eec20940d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "V-CUT"
+		(at 78.32 41.39 90)
+		(layer "User.1")
+		(uuid "33cfeadc-14ad-41e9-9e3c-2319e24a36e4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "V-CUT"
+		(at 92.32 41.39 90)
+		(layer "User.1")
+		(uuid "ec530fb5-3e18-4912-8079-f6055edef114")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "V-CUT"
+		(at 106.32 41.39 90)
+		(layer "User.1")
+		(uuid "55ae03ca-1662-40e6-8dba-21e596689bd7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "V-CUT"
+		(at 120.32 41.39 90)
+		(layer "User.1")
+		(uuid "0f81499b-49ff-4101-948c-e7a931dbcca4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "V-CUT"
+		(at 134.32 41.39 90)
+		(layer "User.1")
+		(uuid "fa40ed00-24fe-4d6e-8bb1-edabec636baf")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
+	(dimension
+		(type orthogonal)
+		(layer "F.SilkS")
+		(uuid "0759da2e-5eb0-47ce-acb9-1c1738a4a61d")
+		(pts
+			(xy 137.32 44.39) (xy 140.32 127.39)
+		)
+		(height 13.5)
+		(orientation 1)
+		(format
+			(prefix "")
+			(suffix "")
+			(units 3)
+			(units_format 0)
+			(precision 4)
+			(suppress_zeroes yes)
+		)
+		(style
+			(thickness 0.1)
+			(arrow_length 1.27)
+			(text_position_mode 0)
+			(arrow_direction outward)
+			(extension_height 0.58642)
+			(extension_offset 0.5)
+			(keep_text_aligned yes)
+		)
+		(gr_text "83"
+			(at 149.72 85.89 90)
+			(layer "F.SilkS")
+			(uuid "0759da2e-5eb0-47ce-acb9-1c1738a4a61d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.1)
+				)
+			)
+		)
+	)
+	(dimension
+		(type orthogonal)
+		(layer "User.4")
+		(uuid "2dea43c2-c7bd-4cd5-8da0-0b9ce8da725b")
+		(pts
+			(xy 60.32 127.39) (xy 137.32 127.39)
+		)
+		(height 7.5)
+		(orientation 0)
+		(format
+			(prefix "")
+			(suffix "")
+			(units 3)
+			(units_format 0)
+			(precision 4)
+			(suppress_zeroes yes)
+		)
+		(style
+			(thickness 0.1)
+			(arrow_length 1.27)
+			(text_position_mode 0)
+			(arrow_direction outward)
+			(extension_height 0.58642)
+			(extension_offset 0.5)
+			(keep_text_aligned yes)
+		)
+		(gr_text "77"
+			(at 98.82 133.74 0)
+			(layer "User.4")
+			(uuid "2dea43c2-c7bd-4cd5-8da0-0b9ce8da725b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+	)
+	(dimension
+		(type orthogonal)
+		(layer "User.4")
+		(uuid "e08e3ff6-c31e-4170-8192-a32cb69b13e9")
+		(pts
+			(xy 60.32 44.39) (xy 60.32 121.39)
+		)
+		(height -5.5)
+		(orientation 1)
+		(format
+			(prefix "")
+			(suffix "")
+			(units 3)
+			(units_format 0)
+			(precision 4)
+			(suppress_zeroes yes)
+		)
+		(style
+			(thickness 0.1)
+			(arrow_length 1.27)
+			(text_position_mode 0)
+			(arrow_direction outward)
+			(extension_height 0.58642)
+			(extension_offset 0.5)
+			(keep_text_aligned yes)
+		)
+		(gr_text "77"
+			(at 53.67 82.89 90)
+			(layer "User.4")
+			(uuid "e08e3ff6-c31e-4170-8192-a32cb69b13e9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+	)
+	(group ""
+		(uuid "059faf5d-d7a8-42c7-b69f-23aaa407891e")
+		(members "0eec4bfb-4d94-4fcf-a8ca-16e44e3429cb" "88ea4341-d783-4567-a3ad-429fbd35fcdd"
+			"a73266c5-6636-49db-b9c9-46f927923459"
+		)
+	)
+	(group ""
+		(uuid "1de81e5e-ede6-47a2-95e4-4ea55e82fa34")
+		(members "213d1474-5340-4bfd-add0-6bc222c548c0" "c6d26826-7c9f-465d-9182-95d8c7903d97"
+			"f1805087-2dc9-4c5b-bc11-5ae290269982"
+		)
+	)
+	(group ""
+		(uuid "2c76be0b-a573-4efc-b8e2-e75ce6a2a4b6")
+		(members "591e36f1-8c2d-4883-8f4b-3411fa3aa7ab" "8ecf1e23-eda6-4543-af44-245ff907311a"
+			"b4b432d7-82fb-465b-a08d-ef4f2aca725b"
+		)
+	)
+	(group ""
+		(uuid "4370eaa6-b52c-4008-9ec2-017606cd4ce7")
+		(members "1076b550-40bd-4bec-8db1-e549ed97214d" "1641e2c9-1a6c-4522-9be7-cf2ff00c46db"
+			"1de81e5e-ede6-47a2-95e4-4ea55e82fa34" "42ef82ac-0b08-44fe-af90-ec04c27f7eba"
+			"4945a231-77be-4143-94bd-45e4cbf72764" "5a3072cc-0028-4538-a342-abaf8d68bc51"
+			"731435cf-e489-4a1c-90f9-545dfc7f4c2a" "9e1cf291-f894-46a3-a72b-273fa0bb47fa"
+			"e085d97f-cbf0-43d3-8787-9185c742c630"
+		)
+	)
+	(group ""
+		(uuid "4945a231-77be-4143-94bd-45e4cbf72764")
+		(members "86c1c0cf-70ff-4663-93c9-086b1eb6c640" "8cc680ce-8e02-4e04-baeb-ddf36b765037"
+			"c8422343-1656-4030-9efd-26ef147fd50e"
+		)
+	)
+	(group ""
+		(uuid "5a3072cc-0028-4538-a342-abaf8d68bc51")
+		(members "0fbd3bca-8289-44a4-b5f0-4277c0975855" "57bda407-7944-43f8-b91f-d324d2592bb3"
+			"f42b45ff-83a5-45fd-beee-e077110e8038"
+		)
+	)
+	(group ""
+		(uuid "69050845-3021-472b-a030-f8d6df2995b1")
+		(members "2303d4cc-be53-49cc-84f3-c5866201dc7f" "2c76be0b-a573-4efc-b8e2-e75ce6a2a4b6"
+			"4febbb08-71b4-4cfc-9936-8c772135029f" "866fde9c-0711-460b-b848-5d62e3a9d7b9"
+			"a70d71c5-f881-4957-9490-26fad4f79095" "ab88f995-9b95-49a9-bf47-e11d75244d41"
+			"afb9a731-fa60-4d0a-99e7-f14a17457205" "b4dc1c92-83ae-4f5d-8e82-7201bb0237a8"
+			"e47487bc-3cf8-4554-8f35-f101ef39be22"
+		)
+	)
+	(group ""
+		(uuid "78e4e086-b326-449f-9903-74ac4516fb50")
+		(members "3da1c73e-9787-49c5-b66b-d635338ef36e" "431361e9-5b68-4e9a-b4f6-b61084714d25"
+			"84ecbbd5-ab4b-46dc-b364-4e2ba95eeedd"
+		)
+	)
+	(group ""
+		(uuid "866fde9c-0711-460b-b848-5d62e3a9d7b9")
+		(members "79e5ab5c-0454-41d1-9409-98e90d382b7a" "a7258541-c1e9-4ec0-892b-9c3345959032"
+			"fb88bd76-9a8a-4b92-8703-a45d90ef8770"
+		)
+	)
+	(group ""
+		(uuid "932595eb-484e-497e-93d5-dbda4ff64b7e")
+		(members "17fd09d9-e5d1-480c-a178-d2d3b54f2697" "c62e3b49-4810-4f38-a755-06f2e2cc5747"
+			"f534deee-a57c-4006-bd45-5ee2759afaff"
+		)
+	)
+	(group ""
+		(uuid "a223a936-4315-4c0b-b201-beb5e17693a7")
+		(members "03005097-8d12-4d33-8878-483cd6b5b6c3" "059faf5d-d7a8-42c7-b69f-23aaa407891e"
+			"1b973942-817b-4a74-8dc7-819b413d996a" "78e4e086-b326-449f-9903-74ac4516fb50"
+			"83265421-0eaa-46b3-a480-2946a7175ebe" "932595eb-484e-497e-93d5-dbda4ff64b7e"
+			"bf8f7e04-f51b-4467-96f6-4145e02ac42d" "cfb5e94d-908d-4566-90b0-323690a9e619"
+			"d2ebe98e-f8ac-49d2-8890-a2905617559d"
+		)
+	)
+	(group ""
+		(uuid "a70d71c5-f881-4957-9490-26fad4f79095")
+		(members "359f4aab-87b1-4cff-a402-d3ca4ffef959" "b547cd20-682a-4c5d-8cbd-e77e552c6a8f"
+			"b8071377-2bbe-455b-a3c5-ed948485118d"
+		)
+	)
+	(group ""
+		(uuid "ab88f995-9b95-49a9-bf47-e11d75244d41")
+		(members "1df9499d-14c8-42c6-bc3f-b3f620980006" "51f2b8fb-6ca7-4aa9-94c1-11da27d3b2b8"
+			"b7ab7854-cbce-43ee-a843-5513a1406bbc"
+		)
+	)
+	(group ""
+		(uuid "d2ebe98e-f8ac-49d2-8890-a2905617559d")
+		(members "0cf8d99f-ae27-49f9-8190-80bca9d509a7" "2d1e5c47-378d-4068-af86-d18cf987898b"
+			"bbd220a7-f981-4748-8ad5-470c26734238"
+		)
+	)
+	(group ""
+		(uuid "e085d97f-cbf0-43d3-8787-9185c742c630")
+		(members "16cfd04f-5809-4b41-ba19-f3b0fd7c8d5e" "66ec0997-fb05-406e-a006-0a36a5751807"
+			"eb454d60-5b27-44fc-9bb3-2661f37d3305"
+		)
+	)
+	(embedded_fonts no)
+)
