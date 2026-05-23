@@ -44,7 +44,7 @@ Space has been allocated for optional components such as decoupling capacitors a
 **Proposed Mezzanine Connectors:**
 
 * 70-pin, 0.4 mm pitch: [LCSC C19089236](https://www.lcsc.com/product-detail/C19089236.html)
-* Mating connector: [LCSC C19089262](https://www.lcsc.com/product-image/C19089262.html)
+* Mating connector: [LCSC C19089262](https://www.lcsc.com/product-detail/C19089262.html)
 
 ---
 
