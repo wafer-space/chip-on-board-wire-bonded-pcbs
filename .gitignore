@@ -40,3 +40,9 @@ fp-info-cache
 # Local project settings
 *.kicad_prl
 
+# Fabrication toolkit options (may exist in multiple directories)
+**/fabrication-toolkit-options.json
+
+# Backup directories
+**/backups/
+
