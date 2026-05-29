@@ -11,6 +11,18 @@ All ground (GND) connections are tied together in the **Default Breakout COB pac
 
 ---
 
+## First Run
+
+[**wafer.space**](https://wafer.space) completed its **successful first run**, delivering working chip-on-board (COB) packages to customers. The boards below are the actual COB parts that were wire-bonded and shipped as part of Run 1 — real silicon, packaged and ready to drop into a breakout motherboard.
+
+![](./images/20260426_182548.jpg)
+![](./images/IMG_20260422_141020007.jpg)
+![](./images/PXL_20260422_030512667.RAW-01.COVER.jpg)
+
+See [**Run 1**](./run-1/README.md) for the full padframe reference, pinouts, and design requirements behind these parts.
+
+---
+
 ## Run Documentation
 
 Pinouts, connector choices, and footprint dimensions are **run-specific** and documented per run.
@@ -21,26 +33,21 @@ Pinouts, connector choices, and footprint dimensions are **run-specific** and do
 
 ---
 
-## Default KiCad Symbols
+## Example Motherboards
 
-We have developed several **KiCad symbols** to support design and integration with our COB layouts.
+We provide example **breakout motherboard** designs that mate with the COB packages via the 70-pin mezzanine connector. See the [**Motherboards directory**](./run-1/motherboards/README.md) for KiCad schematics, layouts, and symbols.
 
-The **pad mapping symbol** corresponds to the default 74-pad wirebonding padframe and [default configuration](https://github.com/wafer-space/gf180mcu-project-template/blob/main/librelane/config.yaml) from the [**GF180MCU Project Template**](https://github.com/wafer-space/gf180mcu-project-template).
-
-> Some users have suggested reducing the number of ground and power pads. If there is sufficient demand, an alternate default configuration will be created.
-> Join the discussion on our [**Discord server**](https://discord.gg/43y2t53jpE).
-
-![](./images/default_74pad_wirebond_symbol.png)
-*Default 74-pad wirebonding padframe*
+![](./images/prototype1/0011.JPG)
+![](./images/prototype1/20251217_000430.jpg)
 
 ---
 
 ### 70-Pin Mezzanine Connector Symbol
 
-The **mezzanine connector symbol** provides a 1:1 pin mapping to the 70-pin default layout.
+The **mezzanine connector symbol** provides a 1:1 pin mapping to the 70-pin default layout. You can find these symbols in the [Motherboards examples](./run-1/motherboards/README.md). 
 All pins are aliased to match [Tiny Tapeout](https://tinytapeout.com/) naming conventions.
 
-![](./images/default_70pin_mezzanine_symbol.png)
+![](./images/motherboard-symbols.png)
 *Default 70-pin mezzanine COB breakout symbol*
 
 We also provide an alternate version that organizes pins by signal type. Ideal for Tiny Tapeout breakout motherboard designs.

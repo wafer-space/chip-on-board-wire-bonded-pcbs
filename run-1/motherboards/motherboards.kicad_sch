@@ -2552,6 +2552,26 @@
 		)
 		(uuid "44361d0a-4855-4e32-b449-dbd8789fe61b")
 	)
+	(text "Castellated"
+		(exclude_from_sim no)
+		(at 143.51 39.37 0)
+		(effects
+			(font
+				(size 3.81 3.81)
+			)
+		)
+		(uuid "6660e7e0-284d-4686-8017-bb237aebf0c7")
+	)
+	(text ".1\" Header"
+		(exclude_from_sim no)
+		(at 53.34 39.37 0)
+		(effects
+			(font
+				(size 3.81 3.81)
+			)
+		)
+		(uuid "6c2dcf49-bdee-4a06-98b0-bc10fb0ec695")
+	)
 	(symbol
 		(lib_id "WaferSpace:70pin_ws_default_mezzanine")
 		(at 54.61 97.79 0)

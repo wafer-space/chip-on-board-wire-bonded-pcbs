@@ -57,6 +57,20 @@ Space has been allocated for optional components such as decoupling capacitors a
 * 70-pin, 0.4 mm pitch: [LCSC C19089236](https://www.lcsc.com/product-detail/C19089236.html)
 * Mating connector: [LCSC C19089262](https://www.lcsc.com/product-detail/C19089262.html)
 
+
+---
+
+## Default KiCad Symbols
+
+We have developed several **KiCad symbols** to support design and integration with our COB layouts.
+
+The **pad mapping symbol** corresponds to the default 74-pad wirebonding padframe and [default configuration](https://github.com/wafer-space/gf180mcu-project-template/blob/main/librelane/config.yaml) from the [**GF180MCU Project Template**](https://github.com/wafer-space/gf180mcu-project-template).
+
+> Some users have suggested reducing the number of ground and power pads. If there is sufficient demand, an alternate default configuration will be created.
+> Join the discussion on our [**Discord server**](https://discord.gg/43y2t53jpE).
+
+![](../images/default_74pad_wirebond_symbol.png)
+*Default 74-pad wirebonding padframe*
 ---
 
 ## Default Design Requirements
