@@ -11,94 +11,46 @@ All ground (GND) connections are tied together in the **Default Breakout COB pac
 
 ---
 
-## Padframe Reference
+## First Run
 
-| Bond Pad | Breakout Pad | Default                                                    | TT Function                                                |
-| -------- | ------------ | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| 0        | 1            | user_defined                                               | ctrl_ena                                                   |
-| 1        | 2            | user_defined                                               | ctrl_sel_inc                                               |
-| 2        | 3            | user_defined                                               | ctrl_sel_rst_n                                             |
-| 3–7      | 4–8          | user_defined                                               | rsvd                                                       |
-| 8        | 9            | <span style="color:gray; font-weight:bold;">GND IO</span>  | <span style="color:gray; font-weight:bold;">GND IO</span>  |
-| 9–16     | 10–17        | user_defined                                               | uo[0–7]                                                    |
-| 17       | 18           | <span style="color:red; font-weight:bold;">VDD IO</span>   | <span style="color:red; font-weight:bold;">VDD IO</span>   |
-| 18       | 19           | <span style="color:gray; font-weight:bold;">GND IO</span>  | <span style="color:gray; font-weight:bold;">GND IO</span>  |
-| 19–24    | 20–25        | user_defined                                               | analog[0–5]                                                |
-| 25       | 26           | <span style="color:blue; font-weight:bold;">PWR Aux</span> | <span style="color:blue; font-weight:bold;">PWR Aux</span> |
-| 26–72    | 27–73        | *(see full table for details)*                             | —                                                          |
-| 73       | 74           | <span style="color:red; font-weight:bold;">VDD IO</span>   | <span style="color:red; font-weight:bold;">VDD IO</span>   |
+[**wafer.space**](https://wafer.space) completed its **successful first run**, delivering working chip-on-board (COB) packages to customers. The boards below are the actual COB parts that were wire-bonded and shipped as part of Run 1 — real silicon, packaged and ready to drop into a breakout motherboard.
 
-> For the complete mapping and color-coded reference, please refer to this [spreadsheet](https://docs.google.com/spreadsheets/d/1pI2BAEWEexXcXN3vah3SR85zPIV6eAXPGXc2bcvoSGU)
+![](./images/20260426_182548.jpg)
+![](./images/IMG_20260422_141020007.jpg)
+![](./images/PXL_20260422_030512667.RAW-01.COVER.jpg)
+
+See [**Run 1**](./run-1/README.md) for the full padframe reference, pinouts, and design requirements behind these parts.
 
 ---
 
-## Example COB Layout
+## Run Documentation
 
-> *Note: Pin numbering and naming conventions are still evolving.*
+Pinouts, connector choices, and footprint dimensions are **run-specific** and documented per run.
 
-<img width="533" height="457" alt="image" src="https://github.com/user-attachments/assets/5f71ebdc-35b8-407f-9d59-434305b8abb7" />
-<img width="533" height="463" alt="image" src="https://github.com/user-attachments/assets/034599b5-a3f3-48c2-93ae-68df6727f374" />
-
-Space has been allocated for optional components such as decoupling capacitors and other passive elements.
-
-**Proposed Mezzanine Connectors:**
-
-* 70-pin, 0.4 mm pitch: [LCSC C19089236](https://www.lcsc.com/product-detail/C19089236.html)
-* Mating connector: [LCSC C19089262](https://www.lcsc.com/product-detail/C19089262.html)
+* [**Run 1**](./run-1/README.md) — padframe reference / pinouts, example COB layout, mezzanine connectors, and design requirements
+  * [Wirebonding detail and design rules](./run-1/1x1-cob/wirebonding/README.md)
+  * [Example motherboards](./run-1/motherboards/README.md)
 
 ---
 
-## Wirebonding Detail
+## Example Motherboards
 
-![](./74pad-70pin-mezzanine/wirebonding/wirebonding2.png)
+We provide example **breakout motherboard** designs that mate with the COB packages via the 70-pin mezzanine connector. See the [**Motherboards directory**](./run-1/motherboards/README.md) for KiCad schematics, layouts, and symbols.
 
-![](./74pad-70pin-mezzanine/wirebonding/wirebonding.png)
-
-
-## Default KiCad Symbols
-
-We have developed several **KiCad symbols** to support design and integration with our COB layouts.
-
-The **pad mapping symbol** corresponds to the default 74-pad wirebonding padframe and [default configuration](https://github.com/wafer-space/gf180mcu-project-template/blob/main/librelane/config.yaml) from the [**GF180MCU Project Template**](https://github.com/wafer-space/gf180mcu-project-template).
-
-> Some users have suggested reducing the number of ground and power pads. If there is sufficient demand, an alternate default configuration will be created.
-> Join the discussion on our [**Discord server**](https://discord.gg/43y2t53jpE).
-
-![](./images/default_74pad_wirebond_symbol.png)
-*Default 74-pad wirebonding padframe*
+![](./images/prototype1/0011.JPG)
+![](./images/prototype1/20251217_000430.jpg)
 
 ---
 
 ### 70-Pin Mezzanine Connector Symbol
 
-The **mezzanine connector symbol** provides a 1:1 pin mapping to the 70-pin default layout.
+The **mezzanine connector symbol** provides a 1:1 pin mapping to the 70-pin default layout. You can find these symbols in the [Motherboards examples](./run-1/motherboards/README.md). 
 All pins are aliased to match [Tiny Tapeout](https://tinytapeout.com/) naming conventions.
 
-![](./images/default_70pin_mezzanine_symbol.png)
+![](./images/motherboard-symbols.png)
 *Default 70-pin mezzanine COB breakout symbol*
 
 We also provide an alternate version that organizes pins by signal type. Ideal for Tiny Tapeout breakout motherboard designs.
 
 ![](./images/tinytapeout_kicad_symbols.png)
 *Default 70-pin mezzanine COB breakout symbol TT version*
-
----
-
-## Default Design Requirements
-
-To maintain compatibility across projects, **default breakouts** must share:
-
-* The same **wirebonding layout**
-* The same **PCB footprint** (14 mm × 16 mm)
-* The same **connector position** (if applicable)
-
-Traces, signal types, and net assignments are **user-definable**.
-
----
-
-## Example Motherboards
-
-We’ve designed several example breakout and motherboard PCBs to simplify development and integration with your custom chips.
-
-<img width="1560" height="886" alt="image" src="https://github.com/user-attachments/assets/a5fda81e-ea04-4347-8ed8-b9aa366fdbfd" />
-

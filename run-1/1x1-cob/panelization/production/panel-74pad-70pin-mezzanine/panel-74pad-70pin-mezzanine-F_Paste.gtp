@@ -1,0 +1,95 @@
+G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,10.0.0*
+G04 #@! TF.CreationDate,2026-04-20T15:50:08+08:00*
+G04 #@! TF.ProjectId,panel-74pad-70pin-mezzanine,70616e65-6c2d-4373-9470-61642d373070,rev?*
+G04 #@! TF.SameCoordinates,Original*
+G04 #@! TF.FileFunction,Paste,Top*
+G04 #@! TF.FilePolarity,Positive*
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 10.0.0) date 2026-04-20 15:50:08*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+G04 Aperture macros list*
+%AMRoundRect*
+0 Rectangle with rounded corners*
+0 $1 Rounding radius*
+0 $2 $3 $4 $5 $6 $7 $8 $9 X,Y pos of 4 corners*
+0 Add a 4 corners polygon primitive as box body*
+4,1,4,$2,$3,$4,$5,$6,$7,$8,$9,$2,$3,0*
+0 Add four circle primitives for the rounded corners*
+1,1,$1+$1,$2,$3*
+1,1,$1+$1,$4,$5*
+1,1,$1+$1,$6,$7*
+1,1,$1+$1,$8,$9*
+0 Add four rect primitives between the rounded corners*
+20,1,$1+$1,$2,$3,$4,$5,0*
+20,1,$1+$1,$4,$5,$6,$7,0*
+20,1,$1+$1,$6,$7,$8,$9,0*
+20,1,$1+$1,$8,$9,$2,$3,0*%
+G04 Aperture macros list end*
+%ADD10RoundRect,0.040000X1.960000X2.560000X-1.960000X2.560000X-1.960000X-2.560000X1.960000X-2.560000X0*%
+G04 APERTURE END LIST*
+D10*
+G04 #@! TO.C,U138*
+X49000000Y-56035000D03*
+G04 #@! TD*
+G04 #@! TO.C,U136*
+X35000000Y-56035000D03*
+G04 #@! TD*
+G04 #@! TO.C,U134*
+X21000000Y-56035000D03*
+G04 #@! TD*
+G04 #@! TO.C,U132*
+X7000000Y-56035000D03*
+G04 #@! TD*
+G04 #@! TO.C,U130*
+X63000000Y-40035000D03*
+G04 #@! TD*
+G04 #@! TO.C,U128*
+X49000000Y-40035000D03*
+G04 #@! TD*
+G04 #@! TO.C,U126*
+X35000000Y-40035000D03*
+G04 #@! TD*
+G04 #@! TO.C,U124*
+X21000000Y-40035000D03*
+G04 #@! TD*
+G04 #@! TO.C,U122*
+X7000000Y-40035000D03*
+G04 #@! TD*
+G04 #@! TO.C,U120*
+X63000000Y-24035000D03*
+G04 #@! TD*
+G04 #@! TO.C,U118*
+X49000000Y-24035000D03*
+G04 #@! TD*
+G04 #@! TO.C,U116*
+X35000000Y-24035000D03*
+G04 #@! TD*
+G04 #@! TO.C,U114*
+X21000000Y-24035000D03*
+G04 #@! TD*
+G04 #@! TO.C,U112*
+X7000000Y-24035000D03*
+G04 #@! TD*
+G04 #@! TO.C,U110*
+X63000000Y-8035000D03*
+G04 #@! TD*
+G04 #@! TO.C,U108*
+X49000000Y-8035000D03*
+G04 #@! TD*
+G04 #@! TO.C,U106*
+X35000000Y-8035000D03*
+G04 #@! TD*
+G04 #@! TO.C,U104*
+X21000000Y-8035000D03*
+G04 #@! TD*
+G04 #@! TO.C,U102*
+X7000000Y-8035000D03*
+G04 #@! TD*
+G04 #@! TO.C,U140*
+X63000000Y-56035000D03*
+G04 #@! TD*
+M02*
