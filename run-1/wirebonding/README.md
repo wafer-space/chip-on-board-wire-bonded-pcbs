@@ -16,7 +16,7 @@ the padframe, matching each die pad to its corresponding bond pad on the PCB.
 The following constraints apply when laying out bond wires:
 
 * **No wires may cross.**
-* **Wire angle must be greater than 45°.**
+* **Wire angle must be not greater than 45°.**
 * **Maximum wire length must be less than 3 mm** — though a wire that long would already add a
   significant amount of inductance, so keep them as short as practical.
 * **Minimum wire length is 1 mm from the die, or 2× the die thickness** (whichever is greater).
