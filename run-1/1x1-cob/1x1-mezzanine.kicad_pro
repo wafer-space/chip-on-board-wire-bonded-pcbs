@@ -50,7 +50,23 @@
         "silk_text_thickness": 0.15,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.15
+          "border_display_style": 2,
+          "border_hatch_pitch": 0.5,
+          "corner_radius": 0.0,
+          "corner_smoothing": 0,
+          "fill_mode": 0,
+          "hatch_gap": 1.5,
+          "hatch_orientation": 0.0,
+          "hatch_smoothing_level": 0,
+          "hatch_smoothing_value": 0.1,
+          "hatch_thickness": 1.0,
+          "min_clearance": 0.15,
+          "min_island_area": 10.0,
+          "min_thickness": 0.1,
+          "pad_connection": 1,
+          "remove_islands": 0,
+          "thermal_relief_gap": 0.17,
+          "thermal_relief_spoke_width": 0.17
         }
       },
       "diff_pair_dimensions": [
@@ -495,7 +511,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "74pad-70pin-mezzanine.kicad_pro",
+    "filename": "1x1-mezzanine.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -673,8 +689,8 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "74pad-70pin-mezzanine.kicad_sch",
-        "name": "74pad-70pin-mezzanine",
+        "filename": "1x1-mezzanine.kicad_sch",
+        "name": "1x1-mezzanine",
         "uuid": "ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
       }
     ],
@@ -684,7 +700,7 @@
   "sheets": [
     [
       "ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8",
-      "74pad-70pin-mezzanine"
+      "1x1-mezzanine"
     ]
   ],
   "text_variables": {},
