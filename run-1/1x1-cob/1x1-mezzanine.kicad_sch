@@ -7287,7 +7287,7 @@
 			(uuid "a164bdac-cdf1-40d1-b1a2-412f9a3dfb57")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR032")
 					(unit 1)
@@ -7304,7 +7304,7 @@
 		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0f343d48-5a9f-411a-8d33-e57106d4eb84")
 		(property "Reference" "U102"
@@ -7607,7 +7607,7 @@
 			(uuid "6a50af7a-c03e-41e8-816a-0f6bb3df4815")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "U102")
 					(unit 1)
@@ -7689,7 +7689,7 @@
 			(uuid "b3f5c649-d280-42ee-8914-92cff7192f48")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "C108")
 					(unit 1)
@@ -7766,7 +7766,7 @@
 			(uuid "b4467921-1cd4-4108-9b87-b68e56a2225a")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR04")
 					(unit 1)
@@ -7843,7 +7843,7 @@
 			(uuid "13372125-1d4e-4b86-b3fe-8af2e38747ac")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR022")
 					(unit 1)
@@ -7920,7 +7920,7 @@
 			(uuid "f5f15829-3e13-4687-8af7-10a37acfe172")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR038")
 					(unit 1)
@@ -7997,7 +7997,7 @@
 			(uuid "3fbea051-e44f-4968-8d03-5e4b9d3b68a7")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR023")
 					(unit 1)
@@ -8074,7 +8074,7 @@
 			(uuid "78830384-43d2-4029-8635-787e17ddc12f")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR036")
 					(unit 1)
@@ -8151,7 +8151,7 @@
 			(uuid "a1a610c9-e8be-4524-8916-7b6ef5d60027")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR037")
 					(unit 1)
@@ -8230,7 +8230,7 @@
 			(uuid "afee0af2-2971-46a3-9447-d4875354bd09")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR08")
 					(unit 1)
@@ -8309,7 +8309,7 @@
 			(uuid "07493bc5-efaf-4440-82b8-45282ac06d60")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR034")
 					(unit 1)
@@ -8388,7 +8388,7 @@
 			(uuid "304afe75-3607-4b2a-bf97-0204ebf4588b")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR0106")
 					(unit 1)
@@ -8470,7 +8470,7 @@
 			(uuid "fef5e57d-e9f8-46a6-acbb-731d79d40627")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "C103")
 					(unit 1)
@@ -8549,7 +8549,7 @@
 			(uuid "f5202b81-2ecc-41bc-9464-a414c0becc13")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR025")
 					(unit 1)
@@ -8626,7 +8626,7 @@
 			(uuid "fd2ef98e-312b-4d12-8937-689f3a1a43d5")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR029")
 					(unit 1)
@@ -8705,7 +8705,7 @@
 			(uuid "52762d22-59e9-41cd-9564-44559a1f69b0")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR010")
 					(unit 1)
@@ -8784,7 +8784,7 @@
 			(uuid "60d4370f-0085-4ea4-a736-400ee16c1ff5")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR011")
 					(unit 1)
@@ -8863,7 +8863,7 @@
 			(uuid "08be74a6-2f91-4834-bd19-752c3b09c56d")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR0107")
 					(unit 1)
@@ -8940,7 +8940,7 @@
 			(uuid "98d70fc0-a3ef-4ebf-beb0-241aa6bdeb3c")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR018")
 					(unit 1)
@@ -9019,7 +9019,7 @@
 			(uuid "5f36a165-54e2-4458-b239-b22aab628dd5")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR0110")
 					(unit 1)
@@ -9096,7 +9096,7 @@
 			(uuid "3b0a5900-2bef-4b2f-bc1f-b2dbe99ee88d")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR0101")
 					(unit 1)
@@ -9175,7 +9175,7 @@
 			(uuid "56293a68-1e11-40fa-8194-e409c2c811af")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR0104")
 					(unit 1)
@@ -9254,7 +9254,7 @@
 			(uuid "06db66e0-3e83-4041-b941-fc2545746903")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR014")
 					(unit 1)
@@ -9333,7 +9333,7 @@
 			(uuid "39a1c6c1-951a-44a7-908a-687e631147d2")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR0108")
 					(unit 1)
@@ -9412,7 +9412,7 @@
 			(uuid "05c42e54-52c4-4b6c-83d2-d3ac12e0c904")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR02")
 					(unit 1)
@@ -9489,7 +9489,7 @@
 			(uuid "bc635b9d-4a91-4e2a-9c74-a74892a4db46")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR033")
 					(unit 1)
@@ -9566,7 +9566,7 @@
 			(uuid "7320c609-2759-4bdc-873f-68644a15b587")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR028")
 					(unit 1)
@@ -9648,7 +9648,7 @@
 			(uuid "3d8ea5f8-7030-4572-9f8c-f80a9835149b")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "C107")
 					(unit 1)
@@ -9730,7 +9730,7 @@
 			(uuid "a5b3c72b-133e-4906-9dfd-d37f56cbcc97")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "C102")
 					(unit 1)
@@ -9807,7 +9807,7 @@
 			(uuid "cfc11372-8c38-4912-b65b-f7c37bfb0bf7")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR031")
 					(unit 1)
@@ -9886,7 +9886,7 @@
 			(uuid "ec134b79-cbba-4533-b93e-230779faca97")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR024")
 					(unit 1)
@@ -9963,7 +9963,7 @@
 			(uuid "833f410e-11bf-4aeb-9d51-a2a93ed8e6ed")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR030")
 					(unit 1)
@@ -10042,7 +10042,7 @@
 			(uuid "3354dd9b-3a45-4720-bc6f-913962e965d3")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR09")
 					(unit 1)
@@ -10121,7 +10121,7 @@
 			(uuid "fe26c962-92fc-4f24-9141-c49418390493")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR012")
 					(unit 1)
@@ -10198,7 +10198,7 @@
 			(uuid "9e7468bb-8b84-4857-987b-63f45d304109")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR01")
 					(unit 1)
@@ -10280,7 +10280,7 @@
 			(uuid "0e43d4c8-cf8c-4842-b591-a0bb8a1cd152")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "C101")
 					(unit 1)
@@ -10357,7 +10357,7 @@
 			(uuid "b7d4fbe5-da65-4958-8116-74e1d76daf83")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR016")
 					(unit 1)
@@ -10434,7 +10434,7 @@
 			(uuid "fee763f9-4d0b-4f15-81fc-eef75d2114d2")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR05")
 					(unit 1)
@@ -10513,7 +10513,7 @@
 			(uuid "6d2f2341-cbac-4d8d-9e6d-894502c95524")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR07")
 					(unit 1)
@@ -10590,7 +10590,7 @@
 			(uuid "cda5a08e-c51a-4cb5-968b-3533019c3c5e")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR035")
 					(unit 1)
@@ -10667,7 +10667,7 @@
 			(uuid "cdb0a4db-f59a-4c77-ba64-1d4dcd6511a0")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR027")
 					(unit 1)
@@ -10746,7 +10746,7 @@
 			(uuid "2bd69830-01b4-49f4-892a-9538a1127674")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR013")
 					(unit 1)
@@ -10828,7 +10828,7 @@
 			(uuid "2bbe5585-269a-4825-8a1b-e9c654e12b49")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "C104")
 					(unit 1)
@@ -10910,7 +10910,7 @@
 			(uuid "57489cdf-3088-4236-b1da-42014d8aa034")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "C106")
 					(unit 1)
@@ -11256,7 +11256,7 @@
 			(alternate "uio_3")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "U2")
 					(unit 1)
@@ -11333,7 +11333,7 @@
 			(uuid "8ddff22d-6a59-4352-a9ed-c60b17bccacf")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR0112")
 					(unit 1)
@@ -11412,7 +11412,7 @@
 			(uuid "9c17bd3b-c08d-464e-9765-4d1967277f6d")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR0105")
 					(unit 1)
@@ -11491,7 +11491,7 @@
 			(uuid "99fbe403-e034-4136-a5e5-8681ad69a19c")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR015")
 					(unit 1)
@@ -11779,7 +11779,7 @@
 			(uuid "aff05413-68c1-44e8-8b30-62579341c29c")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "U101")
 					(unit 1)
@@ -11856,7 +11856,7 @@
 			(uuid "b6440ddb-ba7f-41af-95a7-a06f4f232df5")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR021")
 					(unit 1)
@@ -11933,7 +11933,7 @@
 			(uuid "a573e208-c5eb-4349-9a61-a395cb25772d")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR020")
 					(unit 1)
@@ -12012,7 +12012,7 @@
 			(uuid "290d734c-208c-4766-9fcc-402564f69e58")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR026")
 					(unit 1)
@@ -12089,7 +12089,7 @@
 			(uuid "1ec2af7c-6bea-46de-b08a-da5f277e0cce")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR019")
 					(unit 1)
@@ -12168,7 +12168,7 @@
 			(uuid "4e807f24-197e-4c64-844d-4e87757c9e13")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR0103")
 					(unit 1)
@@ -12250,7 +12250,7 @@
 			(uuid "65d94a83-9084-4dc5-8bb6-a9a8fb527c62")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "C105")
 					(unit 1)
@@ -12329,7 +12329,7 @@
 			(uuid "d6cb35e9-b49a-47ba-a869-5cb25dbad024")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR0111")
 					(unit 1)
@@ -12406,7 +12406,7 @@
 			(uuid "61df0d28-d0fa-4fe5-9208-bedf2a92525e")
 		)
 		(instances
-			(project "74pad-70pin-mezzanine"
+			(project "1x1-mezzanine"
 				(path "/ef7d4379-e49d-4d3d-9c5d-d60c93ea01d8"
 					(reference "#PWR017")
 					(unit 1)
