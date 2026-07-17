@@ -766,10 +766,10 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin bidirectional line
 					(at 55.88 0 90)
 					(length 2.54)
-					(name "GND"
+					(name "bidir_18"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -784,10 +784,10 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin bidirectional line
 					(at 58.42 0 90)
 					(length 2.54)
-					(name "VDD"
+					(name "bidir_19"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -802,10 +802,10 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin power_in line
 					(at 60.96 0 90)
 					(length 2.54)
-					(name "bidir_18"
+					(name "GND"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -820,10 +820,10 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin power_in line
 					(at 63.5 0 90)
 					(length 2.54)
-					(name "bidir_19"
+					(name "VDD"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1054,10 +1054,10 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin power_in line
 					(at 63.5 48.26 270)
 					(length 2.54)
-					(name "bidir_24"
+					(name "VDD"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1072,10 +1072,10 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin power_in line
 					(at 60.96 48.26 270)
 					(length 2.54)
-					(name "bidir_25"
+					(name "GND"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1090,10 +1090,10 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin bidirectional line
 					(at 58.42 48.26 270)
 					(length 2.54)
-					(name "VDD"
+					(name "bidir_24"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1108,10 +1108,10 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin bidirectional line
 					(at 55.88 48.26 270)
 					(length 2.54)
-					(name "GND"
+					(name "bidir_25"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3374,16 +3374,10 @@
 		(uuid "97368755-6a19-4e74-9994-65ce71a2fa0a")
 	)
 	(junction
-		(at 247.65 101.6)
+		(at 160.02 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ad936562-8593-4493-8e62-55904df0adfa")
-	)
-	(junction
-		(at 160.02 101.6)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c0750590-ae4e-4477-96c6-0612f8a47898")
+		(uuid "c215bdae-a0a1-4332-9fb4-6c1f094e4aa1")
 	)
 	(junction
 		(at 160.02 78.74)
@@ -3396,6 +3390,22 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f63ce097-c7ac-4a4a-bb86-6f421cf57eff")
+	)
+	(junction
+		(at 247.65 106.68)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fd25255b-0ed6-40d7-b510-40114315f2e6")
+	)
+	(wire
+		(pts
+			(xy 160.02 106.68) (xy 160.02 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0322774e-13fa-4d8f-9c99-d1c98722cc76")
 	)
 	(wire
 		(pts
@@ -3419,26 +3429,6 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 101.6) (xy 179.07 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "307793c6-32bc-4cc8-909c-770b3d750937")
-	)
-	(wire
-		(pts
-			(xy 227.33 101.6) (xy 247.65 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "30b3d4ec-1863-4789-b193-965e4bbcbabf")
-	)
-	(wire
-		(pts
 			(xy 110.49 80.01) (xy 110.49 100.33)
 		)
 		(stroke
@@ -3449,7 +3439,7 @@
 	)
 	(wire
 		(pts
-			(xy 247.65 78.74) (xy 247.65 101.6)
+			(xy 247.65 78.74) (xy 247.65 106.68)
 		)
 		(stroke
 			(width 0)
@@ -3469,7 +3459,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 78.74) (xy 160.02 101.6)
+			(xy 160.02 78.74) (xy 160.02 106.68)
 		)
 		(stroke
 			(width 0)
@@ -3539,6 +3529,16 @@
 	)
 	(wire
 		(pts
+			(xy 227.33 106.68) (xy 247.65 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b237c6b-a51c-4a03-92a2-f715ec1f19f4")
+	)
+	(wire
+		(pts
 			(xy 227.33 78.74) (xy 247.65 78.74)
 		)
 		(stroke
@@ -3546,16 +3546,6 @@
 			(type default)
 		)
 		(uuid "8c2b7dfc-8943-4c32-a011-f008f004b7d3")
-	)
-	(wire
-		(pts
-			(xy 160.02 101.6) (xy 160.02 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8cd41b46-712f-4aef-b2e6-50be6482f204")
 	)
 	(wire
 		(pts
@@ -3596,16 +3586,6 @@
 			(type default)
 		)
 		(uuid "9974965e-f52e-4b67-8783-88e306e1ab76")
-	)
-	(wire
-		(pts
-			(xy 247.65 101.6) (xy 247.65 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a89732ea-842a-4b48-b3af-895d1ab99751")
 	)
 	(wire
 		(pts
@@ -3659,6 +3639,16 @@
 	)
 	(wire
 		(pts
+			(xy 160.02 106.68) (xy 179.07 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c088fd89-e1e7-4f7c-b3bc-c195b1261768")
+	)
+	(wire
+		(pts
 			(xy 110.49 59.69) (xy 110.49 80.01)
 		)
 		(stroke
@@ -3666,6 +3656,16 @@
 			(type default)
 		)
 		(uuid "c649cb77-8a82-4483-8539-33de6a368d2e")
+	)
+	(wire
+		(pts
+			(xy 247.65 106.68) (xy 247.65 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c67acb2c-06ae-4a09-85f2-33192d7fff59")
 	)
 	(wire
 		(pts
@@ -3776,6 +3776,16 @@
 			(justify right bottom)
 		)
 		(uuid "15220910-9d5b-4524-9357-2be780953116")
+	)
+	(label "bidir_24"
+		(at 227.33 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "176657f4-d8a5-40cb-bd22-61d27f3481c9")
 	)
 	(label "VDD_IO_3"
 		(at 201.93 33.02 90)
@@ -3946,16 +3956,6 @@
 			(justify left bottom)
 		)
 		(uuid "40ff74d1-908d-481c-9f40-abc2d351023c")
-	)
-	(label "VDD_CORE_0"
-		(at 179.07 104.14 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "433f5c12-5643-44ae-b07f-fe4a8b05fa0e")
 	)
 	(label "bidir_23"
 		(at 227.33 111.76 0)
@@ -4297,6 +4297,16 @@
 		)
 		(uuid "75cd7458-5f04-4ced-bf07-e7901f0fa59a")
 	)
+	(label "bidir_19"
+		(at 179.07 104.14 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "761e387d-3cc1-46b2-a7a3-1703711e05c3")
+	)
 	(label "an_3"
 		(at 207.01 127 270)
 		(effects
@@ -4326,16 +4336,6 @@
 			(justify left bottom)
 		)
 		(uuid "77a15665-c8a2-4f18-9142-709db99c8e33")
-	)
-	(label "bidir_25"
-		(at 227.33 106.68 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "791d4437-0991-4691-b212-54a0da00c911")
 	)
 	(label "bidir_42"
 		(at 227.33 48.26 0)
@@ -4447,16 +4447,6 @@
 		)
 		(uuid "87017a26-9ab4-4d14-bc28-bcae55272f5a")
 	)
-	(label "VDD_IO_2"
-		(at 227.33 104.14 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "87c1dd72-37a2-4db9-a0aa-93bb800a7105")
-	)
 	(label "PWR_AUX_0"
 		(at 92.71 77.47 0)
 		(effects
@@ -4476,16 +4466,6 @@
 			(justify right bottom)
 		)
 		(uuid "8e2ad618-3dca-4fed-befb-c1a9dad0435f")
-	)
-	(label "bidir_18"
-		(at 179.07 106.68 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "8ec6e583-a931-4ce3-8428-f80cd84f48e4")
 	)
 	(label "bidir_29"
 		(at 54.61 110.49 180)
@@ -4536,6 +4516,16 @@
 			(justify left bottom)
 		)
 		(uuid "98e6d8d5-ffea-4a85-b593-2f04c554d5c6")
+	)
+	(label "VDD_CORE_0"
+		(at 179.07 109.22 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9b4796c8-c281-4654-a806-bdfa815b7a01")
 	)
 	(label "bidir_14"
 		(at 92.71 72.39 0)
@@ -4727,6 +4717,16 @@
 		)
 		(uuid "ccdf045f-9ea9-40a3-9e05-603901468133")
 	)
+	(label "bidir_25"
+		(at 227.33 101.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d0e6501e-5aa3-4d7f-afe9-de0239e90383")
+	)
 	(label "bidir_3"
 		(at 92.71 39.37 0)
 		(effects
@@ -4777,16 +4777,6 @@
 		)
 		(uuid "d8e48432-e21a-4ed8-8fdd-918a18a7c013")
 	)
-	(label "bidir_24"
-		(at 227.33 109.22 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "dacf5e9b-657f-4e79-88b1-3cc691451cca")
-	)
 	(label "PWR_AUX_1"
 		(at 227.33 81.28 0)
 		(effects
@@ -4816,6 +4806,16 @@
 			(justify left bottom)
 		)
 		(uuid "e06d8722-1908-4b7e-86b8-b42f074adca6")
+	)
+	(label "VDD_IO_2"
+		(at 227.33 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e14574b4-9958-461e-9fe5-0c3beca61a92")
 	)
 	(label "bidir_20"
 		(at 92.71 92.71 0)
@@ -4927,15 +4927,15 @@
 		)
 		(uuid "f54c41ac-0b5f-4816-ab78-8bb27e6c929f")
 	)
-	(label "bidir_19"
-		(at 179.07 109.22 180)
+	(label "bidir_18"
+		(at 179.07 101.6 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
 		)
-		(uuid "f88b488e-c8d3-41ea-8669-1d4b9a7a68b9")
+		(uuid "f9e898be-7074-4b63-9f5e-a5e8ad8b41e6")
 	)
 	(label "bidir_40"
 		(at 54.61 72.39 180)

@@ -172,18 +172,20 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U"
-				(at -4.826 0 0)
+			(property "Reference" "U102"
+				(at 27.5433 68.58 0)
 				(show_name no)
 				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
 			(property "Value" ""
-				(at 0 0 0)
+				(at 68.58 44.5202 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -192,7 +194,7 @@
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "WaferSpace:waferspace_p5xp5_padring"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -568,10 +570,10 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin power_in line
 					(at 40.64 33.02 180)
 					(length 2.54)
-					(name "bidir_15"
+					(name "GND"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -586,10 +588,10 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin power_in line
 					(at 40.64 35.56 180)
 					(length 2.54)
-					(name "bidir_16"
+					(name "VDD"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -607,7 +609,7 @@
 				(pin bidirectional line
 					(at 40.64 38.1 180)
 					(length 2.54)
-					(name "bidir_17"
+					(name "bidir_15"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -625,7 +627,7 @@
 				(pin bidirectional line
 					(at 40.64 40.64 180)
 					(length 2.54)
-					(name "bidir_18"
+					(name "bidir_16"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -643,7 +645,7 @@
 				(pin bidirectional line
 					(at 40.64 43.18 180)
 					(length 2.54)
-					(name "bidir_19"
+					(name "bidir_17"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -661,7 +663,7 @@
 				(pin bidirectional line
 					(at 40.64 45.72 180)
 					(length 2.54)
-					(name "bidir_20"
+					(name "bidir_18"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -679,7 +681,7 @@
 				(pin bidirectional line
 					(at 40.64 48.26 180)
 					(length 2.54)
-					(name "bidir_21"
+					(name "bidir_19"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -694,10 +696,10 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin bidirectional line
 					(at 40.64 50.8 180)
 					(length 2.54)
-					(name "GND"
+					(name "bidir_20"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -712,10 +714,10 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin bidirectional line
 					(at 40.64 53.34 180)
 					(length 2.54)
-					(name "VDD"
+					(name "bidir_21"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3151,13 +3153,13 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 48.26) (xy 236.22 113.03)
+			(xy 219.71 66.04) (xy 236.22 66.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0c5bd8de-0ca9-4c4f-8623-1e7e6dffe669")
+		(uuid "2269d258-ab55-4881-a729-05f39b3a5092")
 	)
 	(wire
 		(pts
@@ -3231,6 +3233,16 @@
 	)
 	(wire
 		(pts
+			(xy 236.22 66.04) (xy 236.22 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80fd377b-0f97-4df5-98fd-fd00f99211f4")
+	)
+	(wire
+		(pts
 			(xy 38.1 80.01) (xy 52.07 80.01)
 		)
 		(stroke
@@ -3248,16 +3260,6 @@
 			(type default)
 		)
 		(uuid "925d7529-a52e-4fb0-8349-b60cda385095")
-	)
-	(wire
-		(pts
-			(xy 219.71 48.26) (xy 236.22 48.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "94f98456-d1e8-4efe-9759-8fdca39d2ff9")
 	)
 	(wire
 		(pts
@@ -3409,6 +3411,16 @@
 		)
 		(uuid "06c8bed7-9618-40d9-9ba4-a5e42f9c19aa")
 	)
+	(label "bidir_16"
+		(at 219.71 58.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "06f8edcf-890e-45a5-91f7-536a293cd3ab")
+	)
 	(label "in_1"
 		(at 166.37 48.26 180)
 		(effects
@@ -3418,6 +3430,16 @@
 			(justify right bottom)
 		)
 		(uuid "07eff951-1960-4a34-bd4f-c8a3f237b9d0")
+	)
+	(label "bidir_20"
+		(at 219.71 48.26 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "08a5f117-c89f-4746-9e4f-5420e0d1af42")
 	)
 	(label "bidir_2"
 		(at 52.07 44.45 180)
@@ -3468,6 +3490,16 @@
 			(justify right bottom)
 		)
 		(uuid "143b93c8-3681-4549-934d-f97634b092b1")
+	)
+	(label "bidir_17"
+		(at 219.71 55.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "16bc360c-f7a0-406f-95ea-8478fba5828f")
 	)
 	(label "in_2"
 		(at 166.37 55.88 180)
@@ -3559,6 +3591,16 @@
 		)
 		(uuid "27d37762-6f3c-4c2c-b6cc-15c384b74a71")
 	)
+	(label "VDD_IO_1"
+		(at 219.71 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "28795a85-5965-4673-a059-f55df03f522b")
+	)
 	(label "bidir_10"
 		(at 90.17 46.99 0)
 		(effects
@@ -3629,26 +3671,6 @@
 		)
 		(uuid "34d47cb7-b7ba-4cae-9c67-ed6285082c2b")
 	)
-	(label "bidir_19"
-		(at 219.71 55.88 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3536428b-9ffc-4d90-8c32-c35c20cf62a1")
-	)
-	(label "VDD_IO_1"
-		(at 219.71 45.72 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "37a90edd-50e7-491c-bcd8-398bb4ebf261")
-	)
 	(label "bidir_30"
 		(at 52.07 87.63 180)
 		(effects
@@ -3698,6 +3720,16 @@
 			(justify right bottom)
 		)
 		(uuid "4c1f180e-cadb-40f5-a000-6342288a7711")
+	)
+	(label "bidir_21"
+		(at 219.71 45.72 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4e6a685c-7455-44e0-b6b0-500b345fb686")
 	)
 	(label "bidir_36"
 		(at 166.37 83.82 180)
@@ -3809,16 +3841,6 @@
 		)
 		(uuid "728e47f1-65ad-41c5-95f5-53964c83490c")
 	)
-	(label "bidir_15"
-		(at 219.71 66.04 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "75eae229-6c1a-402b-9f63-ee10de81c8a8")
-	)
 	(label "bidir_8"
 		(at 90.17 41.91 0)
 		(effects
@@ -3838,16 +3860,6 @@
 			(justify left bottom)
 		)
 		(uuid "7b3e2ddb-c2fe-4143-aeeb-171f73da644b")
-	)
-	(label "bidir_20"
-		(at 219.71 53.34 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "86362cce-c77a-4fea-a929-ce411b850298")
 	)
 	(label "an_2"
 		(at 181.61 30.48 90)
@@ -3938,16 +3950,6 @@
 			(justify left bottom)
 		)
 		(uuid "99468479-b5db-4950-b9f0-b6e8b496e809")
-	)
-	(label "bidir_16"
-		(at 219.71 63.5 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9d24ded0-0810-4643-aa5e-20e4d7721218")
 	)
 	(label "bidir_27"
 		(at 166.37 60.96 180)
@@ -4179,6 +4181,16 @@
 		)
 		(uuid "d1391876-b0e5-413e-8423-b2d08991e352")
 	)
+	(label "bidir_15"
+		(at 219.71 60.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d47d8ee6-6751-40b4-8305-1d9501605985")
+	)
 	(label "bidir_7"
 		(at 219.71 86.36 0)
 		(effects
@@ -4229,16 +4241,6 @@
 		)
 		(uuid "d8bc7f19-a094-4345-a9a5-9f66ac0013c0")
 	)
-	(label "bidir_17"
-		(at 219.71 60.96 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d9d71e0e-8023-4adc-8426-225872bf82ff")
-	)
 	(label "bidir_9"
 		(at 90.17 44.45 0)
 		(effects
@@ -4269,7 +4271,17 @@
 		)
 		(uuid "dc88f65b-dbb1-47fb-bdce-36728e7fea9d")
 	)
-	(label "bidir_21"
+	(label "bidir_18"
+		(at 219.71 53.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "dd79ba0d-3049-46b6-8346-9685545c9f85")
+	)
+	(label "bidir_19"
 		(at 219.71 50.8 0)
 		(effects
 			(font
@@ -4277,7 +4289,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "dd9824a7-8987-4f29-b386-1ab9c7831a67")
+		(uuid "dffbcbac-b01e-4db6-bfcd-740f350c36c3")
 	)
 	(label "bidir_30"
 		(at 166.37 68.58 180)
@@ -4358,16 +4370,6 @@
 			(justify right bottom)
 		)
 		(uuid "f9f9818d-bad3-495b-95e0-97a5090f6545")
-	)
-	(label "bidir_18"
-		(at 219.71 58.42 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "fc7d0fbf-08dc-479f-a603-25f4ad996242")
 	)
 	(label "bidir_5"
 		(at 52.07 36.83 180)
