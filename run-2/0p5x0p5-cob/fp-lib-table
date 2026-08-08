@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "wafer_space") (type "KiCad") (uri "/home/pitchu/pcb/micheal_bell_chip-on-board-wire-bonded-pcbs/lib/wafer_space.pretty") (options "") (descr ""))
+)
