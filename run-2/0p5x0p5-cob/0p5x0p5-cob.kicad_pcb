@@ -1290,37 +1290,6 @@
 			(thermal_bridge_angle 0)
 			(uuid "a065414f-7d6d-416a-bfa8-018c36ba3089")
 		)
-		(zone
-			(layers "F.Mask" "F.SilkS")
-			(uuid "2bc78f89-293f-4cdd-aa3d-0843566298fc")
-			(hatch edge 0.5)
-			(connect_pads
-				(clearance 0)
-			)
-			(min_thickness 0.25)
-			(keepout
-				(tracks allowed)
-				(vias allowed)
-				(pads allowed)
-				(copperpour not_allowed)
-				(footprints allowed)
-			)
-			(placement
-				(enabled no)
-				(sheetname "/")
-			)
-			(fill
-				(thermal_gap 0.5)
-				(thermal_bridge_width 0.5)
-				(island_removal_mode 0)
-			)
-			(polygon
-				(pts
-					(xy 124 86.755) (xy 130 86.755) (xy 131 87.755) (xy 131 95.755) (xy 130 96.755) (xy 124 96.755)
-					(xy 123 95.755) (xy 123 87.755)
-				)
-			)
-		)
 		(group ""
 			(uuid "09ab4813-4f52-4d96-9c0f-86d3b5cbc796")
 			(members "0cdfdc8a-788b-4038-83b8-5fbf774f9e61" "3763dfb6-a2f5-4d7c-bf1e-6056abc38d90"
