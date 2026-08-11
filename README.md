@@ -28,7 +28,7 @@ See [**Run 1**](./run-1/README.md) for the full padframe reference, pinouts, and
 Pinouts, connector choices, and footprint dimensions are **run-specific** and documented per run.
 
 * [**Run 1**](./run-1/README.md) — padframe reference / pinouts, example COB layout, mezzanine connectors, and design requirements
-  * [Wirebonding detail and design rules](./run-1/1x1-cob/wirebonding/README.md)
+  * [Wirebonding detail and design rules](./run-1/wirebonding/README.md)
   * [Example motherboards](./run-1/motherboards/README.md)
 
 ---

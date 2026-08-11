@@ -13,7 +13,7 @@ chip-on-board (COB) breakouts.
 | --------- | ----------- |
 | [`1x1-cob/`](1x1-cob/) | 14 mm × 16 mm 74-pad / 70-pin mezzanine COB breakout |
 | [`1x0p5-cob/`](1x0p5-cob/) · [`0p5x1-cob/`](0p5x1-cob/) | Half-slot COB variants |
-| [`1x1-cob/wirebonding/`](1x1-cob/wirebonding/README.md) | Wirebonding layout and design rules |
+| [`wirebonding/`](wirebonding/README.md) | Wirebonding layout and design rules |
 | [`motherboards/`](motherboards/README.md) | Example breakout motherboards |
 
 ---
