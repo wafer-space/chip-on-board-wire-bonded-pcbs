@@ -82745,7 +82745,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "wafer.space COB\nGF180MCU Run 1\nrev 3"
+	(gr_text "MOSBIUS COB\nGF180MCU Run 1\nrev 3"
 		(at 89.32 125.39 0)
 		(layer "F.SilkS")
 		(uuid "f64b3d29-8904-4dfa-aba5-9833984a098b")
@@ -82757,7 +82757,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "wafer.space COB\nGF180MCU Run 1\nrev 3"
+	(gr_text "MOSBIUS COB\nGF180MCU Run 1\nrev 3"
 		(at 89.82 87.39 0)
 		(layer "F.SilkS")
 		(uuid "27668405-285e-41a6-bb8a-019ad999a89e")
