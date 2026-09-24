@@ -46,3 +46,4 @@ fp-info-cache
 # Backup directories
 **/backups/
 
+fp-lib-table

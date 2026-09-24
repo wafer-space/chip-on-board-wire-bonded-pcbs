@@ -1237,7 +1237,7 @@
 					)
 				)
 				(pin power_in line
-					(at 35.56 0 90)
+					(at 33.02 0 90)
 					(length 2.54)
 					(name "MP"
 						(effects
@@ -1247,114 +1247,6 @@
 						)
 					)
 					(number "57"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 35.56 0 90)
-					(length 2.54)
-					(name "MP"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "58"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 35.56 0 90)
-					(length 2.54)
-					(name "MP"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "59"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 35.56 0 90)
-					(length 2.54)
-					(name "MP"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "60"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 35.56 0 90)
-					(length 2.54)
-					(name "MP"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "61"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 35.56 0 90)
-					(length 2.54)
-					(name "MP"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "62"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 35.56 0 90)
-					(length 2.54)
-					(name "MP"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "63"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3253,6 +3145,16 @@
 	)
 	(wire
 		(pts
+			(xy 212.09 99.06) (xy 212.09 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "88d50334-6d23-43e0-bcf0-bf876e7abd84")
+	)
+	(wire
+		(pts
 			(xy 151.13 53.34) (xy 151.13 110.49)
 		)
 		(stroke
@@ -3280,16 +3182,6 @@
 			(type default)
 		)
 		(uuid "a833abdd-43ec-45eb-b1b6-fbfafca1ffaa")
-	)
-	(wire
-		(pts
-			(xy 214.63 99.06) (xy 214.63 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c62bd173-f9ee-44b1-8d10-357c48434bb4")
 	)
 	(wire
 		(pts
@@ -5016,24 +4908,6 @@
 		(pin "16"
 			(uuid "fa64c34d-ad20-41a6-a63b-d50aa578f56d")
 		)
-		(pin "58"
-			(uuid "155c0f24-591e-48f6-8346-66e929b8289f")
-		)
-		(pin "63"
-			(uuid "c2339e24-dd57-43f2-aeee-27990fa9e3da")
-		)
-		(pin "62"
-			(uuid "785db068-e627-4ce7-bb79-15ea761c9535")
-		)
-		(pin "60"
-			(uuid "5fe28c6a-75c1-472d-9794-e2a33922f3e8")
-		)
-		(pin "59"
-			(uuid "7547a4d8-0277-40a1-b8c1-d82dd55f36ca")
-		)
-		(pin "61"
-			(uuid "980765cb-9e50-4cbf-a1e7-8dce49602fd7")
-		)
 		(instances
 			(project "0p5x0p5-cob"
 				(path "/f44d2c8c-cc6e-4ce2-9d41-a48405cdfa9d"
@@ -5844,7 +5718,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 214.63 105.41 0)
+		(at 212.09 105.41 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5855,7 +5729,7 @@
 		(fields_autoplaced yes)
 		(uuid "afb6eda3-f2cb-4305-9f82-4404c8e168ef")
 		(property "Reference" "#PWR09"
-			(at 214.63 111.76 0)
+			(at 212.09 111.76 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5866,7 +5740,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 214.63 110.49 0)
+			(at 212.09 110.49 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5876,7 +5750,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 214.63 105.41 0)
+			(at 212.09 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5887,7 +5761,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 214.63 105.41 0)
+			(at 212.09 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5898,7 +5772,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 214.63 105.41 0)
+			(at 212.09 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
