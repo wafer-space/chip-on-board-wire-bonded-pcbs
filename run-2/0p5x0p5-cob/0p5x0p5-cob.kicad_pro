@@ -545,7 +545,7 @@
     "last_paths": {
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "../../../jlcpcb/ws_quarter/",
       "specctra_dsn": "",
       "step": "",
       "vrml": ""
