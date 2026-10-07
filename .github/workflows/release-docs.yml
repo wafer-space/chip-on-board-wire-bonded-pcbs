@@ -1,0 +1,63 @@
+name: Release docs
+
+# Regenerates board renders and the AUTO-GEN sections of the READMEs,
+# then commits the result back to main.
+on:
+  push:
+    tags: ["v*.*.*"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release name to show in the docs (defaults to latest tag)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-docs
+  cancel-in-progress: false
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    container:
+      image: kicad/kicad:10.0
+      # The image defaults to the non-root "kicad" user, which can't write to
+      # the Actions workspace or apt-get install.
+      options: --user root
+    steps:
+      - name: Install git
+        # actions/checkout needs git in the container to produce a real clone.
+        run: |
+          if ! command -v git >/dev/null; then
+            apt-get update && apt-get install -y --no-install-recommends git ca-certificates
+          fi
+
+      - uses: actions/checkout@v4
+        with:
+          # Generate on top of main so the commit can be pushed back to it.
+          ref: main
+          fetch-depth: 0
+
+      - name: Generate docs
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          export HOME=/root
+          python3 .github/scripts/gen_docs.py ${VERSION:+--version "$VERSION"}
+
+      - name: Commit to main
+        env:
+          VERSION: ${{ inputs.version || github.ref_name }}
+        run: |
+          git add docs/renders README.md 'run-*/README.md'
+          if git diff --cached --quiet; then
+            echo "No documentation changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "docs: regenerate board docs for $VERSION"
+          git push origin HEAD:main

@@ -33,6 +33,13 @@ Pinouts, connector choices, and footprint dimensions are **run-specific** and do
 
 ---
 
+## Boards
+
+<!-- AUTO-GEN:START -->
+<!-- AUTO-GEN:END -->
+
+---
+
 ## Example Motherboards
 
 We provide example **breakout motherboard** designs that mate with the COB packages via the 70-pin mezzanine connector. See the [**Motherboards directory**](./run-1/motherboards/README.md) for KiCad schematics, layouts, and symbols.

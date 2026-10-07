@@ -5929,7 +5929,7 @@
 	)
 	(gr_poly
 		(pts
-			(xy 174.949434 88.96) (xy 164.949434 88.96) (xy 164.949435 86.96) (xy 174.949433 86.959999)
+			(xy 175.691716 88.96) (xy 165.691716 88.96) (xy 165.691717 86.96) (xy 175.691715 86.959999)
 		)
 		(stroke
 			(width 0.01)
@@ -5992,6 +5992,18 @@
 		(fill no)
 		(layer "Edge.Cuts")
 		(uuid "4640b743-759d-4a04-a40b-fa58f47f797f")
+	)
+	(gr_text "1"
+		(at 164.39 88.21 0)
+		(layer "F.SilkS")
+		(uuid "acc9d846-dae2-4bb9-a8e6-e3e25ecf88a3")
+		(effects
+			(font
+				(size 0.75 0.75)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
 	)
 	(gr_text "70 PIN MEZZANINE\n74 PIN PADRING\nVERSION: 1x1"
 		(at 163.12 81.205 270)
