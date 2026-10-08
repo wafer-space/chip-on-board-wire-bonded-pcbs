@@ -35,6 +35,18 @@ This directory holds the design files for **Run 2** of the [wafer.space](https:/
 
 [PCB](0p5x1-cob/mezzanine-0p5x1.kicad_pcb) · [Schematic source](0p5x1-cob/mezzanine-0p5x1.kicad_sch) · [Schematic PDF](../docs/renders/run-2/0p5x1-cob/mezzanine-0p5x1/schematic.pdf)
 
+### 0p5x1-cob / panelization / panel
+
+| 3D top | 3D bottom |
+| :---: | :---: |
+| <img src="../docs/renders/run-2/0p5x1-cob/panelization/panel/top.png" width="400" alt="top render"> | <img src="../docs/renders/run-2/0p5x1-cob/panelization/panel/bottom.png" width="400" alt="bottom render"> |
+
+| Front layers | Back layers (mirrored) |
+| :---: | :---: |
+| <img src="../docs/renders/run-2/0p5x1-cob/panelization/panel/front.svg" width="400" alt="front layers"> | <img src="../docs/renders/run-2/0p5x1-cob/panelization/panel/back.svg" width="400" alt="back layers"> |
+
+[PCB](0p5x1-cob/panelization/panel.kicad_pcb)
+
 ### 1x0p5-cob / mezzanine-1x0p5
 
 | 3D top | 3D bottom |
@@ -46,6 +58,18 @@ This directory holds the design files for **Run 2** of the [wafer.space](https:/
 | <img src="../docs/renders/run-2/1x0p5-cob/mezzanine-1x0p5/front.svg" width="400" alt="front layers"> | <img src="../docs/renders/run-2/1x0p5-cob/mezzanine-1x0p5/back.svg" width="400" alt="back layers"> |
 
 [PCB](1x0p5-cob/mezzanine-1x0p5.kicad_pcb) · [Schematic source](1x0p5-cob/mezzanine-1x0p5.kicad_sch) · [Schematic PDF](../docs/renders/run-2/1x0p5-cob/mezzanine-1x0p5/schematic.pdf)
+
+### 1x0p5-cob / panelization / panel
+
+| 3D top | 3D bottom |
+| :---: | :---: |
+| <img src="../docs/renders/run-2/1x0p5-cob/panelization/panel/top.png" width="400" alt="top render"> | <img src="../docs/renders/run-2/1x0p5-cob/panelization/panel/bottom.png" width="400" alt="bottom render"> |
+
+| Front layers | Back layers (mirrored) |
+| :---: | :---: |
+| <img src="../docs/renders/run-2/1x0p5-cob/panelization/panel/front.svg" width="400" alt="front layers"> | <img src="../docs/renders/run-2/1x0p5-cob/panelization/panel/back.svg" width="400" alt="back layers"> |
+
+[PCB](1x0p5-cob/panelization/panel.kicad_pcb)
 
 ### 1x1-cob / 1x1-mezzanine
 

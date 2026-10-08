@@ -55,7 +55,9 @@ Pinouts, connector choices, and footprint dimensions are **run-specific** and do
 | [Run 1](run-1/README.md) | [tqva-cob / tqva-cob](run-1/README.md#tqva-cob--tqva-cob) | <img src="docs/renders/run-1/tqva-cob/tqva-cob/top.png" width="160" alt="tqva-cob / tqva-cob"> |
 | [Run 2](run-2/README.md) | [0p5x0p5-cob / 0p5x0p5-cob](run-2/README.md#0p5x0p5-cob--0p5x0p5-cob) | <img src="docs/renders/run-2/0p5x0p5-cob/0p5x0p5-cob/top.png" width="160" alt="0p5x0p5-cob / 0p5x0p5-cob"> |
 | [Run 2](run-2/README.md) | [0p5x1-cob / mezzanine-0p5x1](run-2/README.md#0p5x1-cob--mezzanine-0p5x1) | <img src="docs/renders/run-2/0p5x1-cob/mezzanine-0p5x1/top.png" width="160" alt="0p5x1-cob / mezzanine-0p5x1"> |
+| [Run 2](run-2/README.md) | [0p5x1-cob / panelization / panel](run-2/README.md#0p5x1-cob--panelization--panel) | <img src="docs/renders/run-2/0p5x1-cob/panelization/panel/top.png" width="160" alt="0p5x1-cob / panelization / panel"> |
 | [Run 2](run-2/README.md) | [1x0p5-cob / mezzanine-1x0p5](run-2/README.md#1x0p5-cob--mezzanine-1x0p5) | <img src="docs/renders/run-2/1x0p5-cob/mezzanine-1x0p5/top.png" width="160" alt="1x0p5-cob / mezzanine-1x0p5"> |
+| [Run 2](run-2/README.md) | [1x0p5-cob / panelization / panel](run-2/README.md#1x0p5-cob--panelization--panel) | <img src="docs/renders/run-2/1x0p5-cob/panelization/panel/top.png" width="160" alt="1x0p5-cob / panelization / panel"> |
 | [Run 2](run-2/README.md) | [1x1-cob / 1x1-mezzanine](run-2/README.md#1x1-cob--1x1-mezzanine) | <img src="docs/renders/run-2/1x1-cob/1x1-mezzanine/top.png" width="160" alt="1x1-cob / 1x1-mezzanine"> |
 | [Run 2](run-2/README.md) | [1x1-cob / panelization / panel](run-2/README.md#1x1-cob--panelization--panel) | <img src="docs/renders/run-2/1x1-cob/panelization/panel/top.png" width="160" alt="1x1-cob / panelization / panel"> |
 <!-- AUTO-GEN:END -->
