@@ -90,7 +90,7 @@ Traces, signal types, and net assignments are **user-definable**.
 
 ## Board Renders
 
-*Generated for release **preview** on 2026-10-07.*
+*Generated for release **unreleased** on 2026-10-08.*
 
 ### 0p5x1-cob / mezzanine-0p5x1
 
@@ -164,18 +164,6 @@ Traces, signal types, and net assignments are **user-definable**.
 
 [PCB](1x1-cob/panelization/panel.kicad_pcb)
 
-### mosbius-panel / V3_COB_Original
-
-| 3D top | 3D bottom |
-| :---: | :---: |
-| <img src="../docs/renders/run-1/mosbius-panel/V3_COB_Original/top.png" width="400" alt="top render"> | <img src="../docs/renders/run-1/mosbius-panel/V3_COB_Original/bottom.png" width="400" alt="bottom render"> |
-
-| Front layers | Back layers (mirrored) |
-| :---: | :---: |
-| <img src="../docs/renders/run-1/mosbius-panel/V3_COB_Original/front.svg" width="400" alt="front layers"> | <img src="../docs/renders/run-1/mosbius-panel/V3_COB_Original/back.svg" width="400" alt="back layers"> |
-
-[PCB](mosbius-panel/V3_COB_Original.kicad_pcb)
-
 ### mosbius-panel / panel
 
 | 3D top | 3D bottom |
@@ -187,6 +175,18 @@ Traces, signal types, and net assignments are **user-definable**.
 | <img src="../docs/renders/run-1/mosbius-panel/panel/front.svg" width="400" alt="front layers"> | <img src="../docs/renders/run-1/mosbius-panel/panel/back.svg" width="400" alt="back layers"> |
 
 [PCB](mosbius-panel/panel.kicad_pcb)
+
+### mosbius-panel / V3_COB_Original
+
+| 3D top | 3D bottom |
+| :---: | :---: |
+| <img src="../docs/renders/run-1/mosbius-panel/V3_COB_Original/top.png" width="400" alt="top render"> | <img src="../docs/renders/run-1/mosbius-panel/V3_COB_Original/bottom.png" width="400" alt="bottom render"> |
+
+| Front layers | Back layers (mirrored) |
+| :---: | :---: |
+| <img src="../docs/renders/run-1/mosbius-panel/V3_COB_Original/front.svg" width="400" alt="front layers"> | <img src="../docs/renders/run-1/mosbius-panel/V3_COB_Original/back.svg" width="400" alt="back layers"> |
+
+[PCB](mosbius-panel/V3_COB_Original.kicad_pcb)
 
 ### motherboards / motherboards
 

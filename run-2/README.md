@@ -9,7 +9,7 @@ This directory holds the design files for **Run 2** of the [wafer.space](https:/
 
 ## Board Renders
 
-*Generated for release **preview** on 2026-10-07.*
+*Generated for release **unreleased** on 2026-10-08.*
 
 ### 0p5x0p5-cob / 0p5x0p5-cob
 
