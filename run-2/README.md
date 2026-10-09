@@ -9,7 +9,7 @@ This directory holds the design files for **Run 2** of the [wafer.space](https:/
 
 ## Board Renders
 
-*Generated for release **unreleased** on 2026-10-08.*
+*Generated for release **unreleased** on 2026-10-09.*
 
 ### 0p5x0p5-cob / 0p5x0p5-cob
 
@@ -22,6 +22,18 @@ This directory holds the design files for **Run 2** of the [wafer.space](https:/
 | <img src="../docs/renders/run-2/0p5x0p5-cob/0p5x0p5-cob/front.svg" width="400" alt="front layers"> | <img src="../docs/renders/run-2/0p5x0p5-cob/0p5x0p5-cob/back.svg" width="400" alt="back layers"> |
 
 [PCB](0p5x0p5-cob/0p5x0p5-cob.kicad_pcb) · [Schematic source](0p5x0p5-cob/0p5x0p5-cob.kicad_sch) · [Schematic PDF](../docs/renders/run-2/0p5x0p5-cob/0p5x0p5-cob/schematic.pdf)
+
+### 0p5x0p5-cob / panelization / panel
+
+| 3D top | 3D bottom |
+| :---: | :---: |
+| <img src="../docs/renders/run-2/0p5x0p5-cob/panelization/panel/top.png" width="400" alt="top render"> | <img src="../docs/renders/run-2/0p5x0p5-cob/panelization/panel/bottom.png" width="400" alt="bottom render"> |
+
+| Front layers | Back layers (mirrored) |
+| :---: | :---: |
+| <img src="../docs/renders/run-2/0p5x0p5-cob/panelization/panel/front.svg" width="400" alt="front layers"> | <img src="../docs/renders/run-2/0p5x0p5-cob/panelization/panel/back.svg" width="400" alt="back layers"> |
+
+[PCB](0p5x0p5-cob/panelization/panel.kicad_pcb)
 
 ### 0p5x1-cob / mezzanine-0p5x1
 

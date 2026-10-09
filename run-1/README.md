@@ -90,7 +90,7 @@ Traces, signal types, and net assignments are **user-definable**.
 
 ## Board Renders
 
-*Generated for release **unreleased** on 2026-10-08.*
+*Generated for release **unreleased** on 2026-10-09.*
 
 ### 0p5x1-cob / mezzanine-0p5x1
 
