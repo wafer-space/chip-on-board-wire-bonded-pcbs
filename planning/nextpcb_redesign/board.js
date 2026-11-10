@@ -13,8 +13,9 @@ window.DOC = {
     {ch:1, t:"task list from the NextPCB check on all four designs and panels. 0 of 4 designs and 0 of 4 panels pass today. Three questions open, one for later."},
     {ch:2, t:"Rev 0 is the target and its DFM is the gate. Via drill stays at 0.30 mm. The 1x1 is down to hole-to-trace errors: the plan is a 0.23 mm hole clearance on all four designs. Panels parked."},
     {ch:3, t:"Decided: Edit the file on Rev 0's errors (Q5), and order ENIG at 1.0 mm (Q3). Nothing open now."},
+    {ch:4, t:"1x1: rules set to 0.23 mm, tracks shoved, refilled. KiCad's hole errors at 0.23 mm went from 200+ to 34. The last 12 track spots wait on the via spacing."},
   ],
-  chapter: 3,
+  chapter: 4,
   planDoc: {href:"plan.html", ch:3},
 
   cards: [
@@ -104,10 +105,10 @@ window.DOC = {
   actions: [
     /* ---- Phase 1: 1x1 ---- */
     {id:"D1-DUP", ch:1, status:"done", what:"Delete the **2 duplicate vias**: `/pad_3` at (165.250, 87.804) and `/pad_4` at (165.790, 88.210). Done 2026-11-10; it cleared Rev 0's two hole-spacing errors."},
-    {id:"D1-RULES", ch:2, status:"ready", what:"Board Setup → Constraints: minimum **hole clearance 0.20 → 0.23 mm**. Then the GND pour zone (all four layers): **clearance 0.15 → 0.16 mm**. Refill zones. Should clear the 54+ via-to-pour spots (worst 0.2005 mm) and make KiCad's DRC list everything else."},
-    {id:"D1-VIAVIA", ch:2, status:"ready", what:"**21 via pairs** 0.200 to 0.227 mm from hole to the neighbour's pad. Most are the fan-out vias left of the die (`/pad_53` to `/pad_69`, x ≈ 163.5 to 164.0) and right of it (`/pad_19` to `/pad_32`, x ≈ 174.4 to 175.1). Each pair needs about **0.03 mm more** centre to centre (0.575 → 0.605 mm)."},
-    {id:"D1-TRACKS", ch:2, status:"ready", what:"**About 47 track spots**, worst 0.200 mm. Nudge the track away, or narrow it where it passes the hole (Rev 0 allows 0.089 mm). Includes the one Rev 0 named: `PWR_AUX_1` on B.Cu by `U102` pad 77 (0.201 mm), and `PWR_AUX_0` by pad 80 (0.201 mm)."},
-    {id:"D1-TEARS", ch:2, status:"ready", what:"**25 teardrops** 0.2005 to 0.23 mm from a neighbouring via's hole. Check after the refill in D1-RULES. Delete or shrink any teardrop still flagged. Also move via `/pad_66` away from `U102` pad 68 (0.207 mm)."},
+    {id:"D1-RULES", ch:4, status:"done", what:"Board Setup → Constraints: minimum **hole clearance 0.20 → 0.23 mm**. Then the GND pour zone (all four layers): **clearance 0.15 → 0.16 mm**. Refill zones. Done 2026-11-10: after the refill, **0** pour or teardrop spots are under 0.2286 mm (was 54+ pour and 25 teardrops)."},
+    {id:"D1-VIAVIA", ch:4, status:"ready", what:"**21 via pairs** 0.200 to 0.227 mm from hole to the neighbour's pad. Most are the fan-out vias left of the die (`/pad_53` to `/pad_69`, x ≈ 163.5 to 164.0) and right of it (`/pad_19` to `/pad_32`, x ≈ 174.4 to 175.1). Each pair needs about **0.03 mm more** centre to centre (0.575 → 0.605 mm). Still 21 after the track shove. Do this next: it frees room for the 12 track spots left in D1-TRACKS."},
+    {id:"D1-TRACKS", ch:4, status:"blocked", what:"Shoved 2026-11-10: **37 track moves**, short jogs of 0.03 to 0.05 mm. A move was kept only if no hole gap anywhere got smaller and no copper came within 0.1 mm. Track spots under 0.2286 mm went **49 → 12**, including the one Rev 0 named (`PWR_AUX_1` by `U102` pad 77). The 12 left have copper on both sides with no room for 0.23 mm each way: `/pad_65` between vias `/pad_64` and `/pad_66` (4 spots), `VDD_IO_2` F.Cu and B.Cu by a GND via (2), `PWR_AUX_0` F.Cu by `/pad_24` (1), the GND stub by `/pad_27` (2), and `PWR_AUX_0` B.Cu by `U102` pad 80 (0.2276 mm; 2). Re-run the shove after D1-VIAVIA spreads the vias."},
+    {id:"D1-TEARS", ch:4, status:"ready", what:"The refill cleared every teardrop spot (was 25). But the shove moved tracks out from under their teardrops, so **regenerate teardrops in KiCad** before export, then refill and re-run DRC. Also still open: via `/pad_66` is 0.207 mm from `U102` pad 68."},
     {id:"D1-DRC", ch:2, status:"ready", what:"Refill, save, and run KiCad's DRC with Board Setup at 0.23 mm. **Done when it shows no hole clearance errors** and nothing else new."},
     {id:"D1-EXPORT", ch:2, status:"ready", what:"Export the single board to `run-2/1x1-cob/production/1x1-mezzanine.zip` with Fabrication Toolkit."},
     {id:"D1-REV0", ch:3, status:"ready", what:"Upload to Rev 0 with **ENIG, 1.0 mm, 1 oz outer copper** on the order form. On any error, choose **Edit the file**, fix and upload the new zip. **Done when its DFM shows no errors.**"},
@@ -204,5 +205,6 @@ window.DOC = {
     {ch:1, t:"first version: 8 phases and 48 tasks, from a check of all four designs and panels"},
     {ch:2, t:"Rev 0 is the target and its DFM is the gate; via drill stays 0.30 mm; hole clearance 0.23 mm on all four designs; panels parked"},
     {ch:3, t:"decided: Edit the file on Rev 0 errors; order ENIG, 1.0 mm, 1 oz"},
+    {ch:4, t:"1x1: D1-RULES done; tracks shoved 49 → 12 spots; D1-VIAVIA next, then re-run the shove; regenerate teardrops before export"},
   ],
 };
