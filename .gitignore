@@ -47,3 +47,6 @@ fp-info-cache
 **/backups/
 
 fp-lib-table
+
+# pcbdiff reports (tools/pcbdiff)
+.pcbdiff/

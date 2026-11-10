@@ -15,7 +15,7 @@ window.PLANS_BAKED = {
 window.PLANS = [
   { id:"nextpcb_redesign", title:"NextPCB Redesign", kind:"board", status:"active",
     group:"Run 2", pinned:true, archived:false, order:0, branch:"nextpcb-drc", touched:"2026-11-10",
-    chapter:4, needs:0,
+    chapter:5, needs:0,
     link:"../nextpcb_redesign/board.html", doc:"../nextpcb_redesign/plan.html",
-    blurb:"Get the four run 2 single COB designs through NextPCB Rev 0's DFM check. 1x1: rules at 0.23 mm and tracks shoved; KiCad's hole errors are down from 200+ to 34. Via spacing next. Panels parked." },
+    blurb:"Get the four run 2 single COB designs through NextPCB Rev 0's DFM check. 1x1: vias spread and tracks shoved; KiCad shows 0 hole errors at 0.23 mm. Teardrops, export and upload next. Panels parked." },
 ];
