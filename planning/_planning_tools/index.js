@@ -7,15 +7,15 @@
 
 window.PLANS_BAKED = {
   title: "COB Planning Index",
-  at: "2026-11-09",
-  branch: "main",
+  at: "2026-11-10",
+  branch: "nextpcb-drc",
   groups: ["Run 2"],
 };
 
 window.PLANS = [
   { id:"nextpcb_redesign", title:"NextPCB Redesign", kind:"board", status:"active",
-    group:"Run 2", pinned:true, archived:false, order:0, branch:"main", touched:"2026-11-09",
-    chapter:1, needs:3, needsAnchor:"FINGERS",
+    group:"Run 2", pinned:true, archived:false, order:0, branch:"nextpcb-drc", touched:"2026-11-10",
+    chapter:3, needs:0,
     link:"../nextpcb_redesign/board.html", doc:"../nextpcb_redesign/plan.html",
-    blurb:"Bring the four run 2 single COB designs within NextPCB's published limits, then rebuild the four panels from them. 0 of 4 designs and 0 of 4 panels pass today." },
+    blurb:"Get the four run 2 single COB designs through NextPCB Rev 0's DFM check. The 1x1 is down to two hole-to-trace errors; the fix is a 0.23 mm hole clearance on all four designs. Panels parked." },
 ];
