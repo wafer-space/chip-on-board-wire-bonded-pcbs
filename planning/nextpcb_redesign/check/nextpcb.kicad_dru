@@ -1,0 +1,56 @@
+(version 1)
+# NextPCB Standard PCB limits, from https://www.nextpcb.com/pcb-capabilities (read 2026-11-09).
+# Assumes 1 oz finished outer copper. Used by check_board.py on a temporary copy of a board.
+#
+# Do not copy this file next to a real board. The base clearance rule replaces the design
+# clearance, so refilling zones with it loaded pours copper too close to everything.
+
+(rule "np_cu_spacing_3mil"
+  (constraint clearance (min 0.0762mm)))
+
+(rule "np_smd_to_trace_4mil"
+  (condition "(A.Type == 'Pad' && A.Pad_Type == 'SMD' && B.Type == 'Track') || (B.Type == 'Pad' && B.Pad_Type == 'SMD' && A.Type == 'Track')")
+  (constraint clearance (min 0.1016mm)))
+
+(rule "np_smd_to_smd_0p15"
+  (condition "A.Type == 'Pad' && B.Type == 'Pad' && A.Pad_Type == 'SMD' && B.Pad_Type == 'SMD'")
+  (constraint clearance (min 0.15mm)))
+
+(rule "np_tht_pad_to_pad_0p40"
+  (condition "A.Type == 'Pad' && B.Type == 'Pad' && (A.Pad_Type == 'Through-hole' || B.Pad_Type == 'Through-hole')")
+  (constraint clearance (min 0.40mm)))
+
+# NextPCB's diagram measures these from the hole wall, not the pad edge.
+(rule "np_via_wall_to_cu_7mil"
+  (condition "A.Type == 'Via' || B.Type == 'Via'")
+  (constraint hole_clearance (min 0.1778mm)))
+
+(rule "np_pth_wall_to_cu_9mil"
+  (condition "(A.Type == 'Pad' && A.Pad_Type == 'Through-hole') || (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')")
+  (constraint hole_clearance (min 0.2286mm)))
+
+# Hole edge to hole edge.
+(rule "np_hole_hole_same_net_8mil"
+  (constraint hole_to_hole (min 0.2032mm)))
+
+(rule "np_hole_hole_diff_net_12mil"
+  (condition "A.NetName != B.NetName")
+  (constraint hole_to_hole (min 0.3048mm)))
+
+(rule "np_trace_width_3mil"
+  (constraint track_width (min 0.0762mm)))
+
+(rule "np_annular_3p5mil"
+  (constraint annular_width (min 0.0889mm)))
+
+(rule "np_min_drill_0p15"
+  (constraint hole_size (min 0.15mm)))
+
+# 0.2 mm applies to a routed edge and 0.4 mm to a V-cut. Every edge is held to the V-cut
+# limit because every edge of a single COB ends up on a V-cut.
+(rule "np_edge_vcut_0p40"
+  (constraint edge_clearance (min 0.40mm)))
+
+(rule "np_silk_to_pad_6mil"
+  (condition "A.Type == 'Pad' || B.Type == 'Pad'")
+  (constraint silk_clearance (min 0.1524mm)))

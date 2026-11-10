@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{Title}} Plan</title>
+<!-- ===========================================================================
+     PLAN-DOCUMENT TEMPLATE  (see PROTOCOL.md → "The plan document")
+
+     The readable, illustrated version of the board's current plan. Every board
+     gets one:
+       1. Copy this file to   planning/<your-discussion>/plan.html
+       2. In board.js set     planDoc: {href:"plan.html", ch:<chapter>}
+       3. Replace every {{…}} and the example sections below.
+     The board embeds it in 📋 Current Plan; it also opens on its own.
+
+     Shared styles + embedding glue live in ../_planning_tools/plan.doc.{css,js}.
+     Plan-specific styles go in a <style> block AFTER the stylesheet link.
+     =========================================================================== -->
+<link rel="stylesheet" href="../_planning_tools/plan.doc.css">
+</head>
+<body>
+
+<!-- shared arrowheads for every inline-SVG diagram: marker-end="url(#arr)" etc. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8b949e"/>
+    </marker>
+    <marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#58a6ff"/>
+    </marker>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3fb950"/>
+    </marker>
+  </defs>
+</svg>
+
+<main>
+<header class="top">
+  <div class="crumbs">
+    <a href="board.html">← Discussion board</a>
+    <a href="../_planning_tools/index.html">🗂 Planning index</a>
+    <span>As of chapter {{N}} · {{YYYY-MM-DD}}</span>
+  </div>
+  <h1>{{Title}}</h1>
+  <p class="lede">{{One or two sentences: what this builds and what changes for the user once it exists.}}</p>
+  <p class="small muted">
+    <span class="pill dec">Decided</span> agreed on the board ·
+    <span class="pill lean">Lean</span> Claude's recommendation, not yet confirmed ·
+    <span class="pill open">Open</span> needs your answer ·
+    <span class="pill later">Later</span> settles while building ·
+    <span class="pill now">Today</span> how it works now
+  </p>
+</header>
+
+<div class="tldr">
+  <b>In one line:</b> {{the whole plan in a sentence}}
+</div>
+
+<!-- Scope at a glance: what the whole thing amounts to, readable without opening
+     anything. Typically: what a user/author writes or does, what existing code
+     changes (with counts), which files, and where it stands (phases + open Qs). -->
+<div class="glance" aria-label="Scope at a glance">
+  <div class="g"><h4>{{For the user}}</h4><ul><li>{{what changes for them}}</li></ul><a href="#design">The design →</a></div>
+  <div class="g"><h4>{{What changes}}</h4><div class="nums"><b>{{N}}</b><span>{{files / Parameters touched}}</span></div><a href="#build">Files →</a></div>
+  <div class="g"><h4>Where it stands</h4><ul><li><span class="pill dec">Ready</span> {{phase}}</li><li><span class="pill open">Waiting</span> {{phase}}</li></ul><a href="#questions">Still to decide →</a></div>
+</div>
+
+<div class="foldbar"><span class="small muted">Click a heading to open it.</span><button type="button" data-fold="open">Expand all</button><button type="button" data-fold="close">Collapse all</button></div>
+<nav class="toc" aria-label="Contents">
+  <a href="#why"><span>1</span>Why change it</a>
+  <a href="#design"><span>2</span>The design</a>
+  <a href="#options"><span>3</span>Options considered</a>
+  <a href="#build"><span>4</span>How it's built</a>
+  <a href="#questions"><span>5</span>Still to decide</a>
+</nav>
+
+<!-- Every section folds: the id goes on <details>, the gist (one line, what the
+     section concludes) sits on the closed line. Add `open` to the one or two a
+     first-time reader needs. Secondary material inside a section (options
+     compared, evidence, history) goes in <details class="more">. -->
+<!-- ======================================================= 1 -->
+<details class="sec" id="why" open>
+<summary><h2><span class="n">1</span>Why change it</h2><p class="gist">{{one line: what's wrong today and what the plan changes}}</p></summary>
+<div class="secbody">
+<p><span class="pill now">Today</span> {{how it works now, with a code link like <a href="../../app/floe/framework/floe/parameter.py#L1">parameter.py:1</a>}}</p>
+
+<div class="fig">
+<svg viewBox="0 0 900 140" role="img" aria-labelledby="f1t">
+  <title id="f1t">{{Describe the diagram in one sentence for screen readers.}}</title>
+  <rect x="20"  y="40" width="180" height="44" rx="6" class="s-box"/>  <text x="110" y="67" text-anchor="middle" class="s-t">{{today}}</text>
+  <rect x="360" y="40" width="180" height="44" rx="6" class="s-boxa"/> <text x="450" y="67" text-anchor="middle" class="s-tb">{{the change}}</text>
+  <rect x="700" y="40" width="180" height="44" rx="6" class="s-boxg"/> <text x="790" y="67" text-anchor="middle" class="s-t">{{the result}}</text>
+  <line x1="204" y1="62" x2="356" y2="62" class="s-ln"  marker-end="url(#arr)"/>
+  <line x1="544" y1="62" x2="696" y2="62" class="s-lna" marker-end="url(#arrA)"/>
+  <text x="20" y="120" class="s-m">{{a takeaway line under the diagram}}</text>
+</svg>
+<div class="cap">{{Caption: what to notice. Real names and numbers beat placeholders.}}</div>
+</div>
+</div>
+</details>
+
+<!-- ======================================================= 2 -->
+<details class="sec" id="design">
+<summary><h2><span class="n">2</span>The design <span class="pill dec">Decided</span></h2><p class="gist">{{one line}}</p></summary>
+<div class="secbody">
+<p>{{The decided shape, then the parts still leaning. A flowchart can be mermaid instead of hand-drawn SVG:}}</p>
+<div class="fig">
+<pre class="mermaid">
+flowchart LR
+  A["{{input}}"] --> B{"{{decision}}"}
+  B -- yes --> C["{{path one}}"]
+  B -- no  --> D["{{path two}}"]
+</pre>
+<div class="cap">{{Caption.}}</div>
+</div>
+</div>
+</details>
+
+<!-- ======================================================= 3 -->
+<details class="sec" id="options">
+<summary><h2><span class="n">3</span>Options considered</h2><p class="gist">{{one line: the pick, and why}}</p></summary>
+<div class="secbody">
+<div class="tw"><table>
+  <tr><th>Option</th><th>Good</th><th>Costs</th></tr>
+  <tr class="chosen"><td><b>{{A (chosen)}}</b></td><td>{{…}}</td><td>{{…}}</td></tr>
+  <tr><td>{{B}}</td><td>{{…}}</td><td>{{…}}</td></tr>
+</table></div>
+<details class="more"><summary>{{Secondary detail, e.g. the evidence behind a claim}}</summary>
+<p class="small">{{…}}</p>
+</details>
+</div>
+</details>
+
+<!-- ======================================================= 4 -->
+<details class="sec" id="build">
+<summary><h2><span class="n">4</span>How it's built</h2><p class="gist">{{one line}}</p></summary>
+<div class="secbody">
+<p class="small muted">Mirrors the board's 🛠 Implementation view. Before the design locks, list the likely steps instead.</p>
+<div class="grid2">
+  <div class="card"><h4>Phase 1 · {{title}}</h4>{{goal}}<br><span class="muted small">✅ {{verify}}</span></div>
+  <div class="card"><h4>Phase 2 · {{title}}</h4>{{goal}}<br><span class="muted small">✅ {{verify}}</span></div>
+</div>
+</div>
+</details>
+
+<!-- ======================================================= 5 -->
+<details class="sec" id="questions">
+<summary><h2><span class="n">5</span>Still to decide</h2><p class="gist">{{one line: how many are open, and the big one}}</p></summary>
+<div class="secbody">
+<div class="tw"><table>
+  <tr><th>Question</th><th></th><th>Lean</th></tr>
+  <tr><td><a href="board.html#q-Q1">Q1</a> {{question text}}</td><td><span class="pill open">Open</span></td><td>{{Claude's lean}}</td></tr>
+</table></div>
+</div>
+</details>
+</main>
+
+<script src="../_planning_tools/plan.doc.js"></script>
+</body>
+</html>

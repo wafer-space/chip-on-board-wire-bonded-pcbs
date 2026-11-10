@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Discussion Board</title>
+<!-- ===========================================================================
+     DISCUSSION-BOARD TEMPLATE  (see README.md + PROTOCOL.md in this folder)
+
+     To start a new board:
+       1. Copy this file to   planning/<your-discussion>/board.html
+       2. Create             planning/<your-discussion>/board.js   (sets window.DOC)
+       3. Serve the repo ROOT with Live Server and open the board.html
+
+     This file is generic — ALL board-specific content lives in board.js.
+     The engine is shared at ../_planning_tools/board.engine.{css,js}; those
+     relative paths resolve correctly from any planning/<disc>/ sibling folder.
+     =========================================================================== -->
+<link rel="stylesheet" href="../_planning_tools/board.engine.css">
+</head>
+<body>
+<header class="top">
+  <div class="topbar">
+    <a class="btn ghost mini" href="../_planning_tools/index.html" title="Back to the planning index">🗂 Index</a>
+    <h1 id="boardTitle">Board</h1>
+    <div class="viewtabs" id="viewTabs" role="tablist">
+      <button class="vtab" data-view="plan" role="tab">📋 Current Plan</button>
+      <button class="vtab" data-view="impl" role="tab">🛠 Implementation</button>
+      <button class="vtab" data-view="discuss" role="tab">💬 Discussion</button>
+    </div>
+    <button class="btn ghost mini" id="aboutToggle" aria-expanded="false" title="Show/hide help, stats &amp; legend">ⓘ about</button>
+    <span class="spacer"></span>
+    <div class="controls" id="controls">
+      <input type="search" id="search" placeholder="Search…">
+      <select id="fStatus">
+        <option value="">All statuses</option>
+        <option value="needs">Needs you (open + riffing)</option>
+        <option value="resolved">Resolved</option>
+        <option value="open">Open</option>
+        <option value="riffing">Riffing</option>
+        <option value="later">Later</option>
+        <option value="info">Info</option>
+      </select>
+      <button class="btn ghost mini" id="expandAll">Expand all</button>
+      <button class="btn ghost mini" id="collapseAll">Collapse all</button>
+    </div>
+  </div>
+  <div class="about" id="aboutBox" hidden></div>
+</header>
+
+<main>
+  <div id="docWarnings"></div>
+  <div id="planView" hidden>
+    <div id="planPanel"></div>
+    <div id="actionsPanel"></div>
+    <div class="statehint">Per-topic <b>current state</b> — the distilled position, not the back-and-forth. Hit <b>💬 Discuss →</b> on any card to jump straight to its thread and reply.</div>
+    <div id="stateList"></div>
+  </div>
+  <div id="implView" hidden>
+    <div id="implPanel"></div>
+  </div>
+  <div id="discussView">
+  <details class="global" id="globalBox">
+    <summary><span class="gicon">▸</span> 💬 Overall notes &amp; questions <span style="color:var(--muted);font-weight:400;font-size:12px">(themes, priorities, anything spanning cards)</span></summary>
+    <div class="gbody">
+      <textarea id="globalNotes" placeholder="Themes, priorities, anything spanning cards…"></textarea>
+      <div class="hint">Saved with the export file.</div>
+    </div>
+  </details>
+  <div id="qpanel"></div>
+  <div id="list"></div>
+  <div class="empty" id="emptyMsg" style="display:none">No cards match.</div>
+  </div>
+</main>
+
+<div class="cv-overlay" id="cvOverlay">
+  <div class="cv-modal">
+    <div class="cv-head">
+      <span class="cv-path" id="cvPath"></span>
+      <button class="btn ghost" id="cvCopy">Copy path</button>
+      <a class="btn ghost" id="cvRaw" target="_blank" rel="noopener">Open raw ↗</a>
+      <button class="btn" id="cvClose">Close ✕</button>
+    </div>
+    <div class="cv-body" id="cvBody"></div>
+  </div>
+</div>
+
+<footer class="fab">
+  <span class="saved" id="savedAt">Loading…</span>
+  <button class="btn ghost" id="reset">Reset my notes</button>
+  <button class="btn primary" id="copyJson">📋 Copy JSON for Claude</button>
+</footer>
+
+<script src="board.js"></script>
+<script src="../_planning_tools/board.validate.js"></script>
+<script src="../_planning_tools/board.engine.js"></script>
+</body>
+</html>

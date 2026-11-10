@@ -1,0 +1,23 @@
+G04 #@! TF.GenerationSoftware,Hand-written,Claude Code,1*
+G04 #@! TF.CreationDate,2026-11-09T00:00:00+08:00*
+G04 #@! TF.ProjectId,panel,70616e65-6c2e-46b6-9963-61645f706362,rev?*
+G04 #@! TF.SameCoordinates,Original*
+G04 #@! TF.FileFunction,Profile,NP*
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Board outline only: one closed 98 x 92 mm rectangle*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+G04 #@! TA.AperFunction,Profile*
+%ADD10C,0.050000*%
+G04 #@! TD*
+G04 APERTURE END LIST*
+D10*
+X35000000Y-23000000D02*
+X133000000Y-23000000D01*
+X133000000Y-115000000D01*
+X35000000Y-115000000D01*
+X35000000Y-23000000D01*
+M02*

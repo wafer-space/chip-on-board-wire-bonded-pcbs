@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planning Docs Index</title>
+<!-- ===========================================================================
+     PLANNING DOCS INDEX  (see PROTOCOL.md / README.md in this folder)
+
+     An interactive dashboard over every planning/<discussion>/. Content lives in
+     index.js (window.PLANS + window.PLANS_BAKED); the rendering is index.engine.js.
+     Reuses the board's CSS tokens (board.engine.css) + index-specific styles.
+
+     Serve the REPO ROOT with Live Server and open this file. The registry's
+     row links are relative to this page (../<discussion>/...).
+     =========================================================================== -->
+<link rel="stylesheet" href="board.engine.css">
+<link rel="stylesheet" href="index.engine.css">
+</head>
+<body>
+<header class="top">
+  <div class="topbar">
+    <h1 id="boardTitle">Planning Docs Index</h1>
+    <button class="btn ghost mini" id="aboutToggle" aria-expanded="false" title="Show/hide help, stats &amp; legend">ⓘ about</button>
+    <span class="spacer"></span>
+    <div class="controls" id="controls">
+      <input type="search" id="search" placeholder="Search title, blurb, group…">
+      <select id="fStatus">
+        <option value="">All statuses</option>
+        <option value="needs">Needs you (boards w/ open Qs)</option>
+        <option value="later">Later (parked)</option>
+        <option value="active">Active</option>
+        <option value="partial">Partial</option>
+        <option value="planning">Planning</option>
+        <option value="discussion">Discussion</option>
+        <option value="done">Done</option>
+      </select>
+    </div>
+  </div>
+  <div class="about" id="aboutBox" hidden></div>
+</header>
+
+<main>
+  <div id="needbar" class="needbar"></div>
+  <div id="list"></div>
+
+  <details class="global" id="globalBox" style="margin-top:18px">
+    <summary><span class="gicon">▸</span> 📝 Notes for Claude <span style="color:var(--muted);font-weight:400;font-size:12px">(what to re-sort, re-tag, archive next time)</span></summary>
+    <div class="gbody">
+      <textarea id="globalNotes" placeholder="e.g. 'Archive grbl-optimization next pass.' / 'Pull zorg_c2 into the Flotilla group.'"></textarea>
+      <div class="hint">Saved with the export.</div>
+    </div>
+  </details>
+</main>
+
+<footer class="fab">
+  <span class="saved" id="savedAt">Loading…</span>
+  <button class="btn ghost" id="reset">Reset my notes</button>
+  <button class="btn primary" id="copyJson">📋 Copy registry for Claude</button>
+</footer>
+
+<script src="index.js"></script>
+<script src="index.engine.js"></script>
+</body>
+</html>

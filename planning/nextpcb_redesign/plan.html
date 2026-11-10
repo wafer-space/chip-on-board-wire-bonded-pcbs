@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="plan-board" content="nextpcb_redesign">
+<meta name="plan-chapter" content="1">
+<title>NextPCB Redesign Plan</title>
+<link rel="stylesheet" href="../_planning_tools/plan.doc.css">
+<style>
+/* Task list. Tasks come from board.js (actions + phases); ticks are saved in this browser. */
+.track{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:12px 0}
+.track .chip{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:8px 10px;color:var(--txt);display:block}
+.track .chip:hover{text-decoration:none;border-color:var(--grey)}
+.track .chip b{display:block;font-size:13.5px}
+.track .chip span{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.track .chip i{display:block;height:4px;border-radius:2px;background:var(--line);margin-top:6px;overflow:hidden;font-style:normal}
+.track .chip i u{display:block;height:100%;background:var(--green);text-decoration:none}
+.track .chip.full{border-color:var(--green)}
+.setlabel{font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:18px 0 0}
+.setlabel b{color:var(--txt);font-size:13px;letter-spacing:0;text-transform:none;margin-left:6px;font-weight:600}
+details.ph{background:var(--panel);border:1px solid var(--line);border-radius:10px;margin:8px 0}
+details.ph>summary{cursor:pointer;padding:10px 14px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;list-style:none}
+details.ph>summary::-webkit-details-marker{display:none}
+details.ph>summary::before{content:"▸";color:var(--muted)}
+details.ph[open]>summary::before{content:"▾"}
+.ph-t{font-weight:700;font-size:15px}
+.ph-n{margin-left:auto;font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.ph-goal{padding:0 14px;margin:0 0 6px;font-size:13.5px;color:var(--muted)}
+.tk{display:flex;gap:10px;align-items:flex-start;padding:7px 14px;border-top:1px solid var(--line);font-size:14px;line-height:1.5;cursor:pointer}
+.tk input{flex:0 0 auto;margin:4px 0 0;width:16px;height:16px;accent-color:var(--green);cursor:pointer}
+.tk:hover{background:rgba(255,255,255,.03)}
+.tk.done .tx{color:var(--muted);text-decoration:line-through}
+.tk .tx{flex:1 1 auto;min-width:0}
+.tk .wait{flex:0 0 auto;white-space:nowrap}
+.ph-gate{padding:8px 14px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.ph-gate code{word-break:break-all}
+.sendbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:12px 0;font-size:13px}
+.sendbar button{font:inherit;font-size:13px;background:var(--panel2);color:var(--txt);border:1px solid var(--grey);border-radius:6px;padding:4px 12px;cursor:pointer}
+.sendbar button:hover{border-color:var(--accent)}
+.sendbar textarea{width:100%;min-height:60px;font:12px ui-monospace,Consolas,monospace;background:#0c1311;color:#9df0db;border:1px solid var(--line);border-radius:4px;padding:6px}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7ba69c"/>
+    </marker>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#36d9bb"/>
+    </marker>
+  </defs>
+</svg>
+
+<main>
+<header class="top">
+  <div class="crumbs">
+    <a href="board.html">← Discussion board</a>
+    <a href="../_planning_tools/index.html">🗂 Planning index</a>
+    <span>As of chapter 1 · 2026-11-09</span>
+  </div>
+  <h1>NextPCB Redesign</h1>
+  <p class="lede">Bring the four run 2 single COB designs within NextPCB's published limits, then rebuild the four panels from them.</p>
+  <p class="small muted">
+    <span class="pill dec">Tested</span> tried on scratch copies ·
+    <span class="pill lean">Lean</span> Claude's recommendation, not yet confirmed ·
+    <span class="pill open">Open</span> needs your answer ·
+    <span class="pill later">Later</span> settles while building ·
+    <span class="pill now">Today</span> how it is now
+  </p>
+</header>
+
+<div class="tldr">
+  <b>In one line:</b> change the via drill and mask expansion on all four designs, settle the bond finger gaps on the three half-size designs with NextPCB, and rebuild the panels once all four designs pass.
+</div>
+
+<div class="glance" aria-label="Scope at a glance">
+  <div class="g"><h4>Designs passing</h4><div class="nums"><b>0 of 4</b><span>checked 2026-11-09</span></div><a href="#tasks">Tasks →</a></div>
+  <div class="g"><h4>Panels passing</h4><div class="nums"><b>0 of 4</b><span>start when all designs pass</span></div><a href="#stands">Where each stands →</a></div>
+  <div class="g"><h4>Holding up work</h4><ul><li><span class="pill open">Q1</span> bond finger gaps</li><li><span class="pill open">Q2</span> die-pad holes</li><li><span class="pill open">Q3</span> order details</li></ul><a href="#questions">Still to decide →</a></div>
+</div>
+
+<div class="foldbar"><span class="small muted">Click a heading to open it.</span><button type="button" data-fold="open">Expand all</button><button type="button" data-fold="close">Collapse all</button></div>
+<nav class="toc" aria-label="Contents">
+  <a href="#tasks"><span>1</span>Task list</a>
+  <a href="#fingers"><span>2</span>Bond finger gaps</a>
+  <a href="#limits"><span>3</span>The limits and the check</a>
+  <a href="#stands"><span>4</span>Where each board stands</a>
+  <a href="#questions"><span>5</span>Still to decide</a>
+</nav>
+
+<!-- ======================================================= 1 -->
+<details class="sec" id="tasks" open>
+<summary><h2><span class="n">1</span>Task list</h2><p class="gist" id="taskGist">Four designs first, then four panels.</p></summary>
+<div class="secbody">
+
+<div class="fig">
+<svg viewBox="0 0 900 150" role="img" aria-labelledby="f1t">
+  <title id="f1t">Four single COB designs must each pass the check before the four panels are rebuilt and exported.</title>
+  <text x="20" y="20" class="s-h">Designs (phases 1 to 4)</text>
+  <rect x="20"  y="34" width="88" height="40" rx="6" class="s-box"/><text x="64"  y="59" text-anchor="middle" class="s-t">1x1</text>
+  <rect x="116" y="34" width="88" height="40" rx="6" class="s-box"/><text x="160" y="59" text-anchor="middle" class="s-t">1x0p5</text>
+  <rect x="212" y="34" width="88" height="40" rx="6" class="s-box"/><text x="256" y="59" text-anchor="middle" class="s-t">0p5x1</text>
+  <rect x="308" y="34" width="88" height="40" rx="6" class="s-box"/><text x="352" y="59" text-anchor="middle" class="s-t">0p5x0p5</text>
+  <text x="20" y="100" class="s-m">Each one is done when check_board.py prints PASS.</text>
+  <line x1="402" y1="54" x2="452" y2="54" class="s-ln" marker-end="url(#arr)"/>
+  <rect x="456" y="28" width="84" height="52" rx="6" class="s-boxg"/><text x="498" y="50" text-anchor="middle" class="s-tb">All four</text><text x="498" y="68" text-anchor="middle" class="s-tb">pass</text>
+  <line x1="544" y1="54" x2="578" y2="54" class="s-ln" marker-end="url(#arrG)"/>
+  <text x="582" y="20" class="s-h">Panels (phases 5 to 8)</text>
+  <rect x="582" y="34" width="70" height="40" rx="6" class="s-box"/><text x="617" y="59" text-anchor="middle" class="s-t">1x1</text>
+  <rect x="656" y="34" width="70" height="40" rx="6" class="s-box"/><text x="691" y="59" text-anchor="middle" class="s-t">1x0p5</text>
+  <rect x="730" y="34" width="70" height="40" rx="6" class="s-box"/><text x="765" y="59" text-anchor="middle" class="s-t">0p5x1</text>
+  <rect x="804" y="34" width="76" height="40" rx="6" class="s-box"/><text x="842" y="59" text-anchor="middle" class="s-t">0p5x0p5</text>
+  <text x="582" y="100" class="s-m">Rebuild without refilling zones, check, then export.</text>
+  <text x="20" y="136" class="s-amber">Finger tasks on the three half-size designs wait on Q1. Everything else on them can start now.</text>
+</svg>
+<div class="cap">The panels wait for all four designs, so a late design change doesn't mean rebuilding a finished panel.</div>
+</div>
+
+<div id="taskRoot"><p class="muted">Loading tasks from board.js…</p></div>
+
+<div class="sendbar">
+  <button type="button" id="taskCopy">📋 Copy ticks for Claude</button>
+  <span class="muted" id="taskSaved">Ticks save in this browser. Copy them to Claude to make them permanent.</span>
+  <textarea id="taskExport" hidden readonly aria-label="Ticks to copy"></textarea>
+</div>
+</div>
+</details>
+
+<!-- ======================================================= 2 -->
+<details class="sec" id="fingers" open>
+<summary><h2><span class="n">2</span>Bond finger gaps <span class="pill open">Open</span></h2><p class="gist">The three half-size designs have 0.10 mm gaps against a 0.15 mm limit, and the fix depends on NextPCB's answer.</p></summary>
+<div class="secbody">
+<p><span class="pill now">Today</span> The 1x1 uses 0.25 mm fingers at 0.4 mm pitch, which lands exactly on the limit. The half-size padrings fit more fingers along the same die edge, using 0.2 mm fingers at 0.3 mm pitch.</p>
+<div class="fig">
+<svg viewBox="0 0 900 190" role="img" aria-labelledby="f2t">
+  <title id="f2t">Bond finger width and gap drawn to scale for the 1x1, the half-size designs today, and the half-size designs with narrower fingers.</title>
+  <!-- scale: 200 px per mm. Finger height is cropped. -->
+  <text x="20" y="22" class="s-tb">1x1 today</text>
+  <rect x="20"  y="34" width="50" height="90" fill="#e9c46a"/><rect x="100" y="34" width="50" height="90" fill="#e9c46a"/><rect x="180" y="34" width="50" height="90" fill="#e9c46a"/>
+  <text x="20" y="146" class="s-t">0.25 mm wide, 0.4 mm pitch</text>
+  <text x="20" y="166" class="s-green" style="font-size:13px;font-weight:700">0.15 mm gap: at the limit</text>
+
+  <text x="320" y="22" class="s-tb">Half-size today</text>
+  <rect x="320" y="34" width="40" height="90" fill="#e9c46a"/><rect x="380" y="34" width="40" height="90" fill="#e9c46a"/><rect x="440" y="34" width="40" height="90" fill="#e9c46a"/><rect x="500" y="34" width="40" height="90" fill="#e9c46a"/>
+  <text x="320" y="146" class="s-t">0.2 mm wide, 0.3 mm pitch</text>
+  <text x="320" y="166" style="font-size:13px;font-weight:700;fill:#ff9db0">0.10 mm gap: 0.05 mm short</text>
+
+  <text x="620" y="22" class="s-tb">Half-size if narrowed</text>
+  <rect x="620" y="34" width="30" height="90" fill="#e9c46a"/><rect x="680" y="34" width="30" height="90" fill="#e9c46a"/><rect x="740" y="34" width="30" height="90" fill="#e9c46a"/><rect x="800" y="34" width="30" height="90" fill="#e9c46a"/>
+  <text x="620" y="146" class="s-t">0.15 mm wide, 0.3 mm pitch</text>
+  <text x="620" y="166" class="s-green" style="font-size:13px;font-weight:700">0.15 mm gap, but a 25% narrower bond target</text>
+</svg>
+<div class="cap">Widths and gaps are drawn to scale, and finger length is cropped. Not modelled: whether a 0.15 mm finger still bonds reliably.</div>
+</div>
+<div class="tw"><table>
+  <tr><th>Option</th><th>Good</th><th>Costs</th></tr>
+  <tr class="chosen"><td><b>Ask NextPCB first</b> <span class="pill lean">Lean</span></td><td>Could leave the fingers as they are. Their stated reason for the 0.15 mm rule is mask coverage and bridging, and these fingers sit in an open mask window. Their general spacing limit is 0.076 mm.</td><td>Finger tasks wait for a reply.</td></tr>
+  <tr><td>Narrow the fingers to 0.15 mm now</td><td>Meets the limit as published, and should also clear the traces 0.100 mm from a finger. Needs no answer from NextPCB.</td><td>A padring change on three footprints, and a smaller bond target.</td></tr>
+</table></div>
+</div>
+</details>
+
+<!-- ======================================================= 3 -->
+<details class="sec" id="limits">
+<summary><h2><span class="n">3</span>The limits and the check</h2><p class="gist">One command decides whether a board passes, using NextPCB's published Standard PCB limits.</p></summary>
+<div class="secbody">
+<pre>python planning/nextpcb_redesign/check/check_board.py --designs
+python planning/nextpcb_redesign/check/check_board.py --panels
+python planning/nextpcb_redesign/check/check_board.py run-2/1x1-cob/1x1-mezzanine.kicad_pcb</pre>
+<p>It works on a temporary copy and checks saved copper, so refill zones and save in KiCad first. On a panel it also measures copper against the V-cut lines, which KiCad's own DRC can't see because they sit on <code>User.1</code>. The rules are in <a href="check/nextpcb.kicad_dru">nextpcb.kicad_dru</a>. Don't copy that file next to a real board: its base clearance rule makes zone refills pour too close.</p>
+<div class="tw"><table>
+  <tr><th>Check</th><th>Limit</th><th>Measured how</th><th>On a fail</th></tr>
+  <tr><td>Via ring</td><td class="num">0.089 mm</td><td>Pad to hole. NextPCB's via diagram shows 0.1 mm</td><td>Fails</td></tr>
+  <tr><td>Hole to hole, different nets</td><td class="num">0.305 mm</td><td>Hole edge to hole edge</td><td>Fails</td></tr>
+  <tr><td>Hole to hole, same net</td><td class="num">0.203 mm</td><td>Hole edge to hole edge</td><td>Fails</td></tr>
+  <tr><td>Via to copper</td><td class="num">0.178 mm</td><td>From the hole wall</td><td>Fails</td></tr>
+  <tr><td>SMD pad to SMD pad</td><td class="num">0.150 mm</td><td>Copper edge</td><td>Fails</td></tr>
+  <tr><td>SMD pad to trace</td><td class="num">0.102 mm</td><td>Copper edge</td><td>Fails</td></tr>
+  <tr><td>Through-hole pad to pad</td><td class="num">0.400 mm</td><td>Copper edge</td><td>Fails</td></tr>
+  <tr><td>Copper spacing and trace width</td><td class="num">0.076 mm</td><td>Copper edge</td><td>Fails</td></tr>
+  <tr><td>Copper to edge or V-cut</td><td class="num">0.400 mm</td><td>All edges held to the V-cut limit</td><td>Fails</td></tr>
+  <tr><td>Mask expansion</td><td class="num">0.038 mm</td><td>Board Setup value</td><td>Fails</td></tr>
+  <tr><td>Silk text height</td><td class="num">0.762 mm</td><td>Screen printing figure</td><td>Fails</td></tr>
+  <tr><td>Duplicate holes, single-spoke thermals, extra stackups</td><td>None</td><td>Not published limits; our own cleanup</td><td>Fails</td></tr>
+  <tr><td>PTH wall to copper, PTH ring</td><td class="num">0.229, 0.2 mm</td><td>Applies to the die-pad holes if they count as PTH</td><td>Reported, waiting on Q2</td></tr>
+  <tr><td>Silk to pad, silk stroke</td><td class="num">0.152 mm</td><td>Exported silk is already cut back at mask openings</td><td>Reported only</td></tr>
+</table></div>
+<p class="small muted">Limits from <a href="https://www.nextpcb.com/pcb-capabilities">NextPCB's Standard PCB capabilities</a>, read on 2026-11-09, assuming 1 oz finished outer copper. They're published limits, not an engineering review, so run the final Gerbers through NextPCB's own DFM check too.</p>
+</div>
+</details>
+
+<!-- ======================================================= 4 -->
+<details class="sec" id="stands">
+<summary><h2><span class="n">4</span>Where each board stands</h2><p class="gist">0 of 4 designs and 0 of 4 panels pass. The via change is tested and clears the via and hole failures everywhere.</p></summary>
+<div class="secbody">
+<h3>Single COB designs: failures per board</h3>
+<div class="tw"><table>
+  <tr><th>Failure</th><th class="num">1x1</th><th class="num">1x0p5</th><th class="num">0p5x1</th><th class="num">0p5x0p5</th><th>Fix</th></tr>
+  <tr><td>Via ring 0.075 mm</td><td class="num">93</td><td class="num">92</td><td class="num">84</td><td class="num">70</td><td>0.25 mm drill <span class="pill dec">Tested</span></td></tr>
+  <tr><td>Hole to hole under 0.305 mm</td><td class="num">21</td><td class="num">23</td><td class="num">32</td><td class="num">10</td><td>0.25 mm drill <span class="pill dec">Tested</span></td></tr>
+  <tr><td>Mask expansion 0</td><td class="num">Yes</td><td class="num">Yes</td><td class="num">Yes</td><td class="num">Yes</td><td>0.04 mm <span class="pill dec">Tested</span></td></tr>
+  <tr><td>Silk text 0.75 mm</td><td class="num">1</td><td class="num">1</td><td class="num">1</td><td class="num">1</td><td>0.80 mm</td></tr>
+  <tr><td>Finger gap under 0.15 mm</td><td class="num">0</td><td class="num">46</td><td class="num">54</td><td class="num">42</td><td><a href="#fingers">Q1</a> <span class="pill open">Open</span></td></tr>
+  <tr><td>Trace 0.100 mm from a pad</td><td class="num">2</td><td class="num">11</td><td class="num">13</td><td class="num">9</td><td>Move on the 1x1; the others follow Q1</td></tr>
+  <tr><td>Through-hole pad to pad under 0.40 mm</td><td class="num">0</td><td class="num">12</td><td class="num">1</td><td class="num">0</td><td>1x0p5 waits on Q2; move <code>C102</code> on the 0p5x1</td></tr>
+  <tr><td>Duplicate vias</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td>Delete</td></tr>
+  <tr><td>If PTH: die-pad holes under a 0.2 mm ring</td><td class="num">6</td><td class="num">6</td><td class="num">6</td><td class="num">0</td><td><a href="#questions">Q2</a> <span class="pill open">Open</span></td></tr>
+</table></div>
+<p class="small muted">The tested row is a trial on scratch copies, not a change to the designs: a 0.25 mm drill plus 0.04 mm mask expansion, with no new mask bridges outside the bond opening. Zones weren't refilled in that trial.</p>
+
+<h3>Panels</h3>
+<p>The panels inherit the design failures above, so these columns show only what's specific to each panel. All four have 24 boards, 14 V-cuts and 7 mm rails, and copper stays at 0.5 mm or more from every V-cut today.</p>
+<div class="tw"><table>
+  <tr><th>Panel-only failure</th><th class="num">1x1</th><th class="num">1x0p5</th><th class="num">0p5x1</th><th class="num">0p5x0p5</th></tr>
+  <tr><td>Stackup definitions (needs 1)</td><td class="num">7</td><td class="num">5</td><td class="num">8</td><td class="num">9</td></tr>
+  <tr><td>Copper spacing under 0.076 mm</td><td class="num">0</td><td class="num">0</td><td class="num">48</td><td class="num">96</td></tr>
+  <tr><td>Via to copper under 0.178 mm</td><td class="num">48</td><td class="num">0</td><td class="num">24</td><td class="num">48</td></tr>
+  <tr><td>Single-spoke thermals</td><td class="num">48</td><td class="num">72</td><td class="num">144</td><td class="num">0</td></tr>
+</table></div>
+<div class="callout"><b>Don't refill zones on a panel.</b> <code>Edge.Cuts</code> holds only the outer rectangle, so a refill runs GND copper straight to the V-cuts: 0.0 mm against a 0.4 mm limit, seen on the 1x1 panel. Rebuilding from a passing design should clear the panel-only copper failures above, but that's untested until the first rebuild.</div>
+</div>
+</details>
+
+<!-- ======================================================= 5 -->
+<details class="sec" id="questions" open>
+<summary><h2><span class="n">5</span>Still to decide</h2><p class="gist">Three open, one for later. Q1 holds up the most tasks, and NextPCB's answers settle Q1 and Q2.</p></summary>
+<div class="secbody">
+
+<div class="qa" id="q1">
+  <div class="qa-h"><span class="qa-id">Q1</span> <b>The half-size bond fingers have 0.10 mm gaps. Ask NextPCB to accept that inside the open mask window, or narrow the fingers to 0.15 mm wide now?</b></div>
+  <p class="qa-lean"><span class="pill lean">Lean</span> Ask first. Narrowing changes three padrings and the bond target, so it's better saved for a real no.</p>
+  <textarea class="qa-input" id="a-Q1" data-q="Q1" rows="2" aria-label="Your answer to Q1" placeholder="Your answer…"></textarea>
+  <div class="qa-row"><button type="button" data-lean="Q1">Agree with the lean</button><a href="#fingers">Read the section</a><a href="board.html#q-Q1">Discuss on the board</a></div>
+</div>
+<div class="qa" id="q2">
+  <div class="qa-h"><span class="qa-id">Q2</span> <b>Should the die-pad holes count as vias, as long as NextPCB agrees, or be redesigned to meet the PTH limits?</b></div>
+  <p class="qa-lean"><span class="pill lean">Lean</span> Ask NextPCB to treat them as vias. They're GND stitching holes in the die pad. If it agrees, I'd drop the pad-to-pad rule for them, which clears the 12 hits on the 1x0p5.</p>
+  <textarea class="qa-input" id="a-Q2" data-q="Q2" rows="2" aria-label="Your answer to Q2" placeholder="Your answer…"></textarea>
+  <div class="qa-row"><button type="button" data-lean="Q2">Agree with the lean</button><a href="board.html#q-Q2">Discuss on the board</a></div>
+</div>
+<div class="qa" id="q3">
+  <div class="qa-h"><span class="qa-id">Q3</span> <b>Are ENEPIG, 0.8 mm and 1 oz outer copper right for the order, and will you send NextPCB the questions below?</b></div>
+  <p class="qa-lean"><span class="pill lean">Lean</span> Yes. ENEPIG is the only finish NextPCB's finish page links to wire bonding, and 0.8 mm ±0.1 covers the 0.747 mm stackup. I haven't contacted anyone.</p>
+  <textarea class="qa-input" id="a-Q3" data-q="Q3" rows="2" aria-label="Your answer to Q3" placeholder="Your answer…"></textarea>
+  <div class="qa-row"><button type="button" data-lean="Q3">Agree with the lean</button><a href="board.html#q-Q3">Discuss on the board</a></div>
+</div>
+<div class="qa" id="q4">
+  <div class="qa-h"><span class="qa-id">Q4</span> <b>How were the panels built, and do you want that scripted so the four rebuilds match?</b> <span class="pill later">Later</span></div>
+  <p class="qa-lean"><span class="pill lean">Lean</span> Decide before phase 5. I found no panelization script in this repo, and scripting it would also stop stackup definitions piling up.</p>
+  <textarea class="qa-input" id="a-Q4" data-q="Q4" rows="2" aria-label="Your answer to Q4" placeholder="Your answer…"></textarea>
+  <div class="qa-row"><a href="board.html#q-Q4">Discuss on the board</a></div>
+</div>
+<div class="qa">
+  <div class="qa-h"><b>Anything else</b></div>
+  <textarea class="qa-input" id="a-note" data-q="__note" rows="2" aria-label="Anything else" placeholder="Corrections, things I missed, new questions…"></textarea>
+</div>
+
+<div class="qa-send">
+  <b data-answer-count>0 of 4 answered</b>
+  <span class="small muted embed-hide" data-answer-saved>Saved in this browser as you type.</span>
+  <button type="button" id="planCopy" class="embed-hide">📋 Copy answers for Claude</button>
+  <span class="small muted embed-only">Send with <b>📋 Copy JSON for Claude</b> at the bottom of the board.</span>
+  <textarea id="planExport" hidden readonly aria-label="Answers to copy"></textarea>
+</div>
+
+<h3>Message for NextPCB</h3>
+<p class="small muted">Ready to send once you've confirmed the order details in Q3.</p>
+<pre style="white-space:pre-wrap">We're preparing a 4-layer, 0.8 mm V-cut panel of wire-bonded chip-on-board PCBs, with ENEPIG finish and 1 oz outer copper. Could you confirm the following before we finish the design?
+
+1. Our bond fingers sit together in one open solder mask window, with no mask between them. Three designs have 0.2 mm fingers at 0.3 mm pitch, a 0.10 mm gap. Your SMD pad-to-pad limit is 0.15 mm, and your general spacing limit is 3 mil. Is the 0.10 mm gap acceptable here?
+2. We have 0.3 mm plated holes in a GND die pad, with 0.5 or 0.6 mm pads. Will you treat these as vias rather than component PTH, given the 0.2 mm PTH annular ring on your capabilities page?
+3. We plan vias with a 0.45 mm pad and 0.25 mm finished hole. Your page says holes are enlarged 0.125 mm in production. Is the annular ring acceptable after that?
+4. ENEPIG is on the Advanced PCB quote. Do the Standard PCB limits apply, or does Advanced allow anything tighter? What Ni, Pd and Au thicknesses do you offer, and are they suitable for wire bonding?
+5. Can you build our custom stackup (0.196 mm prepreg, 0.23 mm core, 0.196 mm prepreg, 1 oz inner copper) to 0.8 mm finished?
+6. V-cut lines are in our outline Gerber along with the board outline, labelled V-CUT. Is that acceptable, or do you want them in a separate file?</pre>
+</div>
+</details>
+</main>
+
+<script src="board.js"></script>
+<script>
+/* Task list: tasks come from window.DOC (board.js), so they're defined in one place.
+   A task baked as status "done" starts ticked. Ticks made here are saved in this browser
+   as differences from board.js, and the copy button sends them to Claude to fold in. */
+(function () {
+  var DOC = window.DOC, root = document.getElementById("taskRoot");
+  if (!DOC) { root.innerHTML = '<p class="muted">board.js did not load.</p>'; return; }
+  var KEY = "nextpcb_redesign_tasks_v1", SETS = [
+    { label: "Set 1", title: "Single COB designs", ids: ["P1", "P2", "P3", "P4"] },
+    { label: "Set 2", title: "Panels", ids: ["P5", "P6", "P7", "P8"] }
+  ];
+  var byId = {}; DOC.actions.forEach(function (a) { byId[a.id] = a; });
+  var phaseById = {}; DOC.phases.forEach(function (p) { phaseById[p.id] = p; });
+
+  var ticks = {};
+  try { ticks = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) {}
+  function isDone(id) { return id in ticks ? ticks[id] : byId[id].status === "done"; }
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(ticks)); return true; } catch (e) { return false; }
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function fmt(s) {
+    return esc(s).replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>");
+  }
+  function counts(phase) {
+    var done = phase.acts.filter(isDone).length;
+    return { done: done, total: phase.acts.length };
+  }
+  function shortName(p) { return p.title.split(": ")[1]; }
+  function firstOpen() {
+    for (var i = 0; i < DOC.phases.length; i++) {
+      var c = counts(DOC.phases[i]);
+      if (c.done < c.total) return DOC.phases[i].id;
+    }
+    return null;
+  }
+  function designsDone() {
+    return SETS[0].ids.every(function (id) { var c = counts(phaseById[id]); return c.done === c.total; });
+  }
+
+  function build() {
+    var open = firstOpen(), h = "";
+    SETS.forEach(function (set) {
+      h += '<p class="setlabel">' + set.label + '<b>' + set.title + '</b></p><div class="track">';
+      set.ids.forEach(function (id) {
+        var p = phaseById[id], c = counts(p);
+        h += '<a class="chip' + (c.done === c.total ? " full" : "") + '" href="#ph-' + id + '" data-ph="' + id + '"><b>' + esc(shortName(p)) + '</b>' +
+             '<span>' + c.done + ' of ' + c.total + ' tasks</span><i><u style="width:' + (100 * c.done / c.total) + '%"></u></i></a>';
+      });
+      h += "</div>";
+      set.ids.forEach(function (id) {
+        var p = phaseById[id], c = counts(p), lock = p.depends && !designsDone();
+        h += '<details class="ph" id="ph-' + id + '"' + (id === open ? " open" : "") + '><summary>' +
+             '<span class="ph-t">Phase ' + p.n + ' · ' + esc(p.title) + '</span>' +
+             (lock ? '<span class="pill now">Starts after all four designs</span>' : "") +
+             '<span class="ph-n" data-count="' + id + '">' + c.done + ' of ' + c.total + '</span></summary>' +
+             '<p class="ph-goal">' + fmt(p.goal) + '</p>';
+        p.acts.forEach(function (aid) {
+          var a = byId[aid], d = isDone(aid);
+          var wait = (a.waiting || []).filter(function () { return !d; }).map(function (q) {
+            return '<a class="pill open wait" href="#q' + esc(q.slice(1)) + '">Waits on ' + esc(q) + '</a>';
+          }).join(" ");
+          h += '<label class="tk' + (d ? " done" : "") + '"><input type="checkbox" data-task="' + esc(aid) + '"' + (d ? " checked" : "") + '>' +
+               '<span class="tx">' + fmt(a.what) + '</span>' + wait + '</label>';
+        });
+        h += '<div class="ph-gate"><b>✅ Passes when:</b> ' + fmt(p.verify) + '</div>' +
+             '<div class="ph-gate"><b>🔍 Watch for:</b> ' + fmt(p.audit) + '</div></details>';
+      });
+    });
+    root.innerHTML = h;
+    gist();
+  }
+  function gist() {
+    var all = DOC.actions.length, done = DOC.actions.filter(function (a) { return isDone(a.id); }).length;
+    var waiting = DOC.actions.filter(function (a) { return a.status === "blocked" && !isDone(a.id); }).length;
+    var el = document.getElementById("taskGist");
+    if (el) el.textContent = done + " of " + all + " tasks done. " + waiting + " are waiting on an answer. Four designs first, then four panels.";
+  }
+  function openIds() {
+    return [].slice.call(root.querySelectorAll("details.ph[open]")).map(function (d) { return d.id; });
+  }
+
+  root.addEventListener("change", function (e) {
+    var id = e.target.getAttribute && e.target.getAttribute("data-task");
+    if (!id) return;
+    var baked = byId[id].status === "done";
+    if (e.target.checked === baked) delete ticks[id]; else ticks[id] = e.target.checked;
+    var ok = save(), keep = openIds();
+    build();
+    root.querySelectorAll("details.ph").forEach(function (d) { d.open = keep.indexOf(d.id) >= 0; });
+    var s = document.getElementById("taskSaved");
+    s.textContent = ok ? "Saved " + new Date().toLocaleTimeString() + ". Copy to Claude to make it permanent." : "Couldn't save in this browser. Copy your ticks before closing.";
+  });
+  root.addEventListener("click", function (e) {
+    var chip = e.target.closest && e.target.closest("[data-ph]");
+    if (!chip) return;
+    var d = document.getElementById("ph-" + chip.getAttribute("data-ph"));
+    if (d) d.open = true;
+  });
+
+  var copy = document.getElementById("taskCopy"), out = document.getElementById("taskExport");
+  copy.addEventListener("click", function () {
+    var done = [], undone = [];
+    Object.keys(ticks).forEach(function (id) { (ticks[id] ? done : undone).push(id); });
+    var label = "📋 Copy ticks for Claude";
+    function flash(t) { copy.textContent = t; setTimeout(function () { copy.textContent = label; }, 1600); }
+    if (!done.length && !undone.length) { flash("Nothing new to copy"); return; }
+    var x = { tool: "nextpcb_redesign_tasks", seen: DOC.chapter };
+    if (done.length) x.done = done;
+    if (undone.length) x.undone = undone;
+    var text = JSON.stringify(x);
+    function manual() { out.hidden = false; out.value = text; out.focus(); out.select(); flash("Select and copy below"); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { out.hidden = true; flash("Copied ✓"); }, manual);
+    } else manual();
+  });
+
+  build();
+})();
+</script>
+<script src="../_planning_tools/plan.doc.js"></script>
+</body>
+</html>

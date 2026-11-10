@@ -1,0 +1,125 @@
+/* Planning Docs Index — index-specific styles.
+   Reuses tokens/buttons/controls from board.engine.css (link both). */
+
+/* ---- needs-you rollup strip ---- */
+.needbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--amber);
+  border-radius:10px;padding:11px 15px;margin-bottom:16px}
+.needbar.clear{border-left-color:var(--green)}
+.needbar .nbtitle{font-weight:700;font-size:13px}
+.needbar .nbtitle .nbn{background:var(--amber);color:#1a1400;border-radius:999px;
+  font-size:12px;font-weight:800;padding:1px 9px;margin-left:6px}
+.needbar.clear .nbtitle .nbn{background:var(--green);color:#04130a}
+.needbar .nbhint{color:var(--muted);font-size:12px}
+.needchip{display:inline-flex;align-items:center;gap:6px;background:var(--amber-bg);
+  border:1px solid var(--amber);border-radius:999px;padding:3px 10px;font-size:12px;
+  color:#f1d27a;cursor:pointer}
+.needchip:hover{text-decoration:none;filter:brightness(1.15)}
+.needchip b{color:#fff}
+
+/* ---- zones ---- */
+.zone{margin-bottom:20px}
+.zonehead{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin:0 0 9px 2px}
+.zonehead h2{margin:0;font-size:14px;letter-spacing:.3px}
+.zonehead .zn{color:var(--muted);font-size:12px}
+.zonehead .zhint{color:var(--muted);font-size:11.5px}
+
+.group{margin-bottom:10px}
+.grouphead{display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none;
+  color:var(--muted);font-size:11.5px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.5px;padding:5px 2px;border-bottom:1px solid var(--line)}
+.grouphead .gcar{transition:transform .15s;display:inline-block}
+.group.collapsed .gcar{transform:rotate(-90deg)}
+.group.collapsed .glist{display:none}
+.grouphead .gcount{color:var(--grey);font-weight:600}
+
+/* ---- plan row ---- */
+.prow{display:grid;grid-template-columns:18px 92px 1fr auto;align-items:center;gap:11px;
+  background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--grey);
+  border-radius:9px;padding:9px 12px;margin:7px 0}
+.prow:hover{border-color:var(--accent)}
+.prow.dragging{opacity:.4}
+.prow.dragover{box-shadow:0 -2px 0 0 var(--accent)}
+.prow .drag{cursor:grab;color:var(--grey);font-size:14px;line-height:1;text-align:center}
+.prow .drag:active{cursor:grabbing}
+
+.prow .pmain{min-width:0}
+.prow .ptitle{font-weight:600;font-size:13.5px}
+.prow .pblurb{color:var(--muted);font-size:12px;margin-top:2px;
+  display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.prow .pmeta{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-top:4px;
+  color:var(--muted);font-size:11px}
+.prow .pmeta .mtag{font:600 10.5px ui-monospace,Menlo,monospace}
+.prow .pmeta .branch{color:var(--accent)}
+.prow .pmeta .branch.cur{background:var(--claude);border:1px solid var(--claude-line);
+  border-radius:5px;padding:0 6px;color:#9ec5ff}
+.prow .pmeta .stale{color:#d98a8a}
+.prow .pmeta .kindbadge{border:1px solid var(--line);border-radius:5px;padding:0 6px}
+.prow .pmeta .kindbadge.board{color:#9ec5ff;border-color:var(--claude-line)}
+.prow .pmeta .kindbadge.keystone{color:#d7bcff;border-color:var(--purple);background:var(--purple-bg)}
+
+/* a keystone is its own plan type — reads as a structural, load-bearing node */
+.prow.iskeystone{border-left-color:var(--purple);
+  background:linear-gradient(90deg,var(--purple-bg),var(--panel) 55%)}
+.prow.iskeystone .ptitle{color:#e9ddff}
+/* keystone relationship chips: bears (down) · keystoned-into (up) · continues-from */
+.kbears{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap;color:var(--muted);font-size:11px}
+.kchip{display:inline-flex;align-items:center;font:600 10.5px ui-monospace,Menlo,monospace;
+  border:1px solid var(--line);border-radius:999px;padding:1px 8px}
+.kchip:hover{text-decoration:none;filter:brightness(1.15)}
+.kchip.stone,.kchip.into{color:#d7bcff;border-color:var(--purple);background:var(--purple-bg)}
+.kchip.from{color:#9fe0e8;border-color:var(--later);background:var(--later-bg)}
+.kchip.doc{color:#9ecbff;border-color:var(--accent);background:#10233d}
+
+/* status pill */
+.pstat{font-size:11px;font-weight:700;text-align:center;border-radius:999px;padding:3px 0;
+  border:1px solid var(--line)}
+.st-active{color:#7ee2a8;background:var(--green-bg);border-color:var(--green)}
+.st-partial{color:#9fe6c4;background:var(--green-bg);border-color:#1f6f3f}
+.st-planning{color:#f1d27a;background:var(--amber-bg);border-color:var(--amber)}
+.st-discussion{color:#9ec5ff;background:var(--claude);border-color:var(--claude-line)}
+.st-later{color:#9fe0e8;background:var(--later-bg);border-color:var(--later)}
+.st-done{color:var(--muted);background:var(--chip);border-color:var(--line)}
+
+/* needs flag on a board row */
+.pneed{display:inline-block;background:var(--amber);color:#1a1400;border-radius:999px;
+  font-size:10.5px;font-weight:800;padding:1px 8px;margin-left:7px}
+
+/* row actions */
+.pacts{display:flex;gap:5px}
+.iconbtn{background:transparent;border:1px solid var(--line);border-radius:7px;
+  cursor:pointer;font-size:13px;line-height:1;padding:5px 7px;color:var(--muted)}
+.iconbtn:hover{border-color:var(--accent);color:var(--txt)}
+.iconbtn.on{border-color:var(--amber);color:#f1d27a;background:var(--amber-bg)}
+.iconbtn.on-later{border-color:var(--later);color:#9fe0e8;background:var(--later-bg)}
+.iconbtn.on-done{border-color:var(--green);color:#7ee2a8;background:var(--green-bg)}
+.iconbtn.on-cmt{border-color:var(--accent);color:#9ec5ff;background:var(--claude)}
+
+/* per-row note (comment) — full-width line under the row */
+.prow .pcomment{grid-column:1 / -1;margin-top:3px;padding:6px 9px;font-size:12px;
+  color:#cdd9e5;background:var(--panel2);border:1px solid var(--line);
+  border-left:3px solid var(--accent);border-radius:6px;white-space:pre-wrap;cursor:text}
+.prow .pcomment .cmtag{color:var(--muted);font-weight:700;text-transform:uppercase;
+  font-size:10px;letter-spacing:.5px;margin-right:7px}
+.prow .pcomment-edit{grid-column:1 / -1;margin-top:3px}
+.prow .pcomment-edit textarea{width:100%;min-height:46px;background:var(--bg);color:var(--txt);
+  border:1px solid var(--accent);border-radius:6px;padding:6px 8px;
+  font:12px/1.5 inherit;resize:vertical;outline:none}
+/* a completed row reads as muted, with a green done-pill (st-done stays grey) */
+.prow.isdone .ptitle{color:var(--muted)}
+.prow.isdone{border-left-color:var(--green)}
+
+/* later zone — parked: visible but subdued, out of the active flow */
+#laterZone .prow{opacity:.82;border-left-color:var(--later)}
+#laterZone .prow:hover{opacity:1}
+#laterZone .zonehead h2{color:#9fe0e8}
+
+/* archive zone is subdued */
+#archZone .prow{opacity:.72}
+#archZone .prow:hover{opacity:1}
+#archZone.collapsed .archbody{display:none}
+.arctoggle{cursor:pointer;user-select:none}
+.arctoggle .gcar{display:inline-block;transition:transform .15s}
+#archZone.collapsed .arctoggle .gcar{transform:rotate(-90deg)}
+
+.emptyzone{color:var(--muted);font-size:12.5px;font-style:italic;padding:6px 2px}
