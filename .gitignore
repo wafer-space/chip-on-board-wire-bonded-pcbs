@@ -50,3 +50,6 @@ fp-lib-table
 
 # pcbdiff reports (tools/pcbdiff)
 .pcbdiff/
+
+# rev0fix work files (tools/rev0fix)
+.rev0fix/

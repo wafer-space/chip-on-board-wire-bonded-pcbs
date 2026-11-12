@@ -15,8 +15,9 @@ window.DOC = {
     {ch:3, t:"Decided: Edit the file on Rev 0's errors (Q5), and order ENIG at 1.0 mm (Q3). Nothing open now."},
     {ch:4, t:"1x1: rules set to 0.23 mm, tracks shoved, refilled. KiCad's hole errors at 0.23 mm went from 200+ to 34. The last 12 track spots wait on the via spacing."},
     {ch:5, t:"1x1: vias spread and tracks finished, so KiCad's hole errors are 0. The Rev 0 errors from 2026-11-10 came from last night's zip; the fixed board hasn't been exported yet. Next: regenerate the teardrops, re-run DRC, export, upload. New tool: `git pcbdiff` shows what each change moved."},
+    {ch:6, t:"Rev 0 flagged component (pad) holes at 0.233 and then 0.253 mm, while vias at 0.23 mm passed. KiCad had only one hole clearance, so our DRC missed them. New rules: **vias 0.25 mm, pad holes 0.31 mm**. The 1x1 was restarted from the original and fixed in one run of the new `tools/rev0fix`: DRC clean, teardrops rebuilt by KiCad, v3 zip exported. The other three designs are one command each."},
   ],
-  chapter: 5,
+  chapter: 6,
   planDoc: {href:"plan.html", ch:3},
 
   cards: [
@@ -106,28 +107,28 @@ window.DOC = {
   actions: [
     /* ---- Phase 1: 1x1 ---- */
     {id:"D1-DUP", ch:1, status:"done", what:"Delete the **2 duplicate vias**: `/pad_3` at (165.250, 87.804) and `/pad_4` at (165.790, 88.210). Done 2026-11-10; it cleared Rev 0's two hole-spacing errors."},
-    {id:"D1-RULES", ch:4, status:"done", what:"Board Setup → Constraints: minimum **hole clearance 0.20 → 0.23 mm**. Then the GND pour zone (all four layers): **clearance 0.15 → 0.16 mm**. Refill zones. Done 2026-11-10: after the refill, **0** pour or teardrop spots are under 0.2286 mm (was 54+ pour and 25 teardrops)."},
-    {id:"D1-VIAVIA", ch:5, status:"done", what:"Done 2026-11-10. **37 vias moved**, most by 0.01 to 0.04 mm and the largest 0.057 mm (`/pad_22`), with their tracks dragged along. They were solved together as one minimum-movement problem, since the fan-out rows are chains and moving one via one way pushes it into the next. Every via pair is now at least **0.233 mm** hole to pad (was 0.200; 0.575 → 0.608 mm centre to centre). Board-edge clearance stays at 0.5 mm."},
-    {id:"D1-TRACKS", ch:5, status:"done", what:"Done 2026-11-10. First shove: 37 track moves, **49 → 12** track spots. The via solve then moved 38 track corners with the vias and cleared the last 12. Track spots under 0.23 mm: **0**. Includes both spots Rev 0 named (`PWR_AUX_1` by `U102` pad 77, and via `/pad_54`)."},
-    {id:"D1-TEARS", ch:5, status:"done", what:"Done 2026-11-10. The refill cleared every teardrop spot (was 25), and via `/pad_66` to `U102` pad 68 is fixed. KiCad's Python can't regenerate teardrops, so the **66 teardrops on moved vias were shifted with their via**, then refilled. Teardrops on pads were left as they were. Regenerating them in the KiCad window later is optional tidying."},
-    {id:"D1-DRC", ch:5, status:"done", what:"Done 2026-11-10, after the teardrop shift: **0 hole-clearance errors** at 0.23 mm and at 0.2286 mm, 0 unconnected, and only the 24 old library, courtyard, silk and text items."},
-    {id:"D1-EXPORT", ch:5, status:"done", what:"Done 2026-11-10 15:09: **`run-2/1x1-cob/production/1x1-mezzanine_REV0-UPLOAD_2026-11-10.zip`**. Exported with Fabrication Toolkit (zone fill on, no V-cut layer). Trimmed to the same 12 files as the zip that reached Rev 0's DFM, without the two drill maps and the empty NPTH drill file. 37 drill positions differ from the old zip, one per moved via."},
-    {id:"D1-REV0", ch:3, status:"ready", what:"Upload to Rev 0 with **ENIG, 1.0 mm, 1 oz outer copper** on the order form. On any error, choose **Edit the file**, fix and upload the new zip. **Done when its DFM shows no errors.**"},
+    {id:"D1-RULES", ch:6, status:"done", what:"Restarted from the original board (3088e84, duplicates removed) on 2026-11-10. `tools/rev0fix` sets the rules: **via hole 0.25 mm** in Board Setup, and **pad (component) hole 0.31 mm** plus **0.3048 mm different-net hole to hole** in `1x1-mezzanine.kicad_dru`. Rev 0 flagged pad holes at 0.233 and 0.253 mm but passed vias at 0.23, and KiCad has only one hole clearance in Board Setup, so the pad-hole rule lives in the `.kicad_dru`. That is why our DRC missed pad 77."},
+    {id:"D1-VIAVIA", ch:6, status:"done", what:"One solver round from the original: **64 vias** moved (7 over 0.1 mm), with their tracks dragged along. 0 hole-to-hole spots under 0.30 mm (was 21 errors)."},
+    {id:"D1-TRACKS", ch:6, status:"done", what:"Same round: **81 track corners** moved, 322 tracks touched in all. Track-to-track distance is now measured exactly, not sampled. A sampled check missed a 0.083 mm `/pad_24` to `PWR_AUX_0` spot on the first try."},
+    {id:"D1-TEARS", ch:6, status:"done", what:"**Rebuilt by KiCad**, not shifted: `kicad-cli pcb drc --refill-zones --save-board` regenerates teardrops to fit the moved tracks. 160 → 153 teardrops, because KiCad drops the ones that no longer fit."},
+    {id:"D1-DRC", ch:6, status:"done", what:"Clean: 0 hole, hole-to-hole and copper errors, 0 unconnected, and only the 24 old library, courtyard, silk and text items. Every pad hole is ≥ 0.31 mm from other copper, and every via hole ≥ 0.2505 mm. Diff vs original: `git pcbdiff 3088e84 --target 0.25`."},
+    {id:"D1-EXPORT", ch:6, status:"done", what:"**`run-2/1x1-cob/production/1x1-mezzanine_REV0-UPLOAD_2026-11-10_v3.zip`** (16:27), the only zip in `production/`. 12 files: no drill maps and no empty NPTH file, same as the zips that reached Rev 0. The v1 and v2 zips were removed; v2 was flagged at pad 77."},
+    {id:"D1-REV0", ch:6, status:"ready", what:"Upload **the v3 zip** to Rev 0 with **ENIG, 1.0 mm, 1 oz outer copper** on the order form. On any error, choose **Edit the file**, fix and upload the new zip. **Done when its DFM shows no errors.**"},
 
     /* ---- Phase 2: 1x0p5 ---- */
-    {id:"D2-RULES", ch:2, status:"ready", what:"Board Setup minimum **hole clearance 0.205 → 0.23 mm**, GND pour **clearance 0.15 → 0.16 mm**, refill. Should clear the 58+ via-to-pour spots (worst 0.2055 mm)."},
-    {id:"D2-COPPER", ch:2, status:"ready", what:"Move what DRC still flags: **23 via pairs** (worst 0.205 mm), **about 41 track spots** (worst 0.205 mm), **28 teardrops** and **2 pad spots**. Same fixes as the 1x1."},
-    {id:"D2-REV0", ch:3, status:"ready", what:"DRC clean at 0.23 mm, export `production/` zip, upload to Rev 0 (ENIG, 1.0 mm, 1 oz; Edit the file on errors). **Done when its DFM shows no errors.** Fix anything new it raises, such as the bond fingers (Q1) or the die-pad holes (Q2)."},
+    {id:"D2-RULES", ch:6, status:"ready", what:"Run **`python tools/rev0fix/rev0fix.py <board>.kicad_pcb --export v1`**. It sets the rules (via hole 0.25 mm, pad hole 0.31 mm, hole to hole 0.254 / 0.3048 mm), moves vias and tracks, refills, rebuilds teardrops, checks DRC and exports the upload zip. On the 1x1 this took one round. If it prints NEEDS HAND REROUTE, fix that track in KiCad and run it again."},
+    {id:"D2-COPPER", ch:6, status:"ready", what:"Done by the rev0fix run in D2-RULES. Count at the 0.20 mm check: **23 via pairs** (worst 0.205 mm), **about 41 track spots** (worst 0.205 mm), **28 teardrops** and **2 pad spots**. Same fixes as the 1x1."},
+    {id:"D2-REV0", ch:3, status:"ready", what:"DRC clean at 0.25 mm, export `production/` zip, upload to Rev 0 (ENIG, 1.0 mm, 1 oz; Edit the file on errors). **Done when its DFM shows no errors.** Fix anything new it raises, such as the bond fingers (Q1) or the die-pad holes (Q2)."},
 
     /* ---- Phase 3: 0p5x1 ---- */
-    {id:"D3-RULES", ch:2, status:"ready", what:"Board Setup minimum **hole clearance 0.20 → 0.23 mm**, GND pour **clearance 0.15 → 0.16 mm**, refill. Should clear the 60+ via-to-pour spots (worst 0.2005 mm)."},
-    {id:"D3-COPPER", ch:2, status:"ready", what:"Move what DRC still flags: **32 via pairs** (worst 0.200 mm), **about 89 track spots** (worst 0.200 mm), **48 teardrops** and **6 pad spots**. The most work of the four."},
-    {id:"D3-REV0", ch:3, status:"ready", what:"DRC clean at 0.23 mm, export `production/` zip, upload to Rev 0 (ENIG, 1.0 mm, 1 oz; Edit the file on errors). **Done when its DFM shows no errors.**"},
+    {id:"D3-RULES", ch:6, status:"ready", what:"Run **`python tools/rev0fix/rev0fix.py <board>.kicad_pcb --export v1`**. It sets the rules (via hole 0.25 mm, pad hole 0.31 mm, hole to hole 0.254 / 0.3048 mm), moves vias and tracks, refills, rebuilds teardrops, checks DRC and exports the upload zip. On the 1x1 this took one round. If it prints NEEDS HAND REROUTE, fix that track in KiCad and run it again."},
+    {id:"D3-COPPER", ch:6, status:"ready", what:"Done by the rev0fix run in D3-RULES. Count at the 0.20 mm check: **32 via pairs** (worst 0.200 mm), **about 89 track spots** (worst 0.200 mm), **48 teardrops** and **6 pad spots**. The most work of the four."},
+    {id:"D3-REV0", ch:3, status:"ready", what:"DRC clean at 0.25 mm, export `production/` zip, upload to Rev 0 (ENIG, 1.0 mm, 1 oz; Edit the file on errors). **Done when its DFM shows no errors.**"},
 
     /* ---- Phase 4: 0p5x0p5 ---- */
-    {id:"D4-RULES", ch:2, status:"ready", what:"Board Setup minimum **hole clearance 0.20 → 0.23 mm**, GND pour **clearance 0.15 → 0.16 mm**, refill. Should clear the 54+ via-to-pour spots (worst 0.2005 mm)."},
-    {id:"D4-COPPER", ch:2, status:"ready", what:"Move what DRC still flags: **9 via pairs** (worst 0.200 mm), **about 56 track spots** (worst 0.200 mm) and **12 teardrops**. No die-pad holes on this one."},
-    {id:"D4-REV0", ch:3, status:"ready", what:"DRC clean at 0.23 mm, export `production/` zip, upload to Rev 0 (ENIG, 1.0 mm, 1 oz; Edit the file on errors). **Done when its DFM shows no errors.**"},
+    {id:"D4-RULES", ch:6, status:"ready", what:"Run **`python tools/rev0fix/rev0fix.py <board>.kicad_pcb --export v1`**. It sets the rules (via hole 0.25 mm, pad hole 0.31 mm, hole to hole 0.254 / 0.3048 mm), moves vias and tracks, refills, rebuilds teardrops, checks DRC and exports the upload zip. On the 1x1 this took one round. If it prints NEEDS HAND REROUTE, fix that track in KiCad and run it again."},
+    {id:"D4-COPPER", ch:6, status:"ready", what:"Done by the rev0fix run in D4-RULES. Count at the 0.20 mm check: **9 via pairs** (worst 0.200 mm), **about 56 track spots** (worst 0.200 mm) and **12 teardrops**. No die-pad holes on this one."},
+    {id:"D4-REV0", ch:3, status:"ready", what:"DRC clean at 0.25 mm, export `production/` zip, upload to Rev 0 (ENIG, 1.0 mm, 1 oz; Edit the file on errors). **Done when its DFM shows no errors.**"},
 
     /* ---- Phase 5: 1x1 panel (parked) ---- */
     {id:"P1-BUILD", ch:1, status:"ready", what:"Rebuild from the passing `1x1-mezzanine.kicad_pcb`: 6 × 4 boards, 14 V-cuts, 7 mm rails. **Don't refill zones on the panel.** Should clear its panel-only failures: 48 via-to-copper hits (worst 0.176 mm) and 48 single-spoke thermals."},
@@ -208,5 +209,6 @@ window.DOC = {
     {ch:3, t:"decided: Edit the file on Rev 0 errors; order ENIG, 1.0 mm, 1 oz"},
     {ch:4, t:"1x1: D1-RULES done; tracks shoved 49 → 12 spots; D1-VIAVIA next, then re-run the shove; regenerate teardrops before export"},
     {ch:5, t:"1x1: D1-VIAVIA and D1-TRACKS done; 0 hole errors in KiCad DRC; teardrops, export and upload left"},
+    {ch:6, t:"separate hole clearances: vias 0.25 mm, pad holes 0.31 mm; 1x1 restarted from the original and fixed with `tools/rev0fix` (v3 zip); other designs use the same command"},
   ],
 };
