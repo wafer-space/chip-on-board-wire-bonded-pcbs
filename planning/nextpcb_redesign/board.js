@@ -16,8 +16,9 @@ window.DOC = {
     {ch:4, t:"1x1: rules set to 0.23 mm, tracks shoved, refilled. KiCad's hole errors at 0.23 mm went from 200+ to 34. The last 12 track spots wait on the via spacing."},
     {ch:5, t:"1x1: vias spread and tracks finished, so KiCad's hole errors are 0. The Rev 0 errors from 2026-11-10 came from last night's zip; the fixed board hasn't been exported yet. Next: regenerate the teardrops, re-run DRC, export, upload. New tool: `git pcbdiff` shows what each change moved."},
     {ch:6, t:"Rev 0 flagged component (pad) holes at 0.233 and then 0.253 mm, while vias at 0.23 mm passed. KiCad had only one hole clearance, so our DRC missed them. New rules: **vias 0.25 mm, pad holes 0.31 mm**. The 1x1 was restarted from the original and fixed in one run of the new `tools/rev0fix`: DRC clean, teardrops rebuilt by KiCad, v3 zip exported. The other three designs are one command each."},
+    {ch:7, t:"The 1x1 passed Rev 0. The same fix ran on the other three, and all are DRC clean with v1 upload zips. The 0p5x1 needed the U102 hole-spacing waiver you gave, plus two choices of mine that wait on your OK (Q7): C108 moved 0.095 mm, and vias/tracks 0.45 mm from the edge. Change report with diffs: `rev0fix_changes/index.html`."},
   ],
-  chapter: 6,
+  chapter: 7,
   planDoc: {href:"plan.html", ch:3},
 
   cards: [
@@ -40,14 +41,16 @@ window.DOC = {
       {ch:2, by:"claude", t:"Rev 0's page (https://www.nextpcb.com/rev0-pcba) gives 3.5 mil line/space, a 0.2 mm minimum via, and ENIG but not ENEPIG. Rev 0 flagged hole-to-trace gaps of 0.200 and 0.201 mm, so its hole limit is above that. The target is **0.23 mm from the hole wall**. That's NextPCB's published 0.229 mm plated-hole limit, and it's also their 0.178 mm via limit plus room for the drill to grow 0.1 mm. [check_board.py](check/check_board.py) still checks the Standard limits, so it will always fail on things Rev 0 accepted, like the 0.075 mm via ring. Use it only to measure copper to V-cuts."},
     ]},
 
-  {id:"HOLES", title:"Hole-to-copper clearance: Rev 0's last errors", status:"resolved",
-    state:"Raise the hole clearance to 0.23 mm in Board Setup and the GND pour clearance to 0.16 mm, refill, then move whatever KiCad's DRC still flags. On the 1x1 that's 21 via pairs, about 47 track spots, 25 teardrops and 1 pad. Decided: on Rev 0's error prompt, choose Edit the file and upload the fixed zip.",
-    changes:[{ch:2, t:"new: the remaining Rev 0 errors and how to clear them"}, {ch:3, t:"decided: Edit the file"}],
+  {id:"HOLES", title:"Hole-to-copper clearance: Rev 0's last errors", status:"open",
+    state:"`tools/rev0fix` sets via hole 0.25 mm, pad hole 0.31 mm and hole to hole 0.254 / 0.3048 mm, then moves vias and track corners until KiCad's DRC is clean. That passed Rev 0 on the 1x1. The 1x0p5 and 0p5x0p5 are clean and exported. The 0p5x1 is clean and exported too, with U102's hole spacing waived. Its upload waits on Q7.",
+    changes:[{ch:2, t:"new: the remaining Rev 0 errors and how to clear them"}, {ch:3, t:"decided: Edit the file"}, {ch:7, t:"1x1 passed; other three fixed and exported; Q7 open on two 0p5x1 choices"}],
     stream:[
       {ch:2, by:"user", t:"In the error section they give you two options: 1) Allow the cut trace, 2) Edit the file. Edit the file lets you upload a new gerber file. That seems easy enough. I cannot decipher the former."},
       {ch:2, by:"claude", t:"\"Allow the cut trace\" lets NextPCB's engineers shave copper off the trace beside the hole until it meets their limit. We wouldn't see what they cut, and about 150 spots on the 1x1 sit as close as the two they named, some next to the die. So I'd pick **Edit the file** ([Q5](plan.html#questions)).\n\nA scan of the 1x1 at 0.23 mm from the hole wall, counting each pair once:\n\n| What's too close to a hole | Pairs | Worst | Fix |\n|---|--:|--:|---|\n| GND pour | 54+ | 0.2005 | Board Setup + zone clearance, then refill |\n| Neighbouring via | 21 | 0.1999 | Move vias about 0.03 mm apart |\n| Track | 47 | 0.2000 | Nudge or narrow the track |\n| Teardrop | 25 | 0.2005 | Refill; delete any still too close |\n| Pad | 1 | 0.2074 | Move the via |\n\nThe pour comes from two settings. Inner-layer knockouts follow the 0.20 mm hole clearance in Board Setup, and on the outer layers the pour sits 0.15 mm from a 0.45 mm via pad, which leaves 0.225 mm to the hole. Raising those to 0.23 mm and 0.16 mm costs nothing. Once Board Setup says 0.23 mm, KiCad's DRC lists everything left to move."},
       {ch:3, by:"user", t:"We have decided to edit the file."},
       {ch:3, by:"claude", t:"Recorded. The upload task on each design now says to choose Edit the file and upload the fixed zip. Nothing on this card waits on anything: the 1x1 tasks can start with the Board Setup change."},
+      {ch:7, by:"user", t:"The changes we made for the 1x1 worked. I would like for us to do the same thing for the other 3 boards. For the 0p5x1 we can disregard the spacing on the main footprint. Please also create a local html file that details the changes including the diff."},
+      {ch:7, by:"claude", t:"Done on all three, each DRC clean with a v1 zip in its `production/` folder:\n\n| Board | Hole errors before → after | Vias moved | Largest via move |\n|---|--:|--:|--:|\n| 1x0p5 | 140 → 0 | 61 | 0.227 mm |\n| 0p5x1 | 194 → 0 | 75 | 0.209 mm |\n| 0p5x0p5 | 88 → 0 | 51 | 0.084 mm |\n\nOn the 0p5x1, U102's hole spacing is waived as you said. Seven via-to-U102-pad gaps stay under 0.25 mm, the smallest 0.177 mm, and copper clearance still passes. Even with the waiver, the solver found no way through. It needed two more things, which I chose and you should OK before upload ([Q7](plan.html#questions)): **C108 moved 0.095 mm left**, and **vias and tracks 0.45 mm from the board edge** instead of 0.5. That is still above NextPCB's 0.4 mm V-cut limit, and the pour stays at 0.5. The report with the rule diffs, tool diffs and per-board geometry diffs is [rev0fix_changes/index.html](rev0fix_changes/index.html)."},
     ]},
 
   {id:"VIAS", title:"Vias: keep the 0.30 mm drill", status:"resolved",
@@ -102,6 +105,7 @@ window.DOC = {
     {id:"Q4", card:"PANEL_FLOW", ch:1, status:"later", q:"How were the panels built, and do you want that scripted so the four rebuilds match?"},
     {id:"Q5", card:"HOLES", ch:2, status:"answered", ach:3, q:"For Rev 0's hole-to-trace errors, pick \"Allow the cut trace\" or \"Edit the file\"?", answer:"Edit the file: fix the copper in KiCad and upload a new zip."},
     {id:"Q6", card:"PANEL_FLOW", ch:2, status:"later", q:"Rev 0 panelizes a single design itself. Do we still need our own panels, for another fab or a later run?"},
+    {id:"Q7", card:"HOLES", ch:7, status:"open", q:"OK to upload the 0p5x1 with C108 moved 0.095 mm left, and vias and tracks 0.45 mm from the board edge (pour still 0.5 mm, NextPCB's V-cut limit 0.4 mm)?"},
   ],
 
   actions: [
@@ -113,22 +117,22 @@ window.DOC = {
     {id:"D1-TEARS", ch:6, status:"done", what:"**Rebuilt by KiCad**, not shifted: `kicad-cli pcb drc --refill-zones --save-board` regenerates teardrops to fit the moved tracks. 160 → 153 teardrops, because KiCad drops the ones that no longer fit."},
     {id:"D1-DRC", ch:6, status:"done", what:"Clean: 0 hole, hole-to-hole and copper errors, 0 unconnected, and only the 24 old library, courtyard, silk and text items. Every pad hole is ≥ 0.31 mm from other copper, and every via hole ≥ 0.2505 mm. Diff vs original: `git pcbdiff 3088e84 --target 0.25`."},
     {id:"D1-EXPORT", ch:6, status:"done", what:"**`run-2/1x1-cob/production/1x1-mezzanine_REV0-UPLOAD_2026-11-10_v3.zip`** (16:27), the only zip in `production/`. 12 files: no drill maps and no empty NPTH file, same as the zips that reached Rev 0. The v1 and v2 zips were removed; v2 was flagged at pad 77."},
-    {id:"D1-REV0", ch:6, status:"ready", what:"Upload **the v3 zip** to Rev 0 with **ENIG, 1.0 mm, 1 oz outer copper** on the order form. On any error, choose **Edit the file**, fix and upload the new zip. **Done when its DFM shows no errors.**"},
+    {id:"D1-REV0", ch:7, status:"done", what:"Uploaded **the v3 zip** to Rev 0 with **ENIG, 1.0 mm, 1 oz outer copper**. **Passed: its DFM showed no errors.**"},
 
     /* ---- Phase 2: 1x0p5 ---- */
-    {id:"D2-RULES", ch:6, status:"ready", what:"Run **`python tools/rev0fix/rev0fix.py <board>.kicad_pcb --export v1`**. It sets the rules (via hole 0.25 mm, pad hole 0.31 mm, hole to hole 0.254 / 0.3048 mm), moves vias and tracks, refills, rebuilds teardrops, checks DRC and exports the upload zip. On the 1x1 this took one round. If it prints NEEDS HAND REROUTE, fix that track in KiCad and run it again."},
-    {id:"D2-COPPER", ch:6, status:"ready", what:"Done by the rev0fix run in D2-RULES. Count at the 0.20 mm check: **23 via pairs** (worst 0.205 mm), **about 41 track spots** (worst 0.205 mm), **28 teardrops** and **2 pad spots**. Same fixes as the 1x1."},
-    {id:"D2-REV0", ch:3, status:"ready", what:"DRC clean at 0.25 mm, export `production/` zip, upload to Rev 0 (ENIG, 1.0 mm, 1 oz; Edit the file on errors). **Done when its DFM shows no errors.** Fix anything new it raises, such as the bond fingers (Q1) or the die-pad holes (Q2)."},
+    {id:"D2-RULES", ch:7, status:"done", what:"`rev0fix` set the Rev 0 rules (via hole 0.25 mm, pad hole 0.31 mm, hole to hole 0.254 / 0.3048 mm) in `mezzanine-1x0p5.kicad_pro` and `.kicad_dru`."},
+    {id:"D2-COPPER", ch:7, status:"done", what:"Two rounds: **61 vias** (largest 0.227 mm) and 334 track pieces moved. DRC hole errors **140 → 0**, 0 unconnected. One new harmless warning: a 0.35 mm GND stub off U101's MP pad no longer ends in the pour."},
+    {id:"D2-REV0", ch:7, status:"ready", what:"Upload **`run-2/1x0p5-cob/production/mezzanine-1x0p5_REV0-UPLOAD_2026-11-12_v1.zip`** to Rev 0 (ENIG, 1.0 mm, 1 oz; Edit the file on errors). **Done when its DFM shows no errors.** Fix anything new it raises, such as the bond fingers (Q1) or the die-pad holes (Q2)."},
 
     /* ---- Phase 3: 0p5x1 ---- */
-    {id:"D3-RULES", ch:6, status:"ready", what:"Run **`python tools/rev0fix/rev0fix.py <board>.kicad_pcb --export v1`**. It sets the rules (via hole 0.25 mm, pad hole 0.31 mm, hole to hole 0.254 / 0.3048 mm), moves vias and tracks, refills, rebuilds teardrops, checks DRC and exports the upload zip. On the 1x1 this took one round. If it prints NEEDS HAND REROUTE, fix that track in KiCad and run it again."},
-    {id:"D3-COPPER", ch:6, status:"ready", what:"Done by the rev0fix run in D3-RULES. Count at the 0.20 mm check: **32 via pairs** (worst 0.200 mm), **about 89 track spots** (worst 0.200 mm), **48 teardrops** and **6 pad spots**. The most work of the four."},
-    {id:"D3-REV0", ch:3, status:"ready", what:"DRC clean at 0.25 mm, export `production/` zip, upload to Rev 0 (ENIG, 1.0 mm, 1 oz; Edit the file on errors). **Done when its DFM shows no errors.**"},
+    {id:"D3-RULES", ch:7, status:"done", what:"Same Rev 0 rules, plus `rev0_ignore_U102` (hole spacing at U102 waived, by request) and vias/tracks **0.45 mm** from the edge with the pour kept at 0.5 mm (Q7)."},
+    {id:"D3-COPPER", ch:7, status:"done", what:"**C108 moved 0.095 mm left** (Q7), then four solver rounds: **75 vias** (largest 0.209 mm) and 426 track pieces moved. Two hand fixes after: a VDD_CORE_1 corner 4 µm off U102 pad 78, and the /bidir_22 via moved 0.2 mm to close a 0.088 mm GND spur. DRC hole errors **194 → 0**, 0 unconnected."},
+    {id:"D3-REV0", ch:7, status:"blocked", waiting:["Q7"], what:"Upload **`run-2/0p5x1-cob/production/mezzanine-0p5x1_REV0-UPLOAD_2026-11-14_v1.zip`** to Rev 0 (ENIG, 1.0 mm, 1 oz; Edit the file on errors). **Done when its DFM shows no errors.** Watch for U102: its hole spacing is waived, the smallest via-to-pad hole gap 0.177 mm."},
 
     /* ---- Phase 4: 0p5x0p5 ---- */
-    {id:"D4-RULES", ch:6, status:"ready", what:"Run **`python tools/rev0fix/rev0fix.py <board>.kicad_pcb --export v1`**. It sets the rules (via hole 0.25 mm, pad hole 0.31 mm, hole to hole 0.254 / 0.3048 mm), moves vias and tracks, refills, rebuilds teardrops, checks DRC and exports the upload zip. On the 1x1 this took one round. If it prints NEEDS HAND REROUTE, fix that track in KiCad and run it again."},
-    {id:"D4-COPPER", ch:6, status:"ready", what:"Done by the rev0fix run in D4-RULES. Count at the 0.20 mm check: **9 via pairs** (worst 0.200 mm), **about 56 track spots** (worst 0.200 mm) and **12 teardrops**. No die-pad holes on this one."},
-    {id:"D4-REV0", ch:3, status:"ready", what:"DRC clean at 0.25 mm, export `production/` zip, upload to Rev 0 (ENIG, 1.0 mm, 1 oz; Edit the file on errors). **Done when its DFM shows no errors.**"},
+    {id:"D4-RULES", ch:7, status:"done", what:"`rev0fix` set the Rev 0 rules (via hole 0.25 mm, pad hole 0.31 mm, hole to hole 0.254 / 0.3048 mm) in `0p5x0p5-cob.kicad_pro` and `.kicad_dru`."},
+    {id:"D4-COPPER", ch:7, status:"done", what:"One round: **51 vias** (largest 0.084 mm) and 270 track pieces moved. DRC hole errors **88 → 0**, 0 unconnected, no new warnings."},
+    {id:"D4-REV0", ch:7, status:"ready", what:"Upload **`run-2/0p5x0p5-cob/production/0p5x0p5-cob_REV0-UPLOAD_2026-11-12_v1.zip`** to Rev 0 (ENIG, 1.0 mm, 1 oz; Edit the file on errors). **Done when its DFM shows no errors.**"},
 
     /* ---- Phase 5: 1x1 panel (parked) ---- */
     {id:"P1-BUILD", ch:1, status:"ready", what:"Rebuild from the passing `1x1-mezzanine.kicad_pcb`: 6 × 4 boards, 14 V-cuts, 7 mm rails. **Don't refill zones on the panel.** Should clear its panel-only failures: 48 via-to-copper hits (worst 0.176 mm) and 48 single-spoke thermals."},
@@ -160,7 +164,7 @@ window.DOC = {
   ],
 
   phases: [
-    {n:1, id:"P1", title:"Design: 1x1", status:"ready", risk:"low",
+    {n:1, id:"P1", title:"Design: 1x1", status:"done", risk:"low",
       goal:"Clear Rev 0's last two errors on `1x1-mezzanine` by holding every hole 0.23 mm from other copper, then re-upload.",
       acts:["D1-DUP","D1-RULES","D1-VIAVIA","D1-TRACKS","D1-TEARS","D1-DRC","D1-EXPORT","D1-REV0"],
       verify:"NextPCB Rev 0's DFM shows no errors for `run-2/1x1-cob/production/1x1-mezzanine.zip`.",
@@ -202,7 +206,7 @@ window.DOC = {
       audit:"Don't refill zones on the panel."},
   ],
 
-  plan: "Get each run 2 single COB design through NextPCB Rev 0's DFM check, starting with the 1x1. The 1x1 is down to two hole-to-trace errors, and about 150 other spots on it are just as tight. The fix on every design: raise the hole clearance to 0.23 mm in Board Setup and the GND pour clearance to 0.16 mm, refill, then move the vias, tracks and teardrops KiCad's DRC still flags. The via drill stays at 0.30 mm. Upload with ENIG, 1.0 mm and 1 oz outer copper, choose Edit the file if anything is left, and a design is done when Rev 0 shows no errors. Our own panels are parked because Rev 0 panelizes for us.",
+  plan: "Get each run 2 single COB design through NextPCB Rev 0's DFM check. The fix on every design is `tools/rev0fix`: via hole 0.25 mm, pad hole 0.31 mm, hole to hole 0.254 / 0.3048 mm, then vias and track corners moved until KiCad's DRC is clean. The via drill stays at 0.30 mm. **The 1x1 passed Rev 0.** The 1x0p5 and 0p5x0p5 are DRC clean with v1 zips, ready to upload. The 0p5x1 is clean and exported with U102's hole spacing waived. Its upload waits on Q7, for C108 moved 0.095 mm and 0.45 mm via/track edge clearance. Upload with ENIG, 1.0 mm and 1 oz outer copper, and choose Edit the file if anything is left. Change report: `rev0fix_changes/index.html`. Our own panels are parked because Rev 0 panelizes for us.",
   planChanges: [
     {ch:1, t:"first version: 8 phases and 48 tasks, from a check of all four designs and panels"},
     {ch:2, t:"Rev 0 is the target and its DFM is the gate; via drill stays 0.30 mm; hole clearance 0.23 mm on all four designs; panels parked"},
@@ -210,5 +214,6 @@ window.DOC = {
     {ch:4, t:"1x1: D1-RULES done; tracks shoved 49 → 12 spots; D1-VIAVIA next, then re-run the shove; regenerate teardrops before export"},
     {ch:5, t:"1x1: D1-VIAVIA and D1-TRACKS done; 0 hole errors in KiCad DRC; teardrops, export and upload left"},
     {ch:6, t:"separate hole clearances: vias 0.25 mm, pad holes 0.31 mm; 1x1 restarted from the original and fixed with `tools/rev0fix` (v3 zip); other designs use the same command"},
+    {ch:7, t:"1x1 passed Rev 0; 1x0p5, 0p5x1, 0p5x0p5 fixed and exported (v1 zips); U102 hole spacing waived on 0p5x1; Q7 open on C108 move and 0.45 mm edge; change report added"},
   ],
 };

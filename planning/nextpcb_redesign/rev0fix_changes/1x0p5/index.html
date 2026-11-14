@@ -1,0 +1,923 @@
+<!doctype html><html><head><meta charset='utf-8'><title>pcbdiff mezzanine-1x0p5.kicad_pcb</title>
+<style>
+    :root{--bg:#111;--fg:#ddd;--mut:#999;--line:#333;--red:#eb463c;--grn:#46e15f;--yel:#ffd700}
+    body{background:var(--bg);color:var(--fg);font:14px/1.45 system-ui,Segoe UI,sans-serif;margin:0;padding:16px 20px 60px}
+    h1{font-size:20px;margin:0 0 4px} h2{font-size:16px;margin:28px 0 8px;border-bottom:1px solid var(--line);padding-bottom:4px}
+    .mut{color:var(--mut)} table{border-collapse:collapse;margin:6px 0} td,th{border-bottom:1px solid var(--line);padding:3px 10px 3px 0;text-align:left;vertical-align:top}
+    th{color:var(--mut);font-weight:600} td.n{text-align:right;font-variant-numeric:tabular-nums}
+    .fixed{color:var(--grn)} .new.failure,.worse{color:var(--red)} .better{color:var(--yel)}
+    .key span{display:inline-block;width:12px;height:12px;margin:0 4px -2px 12px}
+    img{max-width:100%;border:1px solid var(--line)} .crops{display:flex;flex-wrap:wrap;gap:10px}
+    .crops figure{margin:0;max-width:460px} .crops img{max-width:460px} figcaption{color:var(--mut);font-size:12px}
+    details summary{cursor:pointer;color:var(--mut)}
+    </style></head><body>
+<h1>run-2\1x0p5-cob\mezzanine-1x0p5.kicad_pcb</h1><div class='mut'>A = <b>7f8c6fd</b> &nbsp;→&nbsp; B = <b>WORK</b> &nbsp;·&nbsp; target hole-to-copper 0.25 mm, hole-to-hole 0.254 mm &nbsp;·&nbsp; generated 2026-11-12 18:39</div>
+<div class='key mut'>Overlays:<span style='background:#555'></span>unchanged<span style='background:var(--red)'></span>only in A (removed)<span style='background:var(--grn)'></span>only in B (added)<span style='border:2px solid var(--yel)'></span>numbered crop</div>
+<h2>Gaps under target</h2><table><tr><th>copper near a hole</th><th>A</th><th>B</th></tr>
+<tr><td>track</td><td class=n>76</td><td class=n>0</td></tr>
+<tr><td>via pad</td><td class=n>52</td><td class=n>0</td></tr>
+<tr><td>pad</td><td class=n>5</td><td class=n>0</td></tr>
+<tr><td>pour</td><td class=n>237</td><td class=n>0</td></tr>
+<tr><td>teardrop</td><td class=n>59</td><td class=n>0</td></tr>
+</table><div class='mut'>Counted per copper item and hole, so a via pair counts twice (each via's pad to the other's hole). Pour and teardrop gaps count once per layer.</div>
+<h2>Board Setup rules</h2>
+<table><tr><th>rule</th><th>A</th><th>B</th></tr><tr><td>min_hole_clearance</td><td>0.205</td><td>0.25</td></tr><tr><td>min_hole_to_hole</td><td>0.205</td><td>0.254</td></tr></table>
+<h2>Zones</h2>
+<table><tr><th>zone</th><th>settings</th><th>fill changed on</th></tr><tr><td>GND</td><td>—</td><td>B.Cu, F.Cu, In1.Cu, In2.Cu</td></tr></table>
+<div class='mut'>Teardrops: 138 → 139 (139 added, 138 removed, 0 reshaped). Teardrops that were not regenerated after their track moved keep their old shape.</div>
+<h2>Vias <span class='mut'>(61)</span></h2>
+<table><tr><th>change</th><th>net</th><th>moved mm</th><th>from</th><th>to</th><th>other</th></tr>
+<tr><td>moved</td><td>/bidir_38</td><td>0.2268</td><td>(137.370, 88.210)</td><td>(137.210, 88.049)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_0</td><td>0.1293</td><td>(147.250, 96.580)</td><td>(147.254, 96.451)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_31</td><td>0.1053</td><td>(143.700, 87.780)</td><td>(143.778, 87.709)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_32</td><td>0.1026</td><td>(143.130, 87.670)</td><td>(143.165, 87.574)</td><td></td></tr>
+<tr><td>moved</td><td>/an_2</td><td>0.0986</td><td>(135.233, 94.361)</td><td>(135.225, 94.263)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_37</td><td>0.0922</td><td>(137.910, 87.980)</td><td>(137.838, 88.038)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_8</td><td>0.0921</td><td>(143.818, 101.484)</td><td>(143.793, 101.573)</td><td></td></tr>
+<tr><td>moved</td><td>/in_3</td><td>0.0778</td><td>(135.596, 96.755)</td><td>(135.617, 96.830)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_16</td><td>0.0770</td><td>(146.390, 98.150)</td><td>(146.317, 98.174)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_26</td><td>0.0734</td><td>(145.870, 90.290)</td><td>(145.911, 90.351)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_35</td><td>0.0708</td><td>(139.040, 87.680)</td><td>(139.003, 87.619)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_9</td><td>0.0695</td><td>(144.397, 101.451)</td><td>(144.419, 101.517)</td><td></td></tr>
+<tr><td>moved</td><td>GND</td><td>0.0632</td><td>(143.650, 89.020)</td><td>(143.704, 89.053)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_14</td><td>0.0614</td><td>(146.370, 99.360)</td><td>(146.368, 99.421)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_17</td><td>0.0595</td><td>(146.310, 97.490)</td><td>(146.330, 97.546)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_22</td><td>0.0567</td><td>(146.240, 94.120)</td><td>(146.263, 94.068)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_36</td><td>0.0561</td><td>(138.501, 87.894)</td><td>(138.456, 87.928)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_4</td><td>0.0487</td><td>(138.948, 101.465)</td><td>(138.975, 101.505)</td><td></td></tr>
+<tr><td>moved</td><td>GND</td><td>0.0473</td><td>(134.890, 89.670)</td><td>(134.848, 89.649)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_45</td><td>0.0452</td><td>(135.481, 91.941)</td><td>(135.464, 91.982)</td><td></td></tr>
+<tr><td>moved</td><td>/an_3</td><td>0.0436</td><td>(135.560, 94.840)</td><td>(135.556, 94.797)</td><td></td></tr>
+<tr><td>moved</td><td>/in_1</td><td>0.0433</td><td>(135.776, 95.653)</td><td>(135.779, 95.696)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_18</td><td>0.0425</td><td>(146.155, 96.115)</td><td>(146.122, 96.088)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_41</td><td>0.0420</td><td>(135.350, 89.220)</td><td>(135.350, 89.262)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_42</td><td>0.0419</td><td>(136.040, 89.970)</td><td>(136.071, 89.998)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_0</td><td>0.0416</td><td>(146.190, 99.980)</td><td>(146.177, 100.020)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_2</td><td>0.0404</td><td>(135.401, 89.971)</td><td>(135.409, 89.931)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_28</td><td>0.0384</td><td>(145.234, 89.320)</td><td>(145.249, 89.285)</td><td></td></tr>
+<tr><td>moved</td><td>/an_1</td><td>0.0370</td><td>(136.050, 93.570)</td><td>(136.070, 93.539)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_23</td><td>0.0353</td><td>(146.624, 93.595)</td><td>(146.654, 93.576)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_19</td><td>0.0346</td><td>(146.730, 96.040)</td><td>(146.745, 96.009)</td><td></td></tr>
+<tr><td>moved</td><td>/in_0</td><td>0.0329</td><td>(135.282, 95.349)</td><td>(135.250, 95.357)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_39</td><td>0.0315</td><td>(136.880, 88.550)</td><td>(136.853, 88.565)</td><td></td></tr>
+<tr><td>moved</td><td>GND</td><td>0.0307</td><td>(134.850, 96.320)</td><td>(134.825, 96.338)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_43</td><td>0.0305</td><td>(135.670, 90.520)</td><td>(135.687, 90.494)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_13</td><td>0.0299</td><td>(145.580, 100.540)</td><td>(145.601, 100.519)</td><td></td></tr>
+<tr><td>moved</td><td>/in_2</td><td>0.0298</td><td>(135.434, 96.198)</td><td>(135.443, 96.227)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_10</td><td>0.0291</td><td>(144.340, 100.860)</td><td>(144.368, 100.867)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_11</td><td>0.0288</td><td>(144.950, 101.110)</td><td>(144.936, 101.135)</td><td></td></tr>
+<tr><td>moved</td><td>GND</td><td>0.0276</td><td>(134.870, 92.070)</td><td>(134.843, 92.074)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_1</td><td>0.0271</td><td>(137.720, 99.830)</td><td>(137.720, 99.857)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_15</td><td>0.0270</td><td>(146.295, 98.785)</td><td>(146.273, 98.800)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_27</td><td>0.0267</td><td>(145.551, 89.806)</td><td>(145.558, 89.831)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_2</td><td>0.0254</td><td>(138.720, 100.360)</td><td>(138.695, 100.360)</td><td></td></tr>
+<tr><td>moved</td><td>GND</td><td>0.0246</td><td>(146.710, 97.040)</td><td>(146.688, 97.030)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_29</td><td>0.0246</td><td>(144.685, 88.970)</td><td>(144.709, 88.965)</td><td></td></tr>
+<tr><td>moved</td><td>/clk</td><td>0.0243</td><td>(136.420, 98.820)</td><td>(136.419, 98.796)</td><td></td></tr>
+<tr><td>moved</td><td>/rst_n</td><td>0.0239</td><td>(136.399, 99.400)</td><td>(136.400, 99.424)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_24</td><td>0.0233</td><td>(146.460, 92.990)</td><td>(146.477, 92.974)</td><td></td></tr>
+<tr><td>moved</td><td>GND</td><td>0.0228</td><td>(141.090, 88.430)</td><td>(141.106, 88.414)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_30</td><td>0.0224</td><td>(143.535, 88.445)</td><td>(143.557, 88.442)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_7</td><td>0.0220</td><td>(143.185, 101.580)</td><td>(143.166, 101.570)</td><td></td></tr>
+<tr><td>moved</td><td>/an_0</td><td>0.0189</td><td>(136.060, 92.900)</td><td>(136.078, 92.894)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_21</td><td>0.0179</td><td>(146.091, 94.681)</td><td>(146.078, 94.668)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_25</td><td>0.0172</td><td>(146.180, 92.440)</td><td>(146.172, 92.425)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_44</td><td>0.0123</td><td>(135.870, 91.510)</td><td>(135.865, 91.499)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_12</td><td>0.0083</td><td>(145.595, 101.165)</td><td>(145.601, 101.159)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_40</td><td>0.0074</td><td>(135.830, 88.780)</td><td>(135.830, 88.773)</td><td></td></tr>
+<tr><td>moved</td><td>GND</td><td>0.0064</td><td>(147.350, 94.970)</td><td>(147.354, 94.965)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_3</td><td>0.0046</td><td>(138.628, 100.981)</td><td>(138.624, 100.984)</td><td></td></tr>
+<tr><td>moved</td><td>GND</td><td>0.0014</td><td>(141.090, 100.530)</td><td>(141.089, 100.531)</td><td></td></tr>
+</table>
+<h2>Tracks <span class='mut'>(334)</span></h2>
+<table><tr><th>change</th><th>net</th><th>layer</th><th>max end moved mm</th><th>at (midpoint)</th><th>other</th></tr>
+<tr><td>moved</td><td>/an_0</td><td>B.Cu</td><td>0.0189</td><td>(136.078, 92.904)</td><td></td></tr>
+<tr><td>moved</td><td>/an_0</td><td>B.Cu</td><td>0.0275</td><td>(138.156, 93.462)</td><td></td></tr>
+<tr><td>moved</td><td>/an_0</td><td>B.Cu</td><td>0.0275</td><td>(136.355, 93.184)</td><td></td></tr>
+<tr><td>moved</td><td>/an_0</td><td>F.Cu</td><td>0.0189</td><td>(136.118, 92.934)</td><td></td></tr>
+<tr><td>moved</td><td>/an_0</td><td>F.Cu</td><td>0.0189</td><td>(136.217, 93.055)</td><td></td></tr>
+<tr><td>moved</td><td>/an_0</td><td>F.Cu</td><td>0.0189</td><td>(136.158, 92.979)</td><td></td></tr>
+<tr><td>moved</td><td>/an_1</td><td>B.Cu</td><td>0.0370</td><td>(136.165, 93.658)</td><td></td></tr>
+<tr><td>moved</td><td>/an_1</td><td>B.Cu</td><td>0.0030</td><td>(137.970, 93.778)</td><td></td></tr>
+<tr><td>moved</td><td>/an_1</td><td>F.Cu</td><td>0.0370</td><td>(136.100, 93.549)</td><td></td></tr>
+<tr><td>moved</td><td>/an_1</td><td>F.Cu</td><td>0.0370</td><td>(136.562, 93.579)</td><td></td></tr>
+<tr><td>moved</td><td>/an_1</td><td>F.Cu</td><td>0.0370</td><td>(136.075, 93.544)</td><td></td></tr>
+<tr><td>moved</td><td>/an_1</td><td>F.Cu</td><td>0.0370</td><td>(136.058, 93.551)</td><td></td></tr>
+<tr><td>moved</td><td>/an_1</td><td>F.Cu</td><td>0.0370</td><td>(136.127, 93.556)</td><td></td></tr>
+<tr><td>moved</td><td>/an_1</td><td>F.Cu</td><td>0.0370</td><td>(136.030, 93.564)</td><td></td></tr>
+<tr><td>moved</td><td>/an_2</td><td>B.Cu</td><td>0.0562</td><td>(137.987, 94.777)</td><td></td></tr>
+<tr><td>moved</td><td>/an_2</td><td>B.Cu</td><td>0.0986</td><td>(135.260, 94.297)</td><td></td></tr>
+<tr><td>moved</td><td>/an_2</td><td>B.Cu</td><td>0.0562</td><td>(138.996, 95.090)</td><td></td></tr>
+<tr><td>moved</td><td>/an_2</td><td>B.Cu</td><td>0.0986</td><td>(136.482, 94.384)</td><td></td></tr>
+<tr><td>moved</td><td>/an_2</td><td>F.Cu</td><td>0.0986</td><td>(135.448, 94.310)</td><td></td></tr>
+<tr><td>moved</td><td>/an_2</td><td>F.Cu</td><td>0.0022</td><td>(135.853, 94.176)</td><td></td></tr>
+<tr><td>moved</td><td>/an_2</td><td>F.Cu</td><td>0.0986</td><td>(135.226, 94.262)</td><td></td></tr>
+<tr><td>moved</td><td>/an_3</td><td>B.Cu</td><td>0.0120</td><td>(137.975, 95.081)</td><td></td></tr>
+<tr><td>moved</td><td>/an_3</td><td>B.Cu</td><td>0.0120</td><td>(138.695, 95.317)</td><td></td></tr>
+<tr><td>moved</td><td>/an_3</td><td>B.Cu</td><td>0.0016</td><td>(139.238, 95.368)</td><td></td></tr>
+<tr><td>moved</td><td>/an_3</td><td>B.Cu</td><td>0.0436</td><td>(136.648, 94.818)</td><td></td></tr>
+<tr><td>moved</td><td>/an_3</td><td>F.Cu</td><td>0.0436</td><td>(135.860, 94.596)</td><td></td></tr>
+<tr><td>moved</td><td>/an_3</td><td>F.Cu</td><td>0.0436</td><td>(135.596, 94.797)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_0</td><td>B.Cu</td><td>0.0239</td><td>(138.580, 99.413)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_0</td><td>B.Cu</td><td>0.0239</td><td>(137.263, 99.586)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_1</td><td>B.Cu</td><td>0.0271</td><td>(138.720, 99.844)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_1</td><td>F.Cu</td><td>0.0271</td><td>(137.725, 99.852)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_1</td><td>F.Cu</td><td>0.0271</td><td>(137.730, 99.426)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_10</td><td>B.Cu</td><td>0.0291</td><td>(143.837, 100.346)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_10</td><td>F.Cu</td><td>0.0291</td><td>(144.264, 100.774)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_11</td><td>B.Cu</td><td>0.0665</td><td>(144.755, 100.618)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_11</td><td>B.Cu</td><td>0.0033</td><td>(143.822, 99.921)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_11</td><td>B.Cu</td><td>0.0665</td><td>(144.424, 100.396)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_11</td><td>B.Cu</td><td>0.0429</td><td>(144.959, 100.998)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_11</td><td>F.Cu</td><td>0.0391</td><td>(144.957, 100.999)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_11</td><td>F.Cu</td><td>0.0666</td><td>(144.771, 100.636)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_11</td><td>F.Cu</td><td>0.0089</td><td>(142.694, 99.897)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_11</td><td>F.Cu</td><td>0.0666</td><td>(143.905, 100.427)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_12</td><td>B.Cu</td><td>0.0083</td><td>(144.611, 100.169)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_12</td><td>B.Cu</td><td>0.0073</td><td>(143.338, 99.182)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_12</td><td>F.Cu</td><td>0.0149</td><td>(143.979, 100.211)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_12</td><td>F.Cu</td><td>0.0016</td><td>(142.876, 99.782)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_12</td><td>F.Cu</td><td>0.0149</td><td>(145.123, 100.682)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_13</td><td>B.Cu</td><td>0.0299</td><td>(144.736, 99.744)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_13</td><td>B.Cu</td><td>0.0299</td><td>(145.566, 100.519)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_13</td><td>F.Cu</td><td>0.0151</td><td>(144.708, 100.008)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_13</td><td>F.Cu</td><td>0.0299</td><td>(145.331, 100.270)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_13</td><td>F.Cu</td><td>0.0151</td><td>(144.057, 100.010)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_13</td><td>F.Cu</td><td>0.0089</td><td>(144.885, 100.017)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_13</td><td>F.Cu</td><td>0.0026</td><td>(143.074, 99.683)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_14</td><td>B.Cu</td><td>0.0614</td><td>(146.332, 99.421)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_14</td><td>B.Cu</td><td>0.0361</td><td>(143.137, 97.154)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_14</td><td>B.Cu</td><td>0.0397</td><td>(143.625, 96.882)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_14</td><td>B.Cu</td><td>0.0866</td><td>(145.843, 98.992)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_14</td><td>B.Cu</td><td>0.0417</td><td>(144.856, 97.923)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_14</td><td>B.Cu</td><td>0.0866</td><td>(146.065, 99.220)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_14</td><td>F.Cu</td><td>0.0614</td><td>(146.109, 99.441)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_14</td><td>F.Cu</td><td>0.0614</td><td>(146.263, 99.421)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_15</td><td>B.Cu</td><td>0.0275</td><td>(145.222, 97.720)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_15</td><td>B.Cu</td><td>0.0270</td><td>(146.273, 98.786)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_15</td><td>B.Cu</td><td>0.0275</td><td>(143.716, 96.660)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_15</td><td>F.Cu</td><td>0.0060</td><td>(145.638, 98.492)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_15</td><td>F.Cu</td><td>0.0270</td><td>(146.135, 98.647)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_16</td><td>B.Cu</td><td>0.0770</td><td>(145.434, 97.291)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_16</td><td>B.Cu</td><td>0.0682</td><td>(143.883, 96.384)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_16</td><td>F.Cu</td><td>0.0770</td><td>(145.827, 98.162)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_17</td><td>B.Cu</td><td>0.0595</td><td>(146.255, 97.226)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_17</td><td>B.Cu</td><td>0.0496</td><td>(145.835, 96.533)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_17</td><td>B.Cu</td><td>0.0595</td><td>(146.310, 97.526)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_17</td><td>F.Cu</td><td>0.0595</td><td>(145.652, 97.488)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_17</td><td>F.Cu</td><td>0.0595</td><td>(146.295, 97.531)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_17</td><td>F.Cu</td><td>0.0595</td><td>(146.320, 97.546)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_18</td><td>B.Cu</td><td>0.0425</td><td>(146.041, 96.004)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_18</td><td>F.Cu</td><td>0.0425</td><td>(146.122, 96.063)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_18</td><td>F.Cu</td><td>0.0425</td><td>(146.087, 96.003)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_18</td><td>F.Cu</td><td>0.0425</td><td>(145.596, 95.982)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_19</td><td>B.Cu</td><td>0.0816</td><td>(145.447, 95.650)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_19</td><td>B.Cu</td><td>0.0816</td><td>(146.570, 95.819)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_19</td><td>B.Cu</td><td>0.0375</td><td>(144.357, 95.549)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_19</td><td>F.Cu</td><td>0.0346</td><td>(146.560, 95.757)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_19</td><td>F.Cu</td><td>0.0346</td><td>(146.745, 95.964)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_2</td><td>B.Cu</td><td>0.0254</td><td>(139.277, 100.225)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_2</td><td>B.Cu</td><td>0.0254</td><td>(138.762, 100.293)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_2</td><td>F.Cu</td><td>0.0254</td><td>(138.735, 100.360)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_2</td><td>F.Cu</td><td>0.0254</td><td>(139.107, 100.040)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_20</td><td>B.Cu</td><td>0.0363</td><td>(146.597, 94.971)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_20</td><td>B.Cu</td><td>0.0343</td><td>(144.443, 94.602)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_20</td><td>B.Cu</td><td>0.0193</td><td>(143.665, 94.082)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_20</td><td>B.Cu</td><td>0.0193</td><td>(143.318, 94.153)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_20</td><td>B.Cu</td><td>0.0363</td><td>(145.700, 95.121)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_21</td><td>B.Cu</td><td>0.0179</td><td>(146.078, 94.668)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_21</td><td>B.Cu</td><td>0.0179</td><td>(145.499, 94.674)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_21</td><td>F.Cu</td><td>0.0179</td><td>(145.554, 94.789)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_21</td><td>F.Cu</td><td>0.0179</td><td>(145.983, 94.765)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_21</td><td>F.Cu</td><td>0.0179</td><td>(146.030, 94.716)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_21</td><td>F.Cu</td><td>0.0179</td><td>(145.975, 94.775)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_22</td><td>B.Cu</td><td>0.0567</td><td>(145.572, 94.094)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_22</td><td>F.Cu</td><td>0.0567</td><td>(146.137, 94.092)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_22</td><td>F.Cu</td><td>0.0232</td><td>(145.432, 94.386)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_22</td><td>F.Cu</td><td>0.0232</td><td>(145.868, 94.247)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_23</td><td>B.Cu</td><td>0.0353</td><td>(146.584, 93.576)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_23</td><td>B.Cu</td><td>0.0196</td><td>(144.684, 93.308)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_23</td><td>B.Cu</td><td>0.0353</td><td>(146.346, 93.446)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_23</td><td>F.Cu</td><td>0.0108</td><td>(145.424, 93.991)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_23</td><td>F.Cu</td><td>0.0353</td><td>(146.379, 93.580)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_23</td><td>F.Cu</td><td>0.0152</td><td>(145.906, 93.786)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_24</td><td>B.Cu</td><td>0.0233</td><td>(144.873, 93.038)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_24</td><td>B.Cu</td><td>0.0233</td><td>(146.449, 93.002)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_24</td><td>F.Cu</td><td>0.0233</td><td>(146.412, 92.974)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_24</td><td>F.Cu</td><td>0.0233</td><td>(146.036, 93.284)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_25</td><td>B.Cu</td><td>0.0172</td><td>(146.127, 92.425)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_25</td><td>B.Cu</td><td>0.0172</td><td>(145.986, 92.533)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_25</td><td>F.Cu</td><td>0.0172</td><td>(146.051, 92.558)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_26</td><td>B.Cu</td><td>0.0734</td><td>(145.901, 90.351)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_26</td><td>B.Cu</td><td>0.0734</td><td>(145.703, 90.488)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_26</td><td>F.Cu</td><td>0.0734</td><td>(145.188, 90.848)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_26</td><td>F.Cu</td><td>0.0734</td><td>(145.824, 90.351)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_27</td><td>B.Cu</td><td>0.0267</td><td>(145.355, 89.819)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_27</td><td>F.Cu</td><td>0.0267</td><td>(145.514, 89.949)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_27</td><td>F.Cu</td><td>0.0267</td><td>(145.538, 89.852)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_28</td><td>B.Cu</td><td>0.0496</td><td>(144.660, 89.594)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_28</td><td>B.Cu</td><td>0.0496</td><td>(145.087, 89.324)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_28</td><td>F.Cu</td><td>0.0384</td><td>(145.120, 89.424)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_29</td><td>B.Cu</td><td>0.0246</td><td>(144.615, 88.965)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_29</td><td>B.Cu</td><td>0.1034</td><td>(143.235, 89.477)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_29</td><td>B.Cu</td><td>0.1034</td><td>(144.278, 89.246)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_29</td><td>F.Cu</td><td>0.0246</td><td>(144.697, 89.457)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_3</td><td>B.Cu</td><td>0.0046</td><td>(138.906, 100.794)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_3</td><td>B.Cu</td><td>0.0046</td><td>(138.691, 100.963)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_3</td><td>B.Cu</td><td>0.0046</td><td>(138.635, 100.974)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_3</td><td>F.Cu</td><td>0.0146</td><td>(139.238, 100.462)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_3</td><td>F.Cu</td><td>0.0146</td><td>(139.745, 99.353)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_3</td><td>F.Cu</td><td>0.0046</td><td>(138.686, 100.963)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_3</td><td>F.Cu</td><td>0.0046</td><td>(138.635, 100.974)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_30</td><td>B.Cu</td><td>0.0224</td><td>(143.256, 88.734)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_30</td><td>F.Cu</td><td>0.0224</td><td>(143.149, 88.841)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_31</td><td>B.Cu</td><td>0.1053</td><td>(143.208, 88.147)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_31</td><td>B.Cu</td><td>0.1053</td><td>(143.733, 87.709)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_31</td><td>B.Cu</td><td>0.0539</td><td>(142.582, 88.605)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_31</td><td>F.Cu</td><td>0.1053</td><td>(143.733, 87.709)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_31</td><td>F.Cu</td><td>0.0749</td><td>(142.415, 89.670)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_31</td><td>F.Cu</td><td>0.1053</td><td>(143.039, 88.302)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_32</td><td>B.Cu</td><td>0.1026</td><td>(142.976, 88.005)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_32</td><td>B.Cu</td><td>0.1026</td><td>(143.165, 87.679)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_32</td><td>F.Cu</td><td>0.1026</td><td>(143.165, 87.589)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_32</td><td>F.Cu</td><td>0.1026</td><td>(142.653, 88.147)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_34</td><td>F.Cu</td><td>0.0155</td><td>(140.982, 88.928)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_34</td><td>F.Cu</td><td>0.0077</td><td>(141.537, 89.960)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_34</td><td>F.Cu</td><td>0.0155</td><td>(140.435, 88.106)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_35</td><td>B.Cu</td><td>0.0708</td><td>(139.022, 87.780)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_35</td><td>F.Cu</td><td>0.0708</td><td>(139.212, 87.650)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_36</td><td>B.Cu</td><td>0.0561</td><td>(138.460, 87.925)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_36</td><td>B.Cu</td><td>0.0561</td><td>(138.468, 87.922)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_36</td><td>B.Cu</td><td>0.0561</td><td>(138.864, 88.273)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_36</td><td>F.Cu</td><td>0.0561</td><td>(138.588, 88.037)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_36</td><td>F.Cu</td><td>0.0561</td><td>(138.456, 87.937)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_37</td><td>B.Cu</td><td>0.0922</td><td>(137.863, 88.038)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_37</td><td>B.Cu</td><td>0.0922</td><td>(138.446, 88.531)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_37</td><td>F.Cu</td><td>0.0922</td><td>(138.062, 88.210)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_37</td><td>F.Cu</td><td>0.0219</td><td>(140.046, 88.960)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_37</td><td>F.Cu</td><td>0.0273</td><td>(138.869, 88.379)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_38</td><td>B.Cu</td><td>0.2268</td><td>(137.897, 88.738)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_38</td><td>B.Cu</td><td>0.0029</td><td>(139.154, 89.426)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_38</td><td>F.Cu</td><td>0.2268</td><td>(137.465, 88.318)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_38</td><td>F.Cu</td><td>0.0231</td><td>(139.849, 89.063)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_38</td><td>F.Cu</td><td>0.0262</td><td>(138.539, 88.585)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_39</td><td>B.Cu</td><td>0.0315</td><td>(137.504, 89.195)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_39</td><td>F.Cu</td><td>0.0315</td><td>(136.973, 88.678)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_39</td><td>F.Cu</td><td>0.0273</td><td>(138.178, 88.788)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_39</td><td>F.Cu</td><td>0.0233</td><td>(139.652, 89.163)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_4</td><td>B.Cu</td><td>0.0487</td><td>(139.187, 101.265)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_4</td><td>B.Cu</td><td>0.0487</td><td>(138.978, 101.505)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_4</td><td>F.Cu</td><td>0.0487</td><td>(138.979, 101.505)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_4</td><td>F.Cu</td><td>0.0487</td><td>(139.511, 100.943)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_40</td><td>B.Cu</td><td>0.0365</td><td>(136.705, 89.009)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_40</td><td>B.Cu</td><td>0.0093</td><td>(136.403, 88.888)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_40</td><td>B.Cu</td><td>0.0365</td><td>(137.525, 89.624)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_40</td><td>B.Cu</td><td>0.0074</td><td>(136.065, 88.776)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_40</td><td>F.Cu</td><td>0.0074</td><td>(135.860, 88.803)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_40</td><td>F.Cu</td><td>0.0566</td><td>(136.394, 88.931)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_40</td><td>F.Cu</td><td>0.0074</td><td>(136.110, 88.836)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_40</td><td>F.Cu</td><td>0.0283</td><td>(139.448, 89.272)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_40</td><td>F.Cu</td><td>0.0566</td><td>(137.807, 89.008)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_41</td><td>B.Cu</td><td>0.0420</td><td>(136.055, 89.241)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_41</td><td>F.Cu</td><td>0.0420</td><td>(137.310, 89.220)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_41</td><td>F.Cu</td><td>0.0420</td><td>(135.435, 89.262)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_41</td><td>F.Cu</td><td>0.0420</td><td>(135.535, 89.247)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_41</td><td>F.Cu</td><td>0.0172</td><td>(139.255, 89.384)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_42</td><td>B.Cu</td><td>0.0419</td><td>(136.601, 90.004)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_42</td><td>B.Cu</td><td>0.0419</td><td>(136.081, 90.008)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_42</td><td>F.Cu</td><td>0.0419</td><td>(136.111, 89.998)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_42</td><td>F.Cu</td><td>0.0419</td><td>(136.231, 89.889)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_43</td><td>B.Cu</td><td>0.0305</td><td>(136.478, 90.507)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_43</td><td>F.Cu</td><td>0.0305</td><td>(135.758, 90.587)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_44</td><td>B.Cu</td><td>0.0038</td><td>(139.174, 92.844)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_44</td><td>B.Cu</td><td>0.0123</td><td>(135.870, 91.499)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_44</td><td>B.Cu</td><td>0.0066</td><td>(138.680, 93.062)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_44</td><td>B.Cu</td><td>0.0123</td><td>(136.312, 91.939)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_44</td><td>B.Cu</td><td>0.0066</td><td>(138.064, 92.720)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_44</td><td>F.Cu</td><td>0.0123</td><td>(136.154, 91.504)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_45</td><td>B.Cu</td><td>0.0054</td><td>(136.296, 92.278)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_45</td><td>B.Cu</td><td>0.0073</td><td>(137.950, 92.936)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_45</td><td>B.Cu</td><td>0.0452</td><td>(135.713, 91.964)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_45</td><td>B.Cu</td><td>0.0032</td><td>(139.193, 93.146)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_45</td><td>B.Cu</td><td>0.0073</td><td>(138.675, 93.265)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_45</td><td>F.Cu</td><td>0.0452</td><td>(136.204, 91.961)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_6</td><td>F.Cu</td><td>0.0011</td><td>(141.165, 99.967)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_6</td><td>F.Cu</td><td>0.0011</td><td>(141.690, 100.961)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_7</td><td>B.Cu</td><td>0.0220</td><td>(143.166, 101.542)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_7</td><td>B.Cu</td><td>0.0220</td><td>(142.925, 101.270)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_7</td><td>F.Cu</td><td>0.0220</td><td>(142.053, 100.452)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_8</td><td>B.Cu</td><td>0.0921</td><td>(143.376, 101.099)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_8</td><td>F.Cu</td><td>0.0145</td><td>(142.131, 100.231)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_8</td><td>F.Cu</td><td>0.0145</td><td>(143.242, 101.118)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_8</td><td>F.Cu</td><td>0.0921</td><td>(143.628, 101.347)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_9</td><td>B.Cu</td><td>0.0358</td><td>(142.771, 100.238)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_9</td><td>B.Cu</td><td>0.0695</td><td>(144.399, 101.520)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_9</td><td>B.Cu</td><td>0.0695</td><td>(143.744, 100.885)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_9</td><td>B.Cu</td><td>0.0695</td><td>(144.418, 101.519)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_9</td><td>F.Cu</td><td>0.0006</td><td>(142.319, 100.126)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_9</td><td>F.Cu</td><td>0.0695</td><td>(144.418, 101.519)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_9</td><td>F.Cu</td><td>0.0695</td><td>(144.085, 101.224)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_9</td><td>F.Cu</td><td>0.0695</td><td>(144.399, 101.520)</td><td></td></tr>
+<tr><td>moved</td><td>/bidir_9</td><td>F.Cu</td><td>0.0334</td><td>(143.443, 100.917)</td><td></td></tr>
+<tr><td>moved</td><td>/clk</td><td>B.Cu</td><td>0.0243</td><td>(136.489, 98.796)</td><td></td></tr>
+<tr><td>moved</td><td>/clk</td><td>B.Cu</td><td>0.0243</td><td>(136.657, 98.710)</td><td></td></tr>
+<tr><td>moved</td><td>/clk</td><td>F.Cu</td><td>0.0243</td><td>(136.491, 98.796)</td><td></td></tr>
+<tr><td>moved</td><td>/clk</td><td>F.Cu</td><td>0.0243</td><td>(137.052, 98.320)</td><td></td></tr>
+<tr><td>moved</td><td>/in_0</td><td>B.Cu</td><td>0.0342</td><td>(136.863, 95.385)</td><td></td></tr>
+<tr><td>moved</td><td>/in_0</td><td>B.Cu</td><td>0.0329</td><td>(135.301, 95.307)</td><td></td></tr>
+<tr><td>moved</td><td>/in_0</td><td>B.Cu</td><td>0.0342</td><td>(136.030, 95.235)</td><td></td></tr>
+<tr><td>moved</td><td>/in_0</td><td>F.Cu</td><td>0.0066</td><td>(136.056, 95.018)</td><td></td></tr>
+<tr><td>moved</td><td>/in_0</td><td>F.Cu</td><td>0.0329</td><td>(135.591, 95.249)</td><td></td></tr>
+<tr><td>moved</td><td>/in_0</td><td>F.Cu</td><td>0.0329</td><td>(135.301, 95.307)</td><td></td></tr>
+<tr><td>moved</td><td>/in_1</td><td>B.Cu</td><td>0.0433</td><td>(135.899, 95.742)</td><td></td></tr>
+<tr><td>moved</td><td>/in_1</td><td>B.Cu</td><td>0.0433</td><td>(135.802, 95.719)</td><td></td></tr>
+<tr><td>moved</td><td>/in_1</td><td>B.Cu</td><td>0.0433</td><td>(136.028, 95.777)</td><td></td></tr>
+<tr><td>moved</td><td>/in_1</td><td>F.Cu</td><td>0.0433</td><td>(136.045, 95.446)</td><td></td></tr>
+<tr><td>moved</td><td>/in_1</td><td>F.Cu</td><td>0.0433</td><td>(135.799, 95.696)</td><td></td></tr>
+<tr><td>moved</td><td>/in_2</td><td>B.Cu</td><td>0.0298</td><td>(137.213, 96.137)</td><td></td></tr>
+<tr><td>moved</td><td>/in_2</td><td>B.Cu</td><td>0.0298</td><td>(135.594, 96.188)</td><td></td></tr>
+<tr><td>moved</td><td>/in_2</td><td>B.Cu</td><td>0.0009</td><td>(139.045, 96.374)</td><td></td></tr>
+<tr><td>moved</td><td>/in_2</td><td>B.Cu</td><td>0.0298</td><td>(135.500, 96.227)</td><td></td></tr>
+<tr><td>moved</td><td>/in_2</td><td>F.Cu</td><td>0.0805</td><td>(135.662, 96.240)</td><td></td></tr>
+<tr><td>moved</td><td>/in_2</td><td>F.Cu</td><td>0.0478</td><td>(136.725, 95.611)</td><td></td></tr>
+<tr><td>moved</td><td>/in_2</td><td>F.Cu</td><td>0.0805</td><td>(136.171, 95.940)</td><td></td></tr>
+<tr><td>moved</td><td>/in_3</td><td>B.Cu</td><td>0.0778</td><td>(135.745, 96.822)</td><td></td></tr>
+<tr><td>moved</td><td>/in_3</td><td>B.Cu</td><td>0.0138</td><td>(139.028, 96.672)</td><td></td></tr>
+<tr><td>moved</td><td>/in_3</td><td>B.Cu</td><td>0.0094</td><td>(139.543, 97.017)</td><td></td></tr>
+<tr><td>moved</td><td>/in_3</td><td>B.Cu</td><td>0.0138</td><td>(138.495, 96.335)</td><td></td></tr>
+<tr><td>moved</td><td>/in_3</td><td>B.Cu</td><td>0.0778</td><td>(135.678, 96.830)</td><td></td></tr>
+<tr><td>moved</td><td>/in_3</td><td>B.Cu</td><td>0.0778</td><td>(136.826, 96.777)</td><td></td></tr>
+<tr><td>moved</td><td>/in_3</td><td>F.Cu</td><td>0.0778</td><td>(136.011, 96.418)</td><td></td></tr>
+<tr><td>moved</td><td>/in_3</td><td>F.Cu</td><td>0.0157</td><td>(136.688, 96.000)</td><td></td></tr>
+<tr><td>moved</td><td>/in_3</td><td>F.Cu</td><td>0.0778</td><td>(135.627, 96.830)</td><td></td></tr>
+<tr><td>moved</td><td>/rst_n</td><td>B.Cu</td><td>0.0239</td><td>(136.688, 99.224)</td><td></td></tr>
+<tr><td>moved</td><td>/rst_n</td><td>B.Cu</td><td>0.0239</td><td>(136.451, 99.424)</td><td></td></tr>
+<tr><td>moved</td><td>/rst_n</td><td>F.Cu</td><td>0.0239</td><td>(137.128, 98.719)</td><td></td></tr>
+<tr><td>moved</td><td>/rst_n</td><td>F.Cu</td><td>0.0239</td><td>(136.428, 99.396)</td><td></td></tr>
+<tr><td>moved</td><td>/rst_n</td><td>F.Cu</td><td>0.0239</td><td>(136.473, 99.369)</td><td></td></tr>
+<tr><td>moved</td><td>GND</td><td>B.Cu</td><td>0.0961</td><td>(139.432, 87.223)</td><td></td></tr>
+<tr><td>moved</td><td>GND</td><td>B.Cu</td><td>0.0161</td><td>(142.633, 101.906)</td><td></td></tr>
+<tr><td>moved</td><td>GND</td><td>B.Cu</td><td>0.0161</td><td>(142.906, 101.978)</td><td></td></tr>
+<tr><td>moved</td><td>GND</td><td>F.Cu</td><td>0.0232</td><td>(144.367, 87.764)</td><td></td></tr>
+<tr><td>moved</td><td>GND</td><td>F.Cu</td><td>0.0632</td><td>(143.562, 89.036)</td><td></td></tr>
+<tr><td>moved</td><td>GND</td><td>F.Cu</td><td>0.0246</td><td>(146.234, 96.985)</td><td></td></tr>
+<tr><td>moved</td><td>GND</td><td>F.Cu</td><td>0.0632</td><td>(143.704, 88.994)</td><td></td></tr>
+<tr><td>moved</td><td>GND</td><td>F.Cu</td><td>0.0632</td><td>(143.863, 88.777)</td><td></td></tr>
+<tr><td>moved</td><td>GND</td><td>F.Cu</td><td>0.0246</td><td>(146.662, 97.005)</td><td></td></tr>
+<tr><td>moved</td><td>GND</td><td>F.Cu</td><td>0.0631</td><td>(144.007, 88.384)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_0</td><td>B.Cu</td><td>0.1293</td><td>(147.254, 96.371)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_0</td><td>B.Cu</td><td>0.0402</td><td>(145.893, 95.380)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_0</td><td>B.Cu</td><td>0.1293</td><td>(147.249, 96.286)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_0</td><td>B.Cu</td><td>0.1293</td><td>(147.249, 95.935)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_0</td><td>B.Cu</td><td>0.0218</td><td>(144.585, 95.266)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_0</td><td>B.Cu</td><td>0.1293</td><td>(147.254, 96.349)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_0</td><td>B.Cu</td><td>0.1293</td><td>(147.252, 96.735)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_0</td><td>B.Cu</td><td>0.0455</td><td>(143.858, 95.154)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_0</td><td>B.Cu</td><td>0.0402</td><td>(147.154, 95.480)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_0</td><td>B.Cu</td><td>0.0455</td><td>(143.228, 95.095)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_0</td><td>F.Cu</td><td>0.1293</td><td>(146.609, 96.533)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_0</td><td>F.Cu</td><td>0.0509</td><td>(145.446, 96.414)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_0</td><td>F.Cu</td><td>0.0509</td><td>(145.858, 96.524)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_1</td><td>B.Cu</td><td>0.0599</td><td>(135.720, 93.902)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_1</td><td>B.Cu</td><td>0.0483</td><td>(138.530, 94.032)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_1</td><td>B.Cu</td><td>0.0419</td><td>(135.487, 93.453)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_1</td><td>B.Cu</td><td>0.0477</td><td>(138.903, 94.129)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_1</td><td>B.Cu</td><td>0.0483</td><td>(138.190, 94.096)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_1</td><td>B.Cu</td><td>0.0599</td><td>(137.058, 94.134)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_1</td><td>F.Cu</td><td>0.0062</td><td>(136.374, 92.392)</td><td></td></tr>
+<tr><td>moved</td><td>PWR_AUX_1</td><td>F.Cu</td><td>0.0062</td><td>(135.622, 92.527)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_CORE_0</td><td>B.Cu</td><td>0.0084</td><td>(142.647, 91.828)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_CORE_0</td><td>B.Cu</td><td>0.0476</td><td>(143.105, 92.099)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_CORE_0</td><td>B.Cu</td><td>0.0234</td><td>(144.326, 92.027)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_CORE_0</td><td>B.Cu</td><td>0.0476</td><td>(143.686, 92.355)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_CORE_0</td><td>F.Cu</td><td>0.0374</td><td>(144.207, 89.024)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_CORE_0</td><td>F.Cu</td><td>0.0441</td><td>(144.811, 88.464)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_CORE_0</td><td>F.Cu</td><td>0.0040</td><td>(146.641, 90.694)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_CORE_0</td><td>F.Cu</td><td>0.0311</td><td>(144.048, 89.421)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_CORE_0</td><td>F.Cu</td><td>0.0311</td><td>(143.713, 89.581)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_CORE_0</td><td>F.Cu</td><td>0.0441</td><td>(144.334, 88.627)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_CORE_0</td><td>F.Cu</td><td>0.0294</td><td>(145.900, 89.229)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_CORE_1</td><td>B.Cu</td><td>0.0529</td><td>(139.545, 97.407)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_CORE_1</td><td>B.Cu</td><td>0.0687</td><td>(139.074, 97.085)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_CORE_1</td><td>B.Cu</td><td>0.0347</td><td>(137.993, 97.204)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_CORE_1</td><td>B.Cu</td><td>0.0119</td><td>(136.566, 97.606)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_CORE_1</td><td>B.Cu</td><td>0.0687</td><td>(138.578, 96.794)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_CORE_1</td><td>F.Cu</td><td>0.0076</td><td>(138.177, 100.129)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_CORE_1</td><td>F.Cu</td><td>0.0471</td><td>(138.894, 99.639)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_CORE_1</td><td>F.Cu</td><td>0.0471</td><td>(138.525, 99.878)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_0</td><td>B.Cu</td><td>0.0416</td><td>(146.516, 100.000)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_0</td><td>B.Cu</td><td>0.0416</td><td>(145.514, 99.360)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_0</td><td>B.Cu</td><td>0.0416</td><td>(146.162, 100.020)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_0</td><td>F.Cu</td><td>0.0053</td><td>(145.395, 99.767)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_0</td><td>F.Cu</td><td>0.0416</td><td>(146.079, 99.895)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_0</td><td>F.Cu</td><td>0.0053</td><td>(144.750, 99.707)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_2</td><td>B.Cu</td><td>0.0412</td><td>(135.334, 90.913)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_2</td><td>B.Cu</td><td>0.0404</td><td>(135.133, 90.221)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_2</td><td>B.Cu</td><td>0.0404</td><td>(135.407, 89.931)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_2</td><td>B.Cu</td><td>0.0348</td><td>(139.148, 92.290)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_2</td><td>B.Cu</td><td>0.0412</td><td>(135.737, 90.995)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_2</td><td>B.Cu</td><td>0.0408</td><td>(136.577, 91.508)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_2</td><td>B.Cu</td><td>0.0407</td><td>(138.025, 92.205)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_2</td><td>B.Cu</td><td>0.0107</td><td>(137.494, 92.046)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_2</td><td>B.Cu</td><td>0.0407</td><td>(138.630, 92.358)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_2</td><td>F.Cu</td><td>0.0068</td><td>(139.000, 89.598)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_2</td><td>F.Cu</td><td>0.0404</td><td>(135.693, 89.661)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_2</td><td>F.Cu</td><td>0.0404</td><td>(135.451, 89.889)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_2</td><td>F.Cu</td><td>0.0404</td><td>(135.492, 89.844)</td><td></td></tr>
+<tr><td>moved</td><td>VDD_IO_2</td><td>F.Cu</td><td>0.0323</td><td>(137.377, 89.472)</td><td></td></tr>
+</table>
+<h2>Footprints <span class='mut'>(0)</span></h2>
+<div class='mut'>None.</div>
+<h2>Hole gaps that changed <span class='mut'>(407: only pairs under target on either side)</span></h2>
+<table><tr><th>status</th><th>copper ↔ hole</th><th>layer</th><th>A mm</th><th>B mm</th><th>at</th></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_14</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.368, 99.421)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_33</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(141.790, 87.830)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_33</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(141.790, 87.830)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_16</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.317, 98.174)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_36</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(138.456, 87.928)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_39</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(136.853, 88.565)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via VDD_CORE_0</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.635, 91.405)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via VDD_CORE_1</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.520, 97.610)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_25</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.172, 92.425)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_27</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(145.558, 89.831)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_24</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.477, 92.974)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_12</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(145.601, 101.159)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_3</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(138.624, 100.984)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_11</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(144.936, 101.135)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /an_3</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.556, 94.797)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /an_0</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(136.078, 92.894)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /an_1</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(136.070, 93.539)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_38</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(137.210, 88.049)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_25</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.172, 92.425)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_36</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(138.456, 87.928)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_39</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(136.853, 88.565)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_5</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(140.490, 101.430)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_24</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.477, 92.974)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_11</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(144.936, 101.135)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_13</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(145.601, 100.519)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /clk</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(136.419, 98.796)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_29</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(144.709, 88.965)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_4</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(138.975, 101.505)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_36</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(138.456, 87.928)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_8</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(143.793, 101.573)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_12</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(145.601, 101.159)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_24</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.477, 92.974)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_15</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.273, 98.800)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_11</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(144.936, 101.135)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via PWR_AUX_1</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.500, 93.210)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /an_1</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(136.070, 93.539)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_13</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(145.601, 100.519)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /in_2</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.443, 96.227)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_4</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(138.975, 101.505)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_45</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.464, 91.982)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_26</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(145.911, 90.351)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_17</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.330, 97.546)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_13</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(145.601, 100.519)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via PWR_AUX_0</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(147.254, 96.451)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_4</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(138.975, 101.505)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_8</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(143.793, 101.573)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /rst_n</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(136.400, 99.424)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_2</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(138.695, 100.360)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via VDD_IO_3</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(136.070, 98.260)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_31</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(143.778, 87.709)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_28</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(145.249, 89.285)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_32</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(143.165, 87.574)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_26</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(145.911, 90.351)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_11</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(144.936, 101.135)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_15</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.273, 98.800)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /an_2</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.225, 94.263)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_16</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.317, 98.174)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_34</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(140.440, 87.830)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_33</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(141.790, 87.830)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_9</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(144.419, 101.517)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_44</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.865, 91.499)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via VDD_IO_3</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(136.070, 98.260)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_31</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(143.778, 87.709)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_28</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(145.249, 89.285)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_14</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.368, 99.421)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_19</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.745, 96.009)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /clk</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(136.419, 98.796)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /an_3</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.556, 94.797)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_8</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(143.793, 101.573)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_1</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(137.720, 99.857)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_34</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(140.440, 87.830)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_31</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(143.778, 87.709)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_15</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.273, 98.800)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_7</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(143.166, 101.570)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_20</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.730, 94.820)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_5</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(140.490, 101.430)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_14</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.368, 99.421)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_35</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(139.003, 87.619)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_29</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(144.709, 88.965)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_9</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(144.419, 101.517)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_16</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.317, 98.174)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_34</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(140.440, 87.830)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_1</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(137.720, 99.857)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /in_3</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.617, 96.830)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_22</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.263, 94.068)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_20</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.730, 94.820)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_37</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(137.838, 88.038)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /an_3</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.556, 94.797)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_35</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(139.003, 87.619)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /rst_n</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(136.400, 99.424)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /in_2</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.443, 96.227)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_40</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.830, 88.773)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_23</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.654, 93.576)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_6</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(141.690, 101.430)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_18</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.122, 96.088)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_20</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.730, 94.820)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /in_3</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.617, 96.830)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_5</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(140.490, 101.430)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_21</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.078, 94.668)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_35</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(139.003, 87.619)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_41</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.350, 89.262)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_17</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.330, 97.546)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_37</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(137.838, 88.038)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_16</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.317, 98.174)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via VDD_IO_2</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.409, 89.931)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /in_3</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.617, 96.830)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_40</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.830, 88.773)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /in_0</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.250, 95.357)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_25</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.172, 92.425)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_23</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.654, 93.576)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_6</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(141.690, 101.430)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_18</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.122, 96.088)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_37</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(137.838, 88.038)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_43</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.687, 90.494)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /an_3</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.556, 94.797)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /an_0</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(136.078, 92.894)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /an_2</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.225, 94.263)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_41</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.350, 89.262)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /in_2</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.443, 96.227)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via VDD_IO_2</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.409, 89.931)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_23</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.654, 93.576)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_36</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(138.456, 87.928)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_39</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(136.853, 88.565)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_6</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(141.690, 101.430)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_5</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(140.490, 101.430)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_3</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(138.624, 100.984)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /in_0</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.250, 95.357)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via VDD_IO_1</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.111, 91.025)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_30</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(143.557, 88.442)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_44</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.865, 91.499)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_24</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.477, 92.974)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_17</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.330, 97.546)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_43</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.687, 90.494)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_29</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(144.709, 88.965)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via VDD_IO_2</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.409, 89.931)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via VDD_IO_0</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.177, 100.020)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /an_2</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.225, 94.263)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_38</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(137.210, 88.049)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_0</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(136.960, 99.770)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /in_0</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.250, 95.357)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_27</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(145.558, 89.831)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_7</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(143.166, 101.570)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_3</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(138.624, 100.984)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via VDD_IO_1</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.111, 91.025)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_30</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(143.557, 88.442)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /an_2</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.225, 94.263)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_13</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(145.601, 100.519)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /in_2</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.443, 96.227)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_4</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(138.975, 101.505)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_38</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(137.210, 88.049)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_0</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(136.960, 99.770)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_3</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(138.624, 100.984)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_30</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(143.557, 88.442)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_44</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.865, 91.499)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via PWR_AUX_1</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.500, 93.210)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_17</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.330, 97.546)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_38</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(137.210, 88.049)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_45</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.464, 91.982)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_26</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(145.911, 90.351)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_7</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(143.166, 101.570)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via PWR_AUX_1</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.500, 93.210)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via PWR_AUX_0</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(147.254, 96.451)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_21</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.078, 94.668)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_2</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(138.695, 100.360)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_45</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.464, 91.982)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_32</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(143.165, 87.574)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_30</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(143.557, 88.442)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_44</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.865, 91.499)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via VDD_IO_3</td><td>B.Cu</td><td class=n>0.2277</td><td class=n>0.2505</td><td>(136.070, 98.260)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_31</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(143.778, 87.709)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_28</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(145.249, 89.285)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via PWR_AUX_1</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.500, 93.210)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via PWR_AUX_0</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(147.254, 96.451)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_0</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(136.960, 99.770)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_45</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.464, 91.982)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_34</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(140.440, 87.830)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_2</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(138.695, 100.360)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_42</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(136.071, 89.998)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_7</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(143.166, 101.570)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_32</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(143.165, 87.574)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_19</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.745, 96.009)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_14</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.368, 99.421)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via PWR_AUX_0</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(147.254, 96.451)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /an_1</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(136.070, 93.539)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_2</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(138.695, 100.360)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via VDD_IO_0</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.177, 100.020)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_1</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(137.720, 99.857)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_32</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(143.165, 87.574)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_40</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.830, 88.773)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_42</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(136.071, 89.998)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_20</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.730, 94.820)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_19</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.745, 96.009)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_27</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(145.558, 89.831)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /clk</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(136.419, 98.796)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_35</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(139.003, 87.619)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_9</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(144.419, 101.517)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_8</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(143.793, 101.573)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_33</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(141.790, 87.830)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_41</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.350, 89.262)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /in_1</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.779, 95.696)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_15</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.273, 98.800)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_22</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.263, 94.068)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_19</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.745, 96.009)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_37</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(137.838, 88.038)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_43</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.687, 90.494)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_10</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(144.368, 100.867)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via VDD_IO_0</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.177, 100.020)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_9</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(144.419, 101.517)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_40</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.830, 88.773)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via VDD_CORE_0</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.635, 91.405)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via VDD_CORE_1</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.520, 97.610)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /in_1</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.779, 95.696)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_23</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.654, 93.576)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_6</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(141.690, 101.430)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_12</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(145.601, 101.159)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_18</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.122, 96.088)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_22</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.263, 94.068)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_41</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.350, 89.262)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /rst_n</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(136.400, 99.424)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via VDD_IO_2</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.409, 89.931)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_10</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(144.368, 100.867)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /bidir_25</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.172, 92.425)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_22</td><td>F.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.263, 94.068)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via VDD_CORE_0</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(146.635, 91.405)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /in_0</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(135.250, 95.357)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via VDD_CORE_1</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(135.520, 97.610)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In1.Cu  ↔  via /an_0</td><td>In1.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(136.078, 92.894)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND In2.Cu  ↔  via /bidir_12</td><td>In2.Cu</td><td class=n>0.2055</td><td class=n>0.2505</td><td>(145.601, 101.159)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via VDD_IO_0</td><td>B.Cu</td><td class=n>0.2255</td><td class=n>0.2505</td><td>(146.177, 100.020)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via VDD_IO_1</td><td>B.Cu</td><td class=n>0.2451</td><td class=n>0.2509</td><td>(146.111, 91.025)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via VDD_CORE_0</td><td>B.Cu</td><td class=n>0.2316</td><td class=n>0.2514</td><td>(146.635, 91.405)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /rst_n pad  ↔  via /clk</td><td>all</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(136.419, 98.796)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_34 F.Cu  ↔  via GND</td><td>F.Cu</td><td class=n>0.2172</td><td class=n>0.2530</td><td>(141.106, 88.414)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track VDD_CORE_0 F.Cu  ↔  via /bidir_29</td><td>F.Cu</td><td class=n>0.2250</td><td class=n>0.2530</td><td>(144.709, 88.965)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /in_2 pad  ↔  via GND</td><td>all</td><td class=n>0.2218</td><td class=n>0.2530</td><td>(134.825, 96.338)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via VDD_IO_2 pad  ↔  via /bidir_43</td><td>all</td><td class=n>0.2363</td><td class=n>0.2530</td><td>(135.687, 90.494)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /bidir_43 pad  ↔  via VDD_IO_2</td><td>all</td><td class=n>0.2363</td><td class=n>0.2530</td><td>(135.409, 89.931)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /bidir_9 pad  ↔  via /bidir_8</td><td>all</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(143.793, 101.573)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_9 B.Cu  ↔  via /bidir_8</td><td>B.Cu</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(143.793, 101.573)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /bidir_30 pad  ↔  via GND</td><td>all</td><td class=n>0.2114</td><td class=n>0.2530</td><td>(143.704, 89.053)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_12 B.Cu  ↔  via /bidir_11</td><td>B.Cu</td><td class=n>0.2172</td><td class=n>0.2530</td><td>(144.936, 101.135)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /bidir_27 pad  ↔  via /bidir_26</td><td>all</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(145.911, 90.351)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_29 B.Cu  ↔  via GND</td><td>B.Cu</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(143.704, 89.053)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_14 B.Cu  ↔  via /bidir_15</td><td>B.Cu</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(146.273, 98.800)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track VDD_IO_2 B.Cu  ↔  via /bidir_43</td><td>B.Cu</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(135.687, 90.494)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /bidir_38 pad  ↔  via /bidir_37</td><td>all</td><td class=n>0.2119</td><td class=n>0.2530</td><td>(137.838, 88.038)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_0 B.Cu  ↔  via /bidir_1</td><td>B.Cu</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(137.720, 99.857)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track VDD_CORE_1 F.Cu  ↔  via /bidir_2</td><td>F.Cu</td><td class=n>0.2096</td><td class=n>0.2530</td><td>(138.695, 100.360)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /in_1 pad  ↔  via /in_0</td><td>all</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(135.250, 95.357)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_28 B.Cu  ↔  via /bidir_29</td><td>B.Cu</td><td class=n>0.2108</td><td class=n>0.2530</td><td>(144.709, 88.965)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /an_3 pad  ↔  via /an_2</td><td>all</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(135.225, 94.263)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_16 B.Cu  ↔  via /bidir_17</td><td>B.Cu</td><td class=n>0.2101</td><td class=n>0.2530</td><td>(146.330, 97.546)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /bidir_45 pad  ↔  via GND</td><td>all</td><td class=n>0.2500</td><td class=n>0.2530</td><td>(134.843, 92.074)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /in_2 F.Cu  ↔  via /in_1</td><td>F.Cu</td><td class=n>0.2180</td><td class=n>0.2530</td><td>(135.779, 95.696)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_20 B.Cu  ↔  via /bidir_21</td><td>B.Cu</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(146.078, 94.668)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_11 B.Cu  ↔  via /bidir_10</td><td>B.Cu</td><td class=n>0.2101</td><td class=n>0.2530</td><td>(144.368, 100.867)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /bidir_32 pad  ↔  via /bidir_31</td><td>all</td><td class=n>0.2055</td><td class=n>0.2530</td><td>(143.778, 87.709)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /bidir_15 pad  ↔  via /bidir_14</td><td>all</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(146.368, 99.421)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_11 F.Cu  ↔  via /bidir_10</td><td>F.Cu</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(144.368, 100.867)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /in_0 B.Cu  ↔  via /an_3</td><td>B.Cu</td><td class=n>0.2078</td><td class=n>0.2530</td><td>(135.556, 94.797)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /bidir_25 pad  ↔  via /bidir_24</td><td>all</td><td class=n>0.2422</td><td class=n>0.2530</td><td>(146.477, 92.974)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /bidir_19 pad  ↔  via /bidir_18</td><td>all</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(146.122, 96.088)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_31 F.Cu  ↔  via /bidir_30</td><td>F.Cu</td><td class=n>0.2172</td><td class=n>0.2530</td><td>(143.557, 88.442)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track PWR_AUX_0 F.Cu  ↔  via /bidir_18</td><td>F.Cu</td><td class=n>0.2154</td><td class=n>0.2530</td><td>(146.122, 96.088)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via VDD_IO_2 pad  ↔  via GND</td><td>all</td><td class=n>0.2181</td><td class=n>0.2530</td><td>(134.848, 89.649)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track GND B.Cu  ↔  via /bidir_35</td><td>B.Cu</td><td class=n>0.2398</td><td class=n>0.2530</td><td>(139.003, 87.619)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_40 F.Cu  ↔  via /bidir_39</td><td>F.Cu</td><td class=n>0.2160</td><td class=n>0.2530</td><td>(136.853, 88.565)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /bidir_39 pad  ↔  via /bidir_38</td><td>all</td><td class=n>0.2214</td><td class=n>0.2530</td><td>(137.210, 88.049)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_40 B.Cu  ↔  via /bidir_39</td><td>B.Cu</td><td class=n>0.2366</td><td class=n>0.2530</td><td>(136.853, 88.565)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /in_0 F.Cu  ↔  via /in_1</td><td>F.Cu</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(135.779, 95.696)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /bidir_17 pad  ↔  via GND</td><td>all</td><td class=n>0.2271</td><td class=n>0.2530</td><td>(146.688, 97.030)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_11 F.Cu  ↔  via /bidir_10</td><td>F.Cu</td><td class=n>0.2101</td><td class=n>0.2530</td><td>(144.368, 100.867)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /bidir_28 pad  ↔  via /bidir_27</td><td>all</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(145.558, 89.831)</td></tr>
+<tr><td class='fixed'>fixed</td><td>C105.1 pad  ↔  via GND</td><td>all</td><td class=n>0.2301</td><td class=n>0.2530</td><td>(146.688, 97.030)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track PWR_AUX_0 F.Cu  ↔  via /bidir_18</td><td>F.Cu</td><td class=n>0.2098</td><td class=n>0.2530</td><td>(146.122, 96.088)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /bidir_37 pad  ↔  via /bidir_36</td><td>all</td><td class=n>0.2223</td><td class=n>0.2530</td><td>(138.456, 87.928)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_9 F.Cu  ↔  via /bidir_10</td><td>F.Cu</td><td class=n>0.2056</td><td class=n>0.2530</td><td>(144.368, 100.867)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track GND F.Cu  ↔  via /bidir_30</td><td>F.Cu</td><td class=n>0.2350</td><td class=n>0.2530</td><td>(143.557, 88.442)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_14 B.Cu  ↔  via /bidir_15</td><td>B.Cu</td><td class=n>0.2376</td><td class=n>0.2530</td><td>(146.273, 98.800)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_31 F.Cu  ↔  via /bidir_32</td><td>F.Cu</td><td class=n>0.2172</td><td class=n>0.2530</td><td>(143.165, 87.574)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track GND F.Cu  ↔  via /bidir_30</td><td>F.Cu</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(143.557, 88.442)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /an_2 B.Cu  ↔  via /an_3</td><td>B.Cu</td><td class=n>0.2100</td><td class=n>0.2530</td><td>(135.556, 94.797)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /bidir_24 pad  ↔  via /bidir_25</td><td>all</td><td class=n>0.2422</td><td class=n>0.2530</td><td>(146.172, 92.425)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_28 B.Cu  ↔  via /bidir_29</td><td>B.Cu</td><td class=n>0.2108</td><td class=n>0.2530</td><td>(144.709, 88.965)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via GND pad  ↔  via /bidir_45</td><td>all</td><td class=n>0.2500</td><td class=n>0.2530</td><td>(135.464, 91.982)</td></tr>
+<tr><td class='fixed'>fixed</td><td>U101.MP pad  ↔  via /bidir_32</td><td>all</td><td class=n>0.2427</td><td class=n>0.2530</td><td>(143.165, 87.574)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via GND pad  ↔  via /bidir_17</td><td>all</td><td class=n>0.2271</td><td class=n>0.2530</td><td>(146.330, 97.546)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track VDD_CORE_0 F.Cu  ↔  via /bidir_29</td><td>F.Cu</td><td class=n>0.2200</td><td class=n>0.2530</td><td>(144.709, 88.965)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_9 F.Cu  ↔  via /bidir_8</td><td>F.Cu</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(143.793, 101.573)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_3 F.Cu  ↔  via /bidir_2</td><td>F.Cu</td><td class=n>0.2313</td><td class=n>0.2530</td><td>(138.695, 100.360)</td></tr>
+<tr><td class='fixed'>fixed</td><td>U101.MP pad  ↔  via /bidir_35</td><td>all</td><td class=n>0.2374</td><td class=n>0.2530</td><td>(139.003, 87.619)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_14 B.Cu  ↔  via /bidir_15</td><td>B.Cu</td><td class=n>0.2376</td><td class=n>0.2530</td><td>(146.273, 98.800)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_11 B.Cu  ↔  via /bidir_10</td><td>B.Cu</td><td class=n>0.2400</td><td class=n>0.2530</td><td>(144.368, 100.867)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_31 B.Cu  ↔  via /bidir_30</td><td>B.Cu</td><td class=n>0.2172</td><td class=n>0.2530</td><td>(143.557, 88.442)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_12 F.Cu  ↔  via /bidir_13</td><td>F.Cu</td><td class=n>0.2313</td><td class=n>0.2530</td><td>(145.601, 100.519)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track PWR_AUX_1 B.Cu  ↔  via /an_1</td><td>B.Cu</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(136.070, 93.539)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /bidir_36 pad  ↔  via /bidir_35</td><td>all</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(139.003, 87.619)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_23 B.Cu  ↔  via /bidir_24</td><td>B.Cu</td><td class=n>0.2111</td><td class=n>0.2530</td><td>(146.477, 92.974)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /bidir_45 pad  ↔  via /bidir_44</td><td>all</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(135.865, 91.499)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /in_0 B.Cu  ↔  via /in_1</td><td>B.Cu</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(135.779, 95.696)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_11 B.Cu  ↔  via /bidir_10</td><td>B.Cu</td><td class=n>0.2404</td><td class=n>0.2530</td><td>(144.368, 100.867)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /in_0 F.Cu  ↔  via /an_3</td><td>F.Cu</td><td class=n>0.2078</td><td class=n>0.2530</td><td>(135.556, 94.797)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track PWR_AUX_0 F.Cu  ↔  via GND</td><td>F.Cu</td><td class=n>0.2100</td><td class=n>0.2530</td><td>(146.688, 97.030)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_19 B.Cu  ↔  via /bidir_18</td><td>B.Cu</td><td class=n>0.2046</td><td class=n>0.2530</td><td>(146.122, 96.088)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track VDD_CORE_0 F.Cu  ↔  via /bidir_29</td><td>F.Cu</td><td class=n>0.2344</td><td class=n>0.2530</td><td>(144.709, 88.965)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_31 B.Cu  ↔  via /bidir_32</td><td>B.Cu</td><td class=n>0.2172</td><td class=n>0.2530</td><td>(143.165, 87.574)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_17 B.Cu  ↔  via GND</td><td>B.Cu</td><td class=n>0.2400</td><td class=n>0.2530</td><td>(146.688, 97.030)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_9 B.Cu  ↔  via /bidir_10</td><td>B.Cu</td><td class=n>0.2056</td><td class=n>0.2530</td><td>(144.368, 100.867)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /bidir_22 pad  ↔  via /bidir_21</td><td>all</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(146.078, 94.668)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track VDD_IO_2 B.Cu  ↔  via /bidir_44</td><td>B.Cu</td><td class=n>0.2308</td><td class=n>0.2530</td><td>(135.865, 91.499)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /bidir_4 pad  ↔  via /bidir_3</td><td>all</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(138.624, 100.984)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track GND B.Cu  ↔  via /bidir_7</td><td>B.Cu</td><td class=n>0.2442</td><td class=n>0.2530</td><td>(143.166, 101.570)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /in_3 pad  ↔  via /in_2</td><td>all</td><td class=n>0.2050</td><td class=n>0.2530</td><td>(135.443, 96.227)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_45 B.Cu  ↔  via /bidir_44</td><td>B.Cu</td><td class=n>0.2306</td><td class=n>0.2530</td><td>(135.865, 91.499)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track VDD_IO_2 F.Cu  ↔  via /bidir_42</td><td>F.Cu</td><td class=n>0.2061</td><td class=n>0.2530</td><td>(136.071, 89.998)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_12 B.Cu  ↔  via /bidir_13</td><td>B.Cu</td><td class=n>0.2313</td><td class=n>0.2531</td><td>(145.601, 100.519)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_12 F.Cu  ↔  via /bidir_11</td><td>F.Cu</td><td class=n>0.2172</td><td class=n>0.2531</td><td>(144.936, 101.135)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /rst_n F.Cu  ↔  via /clk</td><td>F.Cu</td><td class=n>0.2207</td><td class=n>0.2531</td><td>(136.419, 98.796)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track GND B.Cu  ↔  via /bidir_7</td><td>B.Cu</td><td class=n>0.2445</td><td class=n>0.2537</td><td>(143.166, 101.570)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_23 B.Cu  ↔  via /bidir_24</td><td>B.Cu</td><td class=n>0.2111</td><td class=n>0.2538</td><td>(146.477, 92.974)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track VDD_CORE_1 F.Cu  ↔  via /bidir_2</td><td>F.Cu</td><td class=n>0.2096</td><td class=n>0.2540</td><td>(138.695, 100.360)</td></tr>
+<tr><td class='fixed'>fixed</td><td>U101.35 pad  ↔  via /bidir_35</td><td>all</td><td class=n>0.2078</td><td class=n>0.2557</td><td>(139.003, 87.619)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /an_2 F.Cu  ↔  via /an_1</td><td>F.Cu</td><td class=n>0.2250</td><td class=n>0.2560</td><td>(136.070, 93.539)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_3 B.Cu  ↔  via /bidir_2</td><td>B.Cu</td><td class=n>0.2384</td><td class=n>0.2561</td><td>(138.695, 100.360)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track PWR_AUX_0 F.Cu  ↔  via /bidir_18</td><td>F.Cu</td><td class=n>0.2141</td><td class=n>0.2562</td><td>(146.122, 96.088)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via VDD_IO_1</td><td>F.Cu</td><td class=n>0.2491</td><td class=n>0.2568</td><td>(146.111, 91.025)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /an_2 F.Cu  ↔  via /an_1</td><td>F.Cu</td><td class=n>0.2253</td><td class=n>0.2574</td><td>(136.070, 93.539)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_41 F.Cu  ↔  via /bidir_40</td><td>F.Cu</td><td class=n>0.2100</td><td class=n>0.2574</td><td>(135.830, 88.773)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_45 B.Cu  ↔  via /bidir_44</td><td>B.Cu</td><td class=n>0.2400</td><td class=n>0.2574</td><td>(135.865, 91.499)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /in_0 F.Cu  ↔  via /in_1</td><td>F.Cu</td><td class=n>0.2086</td><td class=n>0.2576</td><td>(135.779, 95.696)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_37 B.Cu  ↔  via /bidir_36</td><td>B.Cu</td><td class=n>0.2431</td><td class=n>0.2583</td><td>(138.456, 87.928)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_40 B.Cu  ↔  via /bidir_39</td><td>B.Cu</td><td class=n>0.2374</td><td class=n>0.2605</td><td>(136.853, 88.565)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_3 B.Cu  ↔  via /bidir_2</td><td>B.Cu</td><td class=n>0.2430</td><td class=n>0.2634</td><td>(138.695, 100.360)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /in_0 pad  ↔  via /an_3</td><td>all</td><td class=n>0.2050</td><td class=n>0.2637</td><td>(135.556, 94.797)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_45 F.Cu  ↔  via /bidir_44</td><td>F.Cu</td><td class=n>0.2306</td><td class=n>0.2720</td><td>(135.865, 91.499)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_41 B.Cu  ↔  via /bidir_40</td><td>B.Cu</td><td class=n>0.2400</td><td class=n>0.2749</td><td>(135.830, 88.773)</td></tr>
+<tr><td class='fixed'>fixed</td><td>via /bidir_10 pad  ↔  via /bidir_9</td><td>all</td><td class=n>0.2193</td><td class=n>0.2774</td><td>(144.419, 101.517)</td></tr>
+<tr><td class='fixed'>fixed</td><td>U101.36 pad  ↔  via /bidir_32</td><td>all</td><td class=n>0.2191</td><td class=n>0.2777</td><td>(143.165, 87.574)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track GND F.Cu  ↔  via /bidir_17</td><td>F.Cu</td><td class=n>0.2250</td><td class=n>0.2873</td><td>(146.330, 97.546)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_19 F.Cu  ↔  via /bidir_18</td><td>F.Cu</td><td class=n>0.2484</td><td class=n>≥0.30</td><td>(146.155, 96.115)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_27 F.Cu  ↔  via /bidir_26</td><td>F.Cu</td><td class=n>0.2470</td><td class=n>≥0.30</td><td>(145.870, 90.290)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /an_2 B.Cu  ↔  via /an_3</td><td>B.Cu</td><td class=n>0.2055</td><td class=n>≥0.30</td><td>(135.560, 94.840)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /bidir_27 F.Cu  ↔  via /bidir_26</td><td>F.Cu</td><td class=n>0.2470</td><td class=n>≥0.30</td><td>(145.870, 90.290)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /in_0 B.Cu  ↔  via /an_3</td><td>B.Cu</td><td class=n>0.2445</td><td class=n>≥0.30</td><td>(135.560, 94.840)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /in_3 F.Cu  ↔  via /in_2</td><td>F.Cu</td><td class=n>0.2095</td><td class=n>≥0.30</td><td>(135.434, 96.198)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_26 B.Cu  ↔  via /bidir_27</td><td>B.Cu</td><td class=n>0.2393</td><td class=n>≥0.30</td><td>(145.551, 89.806)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /in_0 F.Cu  ↔  via /in_1</td><td>F.Cu</td><td class=n>0.2152</td><td class=n>≥0.30</td><td>(135.776, 95.653)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /rst_n F.Cu  ↔  via /clk</td><td>F.Cu</td><td class=n>0.2055</td><td class=n>≥0.30</td><td>(136.420, 98.820)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_37 F.Cu  ↔  via /bidir_36</td><td>F.Cu</td><td class=n>0.2223</td><td class=n>≥0.30</td><td>(138.501, 87.894)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_9 F.Cu  ↔  via /bidir_8</td><td>F.Cu</td><td class=n>0.2055</td><td class=n>≥0.30</td><td>(143.818, 101.484)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_17 B.Cu  ↔  via GND</td><td>B.Cu</td><td class=n>0.2277</td><td class=n>≥0.30</td><td>(146.710, 97.040)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_36 B.Cu  ↔  via /bidir_35</td><td>B.Cu</td><td class=n>0.2055</td><td class=n>≥0.30</td><td>(139.040, 87.680)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_22 B.Cu  ↔  via /bidir_21</td><td>B.Cu</td><td class=n>0.2299</td><td class=n>≥0.30</td><td>(146.091, 94.681)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_38 F.Cu  ↔  via /bidir_37</td><td>F.Cu</td><td class=n>0.2240</td><td class=n>≥0.30</td><td>(137.910, 87.980)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /in_2 F.Cu  ↔  via /in_3</td><td>F.Cu</td><td class=n>0.2278</td><td class=n>≥0.30</td><td>(135.596, 96.755)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_41 F.Cu  ↔  via /bidir_40</td><td>F.Cu</td><td class=n>0.2122</td><td class=n>≥0.30</td><td>(135.830, 88.780)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_27 F.Cu  ↔  via /bidir_26</td><td>F.Cu</td><td class=n>0.2055</td><td class=n>≥0.30</td><td>(145.870, 90.290)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /in_1</td><td>B.Cu</td><td class=n>0.2311</td><td class=n>≥0.30</td><td>(135.776, 95.653)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /rst_n B.Cu  ↔  via /clk</td><td>B.Cu</td><td class=n>0.2353</td><td class=n>≥0.30</td><td>(136.420, 98.820)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_31 B.Cu  ↔  via /bidir_32</td><td>B.Cu</td><td class=n>0.2055</td><td class=n>≥0.30</td><td>(143.130, 87.670)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_12 B.Cu  ↔  via /bidir_11</td><td>B.Cu</td><td class=n>0.2217</td><td class=n>≥0.30</td><td>(144.950, 101.110)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop VDD_IO_2 B.Cu  ↔  via /bidir_43</td><td>B.Cu</td><td class=n>0.2364</td><td class=n>≥0.30</td><td>(135.670, 90.520)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_45 F.Cu  ↔  via /bidir_44</td><td>F.Cu</td><td class=n>0.2055</td><td class=n>≥0.30</td><td>(135.870, 91.510)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_12 B.Cu  ↔  via /bidir_13</td><td>B.Cu</td><td class=n>0.2311</td><td class=n>≥0.30</td><td>(145.580, 100.540)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /in_0 F.Cu  ↔  via /an_3</td><td>F.Cu</td><td class=n>0.2055</td><td class=n>≥0.30</td><td>(135.560, 94.840)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_3 B.Cu  ↔  via /bidir_2</td><td>B.Cu</td><td class=n>0.2468</td><td class=n>≥0.30</td><td>(138.720, 100.360)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /in_0 B.Cu  ↔  via /in_1</td><td>B.Cu</td><td class=n>0.2157</td><td class=n>≥0.30</td><td>(135.776, 95.653)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_38 B.Cu  ↔  via /bidir_37</td><td>B.Cu</td><td class=n>0.2240</td><td class=n>≥0.30</td><td>(137.910, 87.980)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_9 B.Cu  ↔  via /bidir_10</td><td>B.Cu</td><td class=n>0.2065</td><td class=n>≥0.30</td><td>(144.340, 100.860)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop GND F.Cu  ↔  via /bidir_30</td><td>F.Cu</td><td class=n>0.2055</td><td class=n>≥0.30</td><td>(143.535, 88.445)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_4 F.Cu  ↔  via /bidir_3</td><td>F.Cu</td><td class=n>0.2376</td><td class=n>≥0.30</td><td>(138.628, 100.981)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_3 F.Cu  ↔  via /bidir_2</td><td>F.Cu</td><td class=n>0.2386</td><td class=n>≥0.30</td><td>(138.720, 100.360)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_16 B.Cu  ↔  via /bidir_17</td><td>B.Cu</td><td class=n>0.2203</td><td class=n>≥0.30</td><td>(146.310, 97.490)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /in_0 B.Cu  ↔  via /an_3</td><td>B.Cu</td><td class=n>0.2055</td><td class=n>≥0.30</td><td>(135.560, 94.840)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_14 B.Cu  ↔  via /bidir_15</td><td>B.Cu</td><td class=n>0.2068</td><td class=n>≥0.30</td><td>(146.295, 98.785)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop PWR_AUX_0 F.Cu  ↔  via GND</td><td>F.Cu</td><td class=n>0.2249</td><td class=n>≥0.30</td><td>(146.710, 97.040)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop VDD_IO_2 F.Cu  ↔  via /bidir_42</td><td>F.Cu</td><td class=n>0.2061</td><td class=n>≥0.30</td><td>(136.040, 89.970)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /in_2 B.Cu  ↔  via /in_1</td><td>B.Cu</td><td class=n>0.2400</td><td class=n>≥0.30</td><td>(135.776, 95.653)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_36 F.Cu  ↔  via /bidir_35</td><td>F.Cu</td><td class=n>0.2162</td><td class=n>≥0.30</td><td>(139.040, 87.680)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_37 B.Cu  ↔  via /bidir_36</td><td>B.Cu</td><td class=n>0.2055</td><td class=n>≥0.30</td><td>(138.501, 87.894)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_30 F.Cu  ↔  via GND</td><td>F.Cu</td><td class=n>0.2121</td><td class=n>≥0.30</td><td>(143.650, 89.020)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_9 B.Cu  ↔  via /bidir_8</td><td>B.Cu</td><td class=n>0.2055</td><td class=n>≥0.30</td><td>(143.818, 101.484)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_23 B.Cu  ↔  via /bidir_24</td><td>B.Cu</td><td class=n>0.2339</td><td class=n>≥0.30</td><td>(146.460, 92.990)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_45 B.Cu  ↔  via /bidir_44</td><td>B.Cu</td><td class=n>0.2055</td><td class=n>≥0.30</td><td>(135.870, 91.510)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_19 B.Cu  ↔  via /bidir_18</td><td>B.Cu</td><td class=n>0.2057</td><td class=n>≥0.30</td><td>(146.155, 96.115)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_31 F.Cu  ↔  via /bidir_32</td><td>F.Cu</td><td class=n>0.2055</td><td class=n>≥0.30</td><td>(143.130, 87.670)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /bidir_21</td><td>F.Cu</td><td class=n>0.2343</td><td class=n>≥0.30</td><td>(146.091, 94.681)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_26 F.Cu  ↔  via /bidir_27</td><td>F.Cu</td><td class=n>0.2156</td><td class=n>≥0.30</td><td>(145.551, 89.806)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_27 B.Cu  ↔  via /bidir_28</td><td>B.Cu</td><td class=n>0.2067</td><td class=n>≥0.30</td><td>(145.234, 89.320)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /an_2 F.Cu  ↔  via /an_3</td><td>F.Cu</td><td class=n>0.2058</td><td class=n>≥0.30</td><td>(135.560, 94.840)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop GND F.Cu  ↔  via /bidir_17</td><td>F.Cu</td><td class=n>0.2274</td><td class=n>≥0.30</td><td>(146.310, 97.490)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_41 B.Cu  ↔  via /bidir_40</td><td>B.Cu</td><td class=n>0.2420</td><td class=n>≥0.30</td><td>(135.830, 88.780)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop VDD_IO_2 B.Cu  ↔  via GND</td><td>B.Cu</td><td class=n>0.2193</td><td class=n>≥0.30</td><td>(134.890, 89.670)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /in_3</td><td>B.Cu</td><td class=n>0.2269</td><td class=n>≥0.30</td><td>(135.596, 96.755)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND B.Cu  ↔  via /bidir_21</td><td>B.Cu</td><td class=n>0.2343</td><td class=n>≥0.30</td><td>(146.091, 94.681)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_3 B.Cu  ↔  via /bidir_4</td><td>B.Cu</td><td class=n>0.2167</td><td class=n>≥0.30</td><td>(138.948, 101.465)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_12 F.Cu  ↔  via /bidir_11</td><td>F.Cu</td><td class=n>0.2217</td><td class=n>≥0.30</td><td>(144.950, 101.110)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_28 B.Cu  ↔  via /bidir_29</td><td>B.Cu</td><td class=n>0.2127</td><td class=n>≥0.30</td><td>(144.685, 88.970)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_28 F.Cu  ↔  via /bidir_27</td><td>F.Cu</td><td class=n>0.2370</td><td class=n>≥0.30</td><td>(145.551, 89.806)</td></tr>
+<tr><td class='fixed'>fixed</td><td>track /in_0 F.Cu  ↔  via /an_3</td><td>F.Cu</td><td class=n>0.2445</td><td class=n>≥0.30</td><td>(135.560, 94.840)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop GND F.Cu  ↔  via /bidir_30</td><td>F.Cu</td><td class=n>0.2381</td><td class=n>≥0.30</td><td>(143.535, 88.445)</td></tr>
+<tr><td class='fixed'>fixed</td><td>zone GND F.Cu  ↔  via /in_1</td><td>F.Cu</td><td class=n>0.2311</td><td class=n>≥0.30</td><td>(135.776, 95.653)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_9 F.Cu  ↔  via /bidir_10</td><td>F.Cu</td><td class=n>0.2065</td><td class=n>≥0.30</td><td>(144.340, 100.860)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_30 B.Cu  ↔  via GND</td><td>B.Cu</td><td class=n>0.2121</td><td class=n>≥0.30</td><td>(143.650, 89.020)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_4 B.Cu  ↔  via /bidir_3</td><td>B.Cu</td><td class=n>0.2376</td><td class=n>≥0.30</td><td>(138.628, 100.981)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_12 F.Cu  ↔  via /bidir_13</td><td>F.Cu</td><td class=n>0.2311</td><td class=n>≥0.30</td><td>(145.580, 100.540)</td></tr>
+<tr><td class='fixed'>fixed</td><td>teardrop /bidir_3 F.Cu  ↔  via /bidir_4</td><td>F.Cu</td><td class=n>0.2168</td><td class=n>≥0.30</td><td>(138.948, 101.465)</td></tr>
+</table>
+<h2>F.Cu <span class='mut'>(102586 px changed at 110 px/mm, 16 crops)</span></h2>
+<a href='F_Cu.png'><img src='F_Cu.png' loading='lazy'></a>
+<div class='crops'>
+<figure><a href='F_Cu_crop1.png'><img src='F_Cu_crop1.png' loading='lazy'></a><figcaption>1: x 134.30–137.86, y 87.50–90.55 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='F_Cu_crop2.png'><img src='F_Cu_crop2.png' loading='lazy'></a><figcaption>2: x 134.29–136.92, y 89.94–93.61 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='F_Cu_crop3.png'><img src='F_Cu_crop3.png' loading='lazy'></a><figcaption>3: x 134.67–137.28, y 92.66–96.49 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='F_Cu_crop4.png'><img src='F_Cu_crop4.png' loading='lazy'></a><figcaption>4: x 134.27–137.68, y 95.44–99.27 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='F_Cu_crop5.png'><img src='F_Cu_crop5.png' loading='lazy'></a><figcaption>5: x 135.65–137.25, y 98.25–99.97 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='F_Cu_crop6.png'><img src='F_Cu_crop6.png' loading='lazy'></a><figcaption>6: x 136.82–140.20, y 87.07–90.15 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='F_Cu_crop7.png'><img src='F_Cu_crop7.png' loading='lazy'></a><figcaption>7: x 137.17–140.30, y 98.80–102.06 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='F_Cu_crop8.png'><img src='F_Cu_crop8.png' loading='lazy'></a><figcaption>8: x 139.30–142.34, y 87.28–90.51 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='F_Cu_crop9.png'><img src='F_Cu_crop9.png' loading='lazy'></a><figcaption>9: x 139.94–142.87, y 99.42–101.98 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='F_Cu_crop10.png'><img src='F_Cu_crop10.png' loading='lazy'></a><figcaption>10: x 141.86–145.36, y 87.02–90.25 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='F_Cu_crop11.png'><img src='F_Cu_crop11.png' loading='lazy'></a><figcaption>11: x 142.14–145.32, y 99.13–102.13 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='F_Cu_crop12.png'><img src='F_Cu_crop12.png' loading='lazy'></a><figcaption>12: x 144.56–146.46, y 88.68–90.90 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='F_Cu_crop13.png'><img src='F_Cu_crop13.png' loading='lazy'></a><figcaption>13: x 144.62–147.19, y 90.14–93.54 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='F_Cu_crop14.png'><img src='F_Cu_crop14.png' loading='lazy'></a><figcaption>14: x 144.87–147.90, y 92.73–96.51 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='F_Cu_crop15.png'><img src='F_Cu_crop15.png' loading='lazy'></a><figcaption>15: x 144.90–147.80, y 95.43–99.20 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='F_Cu_crop16.png'><img src='F_Cu_crop16.png' loading='lazy'></a><figcaption>16: x 144.33–146.92, y 98.23–101.72 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+</div>
+<h2>In1.Cu <span class='mut'>(71478 px changed at 110 px/mm, 14 crops)</span></h2>
+<a href='In1_Cu.png'><img src='In1_Cu.png' loading='lazy'></a>
+<div class='crops'>
+<figure><a href='In1_Cu_crop1.png'><img src='In1_Cu_crop1.png' loading='lazy'></a><figcaption>1: x 142.62–145.50, y 100.31–102.13 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In1_Cu_crop2.png'><img src='In1_Cu_crop2.png' loading='lazy'></a><figcaption>2: x 145.57–147.80, y 95.46–99.33 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In1_Cu_crop3.png'><img src='In1_Cu_crop3.png' loading='lazy'></a><figcaption>3: x 145.03–146.92, y 98.25–101.72 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In1_Cu_crop4.png'><img src='In1_Cu_crop4.png' loading='lazy'></a><figcaption>4: x 134.29–136.63, y 90.95–94.81 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In1_Cu_crop5.png'><img src='In1_Cu_crop5.png' loading='lazy'></a><figcaption>5: x 134.27–136.33, y 93.81–97.38 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In1_Cu_crop6.png'><img src='In1_Cu_crop6.png' loading='lazy'></a><figcaption>6: x 134.97–138.27, y 97.06–100.41 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In1_Cu_crop7.png'><img src='In1_Cu_crop7.png' loading='lazy'></a><figcaption>7: x 144.13–147.19, y 88.41–91.95 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In1_Cu_crop8.png'><img src='In1_Cu_crop8.png' loading='lazy'></a><figcaption>8: x 142.58–144.33, y 87.02–89.60 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In1_Cu_crop9.png'><img src='In1_Cu_crop9.png' loading='lazy'></a><figcaption>9: x 139.89–142.34, y 87.28–88.98 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In1_Cu_crop10.png'><img src='In1_Cu_crop10.png' loading='lazy'></a><figcaption>10: x 145.53–147.90, y 91.88–95.52 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In1_Cu_crop11.png'><img src='In1_Cu_crop11.png' loading='lazy'></a><figcaption>11: x 134.30–137.43, y 88.00–91.07 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In1_Cu_crop12.png'><img src='In1_Cu_crop12.png' loading='lazy'></a><figcaption>12: x 136.66–139.59, y 87.07–88.76 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In1_Cu_crop13.png'><img src='In1_Cu_crop13.png' loading='lazy'></a><figcaption>13: x 139.94–142.24, y 99.98–101.98 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In1_Cu_crop14.png'><img src='In1_Cu_crop14.png' loading='lazy'></a><figcaption>14: x 138.00–139.60, y 99.81–102.06 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+</div>
+<h2>In2.Cu <span class='mut'>(71478 px changed at 110 px/mm, 14 crops)</span></h2>
+<a href='In2_Cu.png'><img src='In2_Cu.png' loading='lazy'></a>
+<div class='crops'>
+<figure><a href='In2_Cu_crop1.png'><img src='In2_Cu_crop1.png' loading='lazy'></a><figcaption>1: x 142.62–145.50, y 100.31–102.13 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In2_Cu_crop2.png'><img src='In2_Cu_crop2.png' loading='lazy'></a><figcaption>2: x 145.57–147.80, y 95.46–99.33 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In2_Cu_crop3.png'><img src='In2_Cu_crop3.png' loading='lazy'></a><figcaption>3: x 145.03–146.92, y 98.25–101.72 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In2_Cu_crop4.png'><img src='In2_Cu_crop4.png' loading='lazy'></a><figcaption>4: x 134.29–136.63, y 90.95–94.81 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In2_Cu_crop5.png'><img src='In2_Cu_crop5.png' loading='lazy'></a><figcaption>5: x 134.27–136.33, y 93.81–97.38 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In2_Cu_crop6.png'><img src='In2_Cu_crop6.png' loading='lazy'></a><figcaption>6: x 134.97–138.27, y 97.06–100.41 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In2_Cu_crop7.png'><img src='In2_Cu_crop7.png' loading='lazy'></a><figcaption>7: x 144.13–147.19, y 88.41–91.95 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In2_Cu_crop8.png'><img src='In2_Cu_crop8.png' loading='lazy'></a><figcaption>8: x 142.58–144.33, y 87.02–89.60 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In2_Cu_crop9.png'><img src='In2_Cu_crop9.png' loading='lazy'></a><figcaption>9: x 139.89–142.34, y 87.28–88.98 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In2_Cu_crop10.png'><img src='In2_Cu_crop10.png' loading='lazy'></a><figcaption>10: x 145.53–147.90, y 91.88–95.52 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In2_Cu_crop11.png'><img src='In2_Cu_crop11.png' loading='lazy'></a><figcaption>11: x 134.30–137.43, y 88.00–91.07 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In2_Cu_crop12.png'><img src='In2_Cu_crop12.png' loading='lazy'></a><figcaption>12: x 136.66–139.59, y 87.07–88.76 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In2_Cu_crop13.png'><img src='In2_Cu_crop13.png' loading='lazy'></a><figcaption>13: x 139.94–142.24, y 99.98–101.98 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='In2_Cu_crop14.png'><img src='In2_Cu_crop14.png' loading='lazy'></a><figcaption>14: x 138.00–139.60, y 99.81–102.06 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+</div>
+<h2>B.Cu <span class='mut'>(136814 px changed at 110 px/mm, 22 crops)</span></h2>
+<a href='B_Cu.png'><img src='B_Cu.png' loading='lazy'></a>
+<div class='crops'>
+<figure><a href='B_Cu_crop1.png'><img src='B_Cu_crop1.png' loading='lazy'></a><figcaption>1: x 134.30–137.76, y 87.50–90.56 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop2.png'><img src='B_Cu_crop2.png' loading='lazy'></a><figcaption>2: x 134.29–137.13, y 89.67–93.46 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop3.png'><img src='B_Cu_crop3.png' loading='lazy'></a><figcaption>3: x 134.67–137.62, y 92.63–96.33 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop4.png'><img src='B_Cu_crop4.png' loading='lazy'></a><figcaption>4: x 134.27–137.76, y 95.57–99.37 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop5.png'><img src='B_Cu_crop5.png' loading='lazy'></a><figcaption>5: x 135.85–137.81, y 98.66–100.32 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop6.png'><img src='B_Cu_crop6.png' loading='lazy'></a><figcaption>6: x 136.82–139.98, y 86.67–90.17 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop7.png'><img src='B_Cu_crop7.png' loading='lazy'></a><figcaption>7: x 136.94–139.72, y 91.50–93.62 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop8.png'><img src='B_Cu_crop8.png' loading='lazy'></a><figcaption>8: x 137.42–139.79, y 92.60–95.92 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop9.png'><img src='B_Cu_crop9.png' loading='lazy'></a><figcaption>9: x 137.44–140.10, y 95.79–97.97 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop10.png'><img src='B_Cu_crop10.png' loading='lazy'></a><figcaption>10: x 137.17–139.84, y 98.86–102.06 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop11.png'><img src='B_Cu_crop11.png' loading='lazy'></a><figcaption>11: x 139.89–142.34, y 87.28–88.98 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop12.png'><img src='B_Cu_crop12.png' loading='lazy'></a><figcaption>12: x 139.94–142.24, y 99.98–101.98 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop13.png'><img src='B_Cu_crop13.png' loading='lazy'></a><figcaption>13: x 142.03–145.26, y 87.02–90.14 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop14.png'><img src='B_Cu_crop14.png' loading='lazy'></a><figcaption>14: x 142.10–144.88, y 91.27–92.91 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop15.png'><img src='B_Cu_crop15.png' loading='lazy'></a><figcaption>15: x 142.68–145.24, y 92.75–96.12 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop16.png'><img src='B_Cu_crop16.png' loading='lazy'></a><figcaption>16: x 142.59–144.46, y 95.81–97.72 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop17.png'><img src='B_Cu_crop17.png' loading='lazy'></a><figcaption>17: x 142.08–145.31, y 98.63–102.53 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop18.png'><img src='B_Cu_crop18.png' loading='lazy'></a><figcaption>18: x 144.51–146.11, y 88.73–90.38 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop19.png'><img src='B_Cu_crop19.png' loading='lazy'></a><figcaption>19: x 144.31–147.19, y 89.74–93.60 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop20.png'><img src='B_Cu_crop20.png' loading='lazy'></a><figcaption>20: x 144.90–147.90, y 92.90–96.59 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop21.png'><img src='B_Cu_crop21.png' loading='lazy'></a><figcaption>21: x 144.31–147.80, y 95.54–99.54 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+<figure><a href='B_Cu_crop22.png'><img src='B_Cu_crop22.png' loading='lazy'></a><figcaption>22: x 144.39–147.07, y 98.61–101.72 mm. Label per hole: its smallest changed gap A→B (white = passes in B, yellow = still under).</figcaption></figure>
+</div>
+</body></html>

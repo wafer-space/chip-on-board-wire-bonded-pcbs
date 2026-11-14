@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Rev 0 Fix Changes</title>
+<style>
+:root{--bg:#fbfaf7;--fg:#1d1d1b;--mut:#6b6a66;--line:#e2dfd8;--card:#fff;--add:#e6f4ea;--addf:#1a6b33;--del:#fbe9e7;--delf:#a1281b;
+  --hunk:#eef1f8;--hunkf:#3b4f8a;--ok:#1a6b33;--okb:#e6f4ea;--warn:#8a5a00;--warnb:#fff3d6;--code:#f2f0eb;--acc:#2f5bd3}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#161615;--fg:#e8e6e1;--mut:#9b9992;--line:#33322f;--card:#1e1e1c;
+  --add:#15301d;--addf:#8fd9a2;--del:#3a1915;--delf:#f2a397;--hunk:#1d2335;--hunkf:#9fb3ee;--ok:#8fd9a2;--okb:#15301d;--warn:#f0c66b;--warnb:#3a2e12;--code:#262523;--acc:#8aa8ff}}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 system-ui,-apple-system,Segoe UI,sans-serif;margin:0}
+main{max-width:1180px;margin:0 auto;padding:28px 16px 80px}
+h1{font-size:26px;margin:0 0 4px} h2{font-size:19px;margin:42px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h3{font-size:16px;margin:26px 0 6px}
+.mut{color:var(--mut)} .small{font-size:13px}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font:13px/1.4 ui-monospace,Consolas,monospace}
+table{border-collapse:collapse;width:100%;margin:8px 0;font-size:14px}
+th,td{text-align:left;padding:6px 10px 6px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--mut);font-weight:600} td.n{font-variant-numeric:tabular-nums}
+.facts th{width:220px}
+.scroll{overflow-x:auto}
+.pill{display:inline-block;padding:1px 9px;border-radius:99px;font-size:12px;font-weight:600;vertical-align:middle}
+.pill.ok{background:var(--okb);color:var(--ok)} .pill.warn{background:var(--warnb);color:var(--warn)}
+.callout{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:6px;padding:12px 16px;margin:14px 0}
+.notes li{margin:4px 0}
+.btn{display:inline-block;margin:6px 10px 6px 0;padding:6px 12px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--acc);text-decoration:none;font-weight:600}
+.layers{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:10px}
+.layers figure{margin:0} .layers img{width:100%;border:1px solid var(--line);border-radius:4px;background:#111}
+figcaption{font-size:12px;color:var(--mut)}
+pre.diff{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:8px 0;overflow-x:auto;font:12.5px/1.45 ui-monospace,Consolas,monospace;margin:8px 0}
+pre.diff div{padding:0 12px;white-space:pre}
+.add{background:var(--add);color:var(--addf)} .del{background:var(--del);color:var(--delf)}
+.hunk{background:var(--hunk);color:var(--hunkf)} .hdr{color:var(--mut)}
+.dh{font-weight:700;padding-top:10px!important;border-top:1px solid var(--line);margin-top:6px}
+.dh:first-child{border-top:0;margin-top:0;padding-top:0!important}
+details summary{cursor:pointer;font-weight:600;margin:10px 0}
+nav a{margin-right:14px;color:var(--acc)}
+</style></head><body><main>
+<h1>Rev 0 fix: 1x0p5, 0p5x1, 0p5x0p5</h1>
+<p class='mut'>Branch <code>nextpcb-drc</code> · working copy vs <code>7f8c6fd</code> (“1x1 passed”) · generated 2026-11-14 00:03</p>
+<nav><a href='#summary'>Summary</a><a href='#rules'>Rules diff</a><a href='#tools'>Tool diff</a><a href='#0p5x0p5'>0p5x0p5</a><a href='#1x0p5'>1x0p5</a><a href='#0p5x1'>0p5x1</a><a href='#pcb'>Board file stats</a></nav>
+
+<div class='callout'>Same process as the 1x1, which passed NextPCB&#x27;s Rev 0 check. The board-level hole rules were raised to NextPCB&#x27;s limits: via hole clearance 0.25 mm, pad hole 0.31 mm, hole-to-hole 0.254 mm same net / 0.3048 mm different nets. <code>tools/rev0fix</code> then moved vias and free track corners until KiCad DRC showed no blocking items. No via drill, track width or pad changed, and no footprint moved except <b>C108 on the 0p5x1, 0.095 mm left</b>. Each board was exported to a fresh 12-file upload zip. <b>The 0p5x1 has three choices that need your OK before upload</b> (see its section).</div>
+
+<h2 id='summary'>Summary</h2>
+<div class='scroll'><table><tr><th>Board</th><th>Hole items before</th><th>After</th><th>Vias moved</th><th>Track pieces moved</th><th>Largest via move</th><th>Upload zip</th></tr><tr><td><a href='#0p5x0p5'>0p5x0p5</a></td><td class='n'>88</td><td class='n'>0</td><td class='n'>51</td><td class='n'>270</td><td class='n'>0.084 mm</td><td class='n'><code>0p5x0p5-cob_REV0-UPLOAD_2026-11-12_v1.zip</code></td><td><span class='pill ok'>Ready</span></td></tr><tr><td><a href='#1x0p5'>1x0p5</a></td><td class='n'>140</td><td class='n'>0</td><td class='n'>61</td><td class='n'>334</td><td class='n'>0.227 mm</td><td class='n'><code>mezzanine-1x0p5_REV0-UPLOAD_2026-11-12_v1.zip</code></td><td><span class='pill ok'>Ready</span></td></tr><tr><td><a href='#0p5x1'>0p5x1</a></td><td class='n'>194</td><td class='n'>0</td><td class='n'>75</td><td class='n'>426</td><td class='n'>0.209 mm</td><td class='n'><code>mezzanine-0p5x1_REV0-UPLOAD_2026-11-14_v1.zip</code></td><td><span class='pill warn'>Needs your OK</span></td></tr></table></div>
+<ul class='notes'><li>Hole items are KiCad DRC <code>hole_clearance</code> + <code>hole_to_hole</code> errors under the Rev 0 rules. The other DRC items (library footprint mismatches, silkscreen over copper, one text height) were there before; the small changes in them are listed per board.</li><li>Nothing is committed yet. The boards, rules and zips are in the working copy on branch <code>nextpcb-drc</code>.</li></ul>
+
+<h2 id='rules'>Rules diff (<code>.kicad_pro</code> and <code>.kicad_dru</code>)</h2>
+<p class='mut'>Board Setup minimums in each <code>.kicad_pro</code>, and the custom rules that rev0fix writes into each <code>.kicad_dru</code>. The 0p5x1 file also carries the U102 exemption and a rule that keeps the pour at 0.5 mm from the edge while vias and tracks may go to 0.45 mm.</p>
+<pre class='diff'><div class='dh'>a/run-2/0p5x0p5-cob/0p5x0p5-cob.kicad_pro b/run-2/0p5x0p5-cob/0p5x0p5-cob.kicad_pro</div>
+<div class='hdr'>--- a/run-2/0p5x0p5-cob/0p5x0p5-cob.kicad_pro</div>
+<div class='hdr'>+++ b/run-2/0p5x0p5-cob/0p5x0p5-cob.kicad_pro</div>
+<div class='hunk'>@@ -150,8 +150,8 @@</div>
+<div class='ctx'>         &quot;min_connection&quot;: 0.1,</div>
+<div class='ctx'>         &quot;min_copper_edge_clearance&quot;: 0.5,</div>
+<div class='ctx'>         &quot;min_groove_width&quot;: 0.0,</div>
+<div class='del'>-        &quot;min_hole_clearance&quot;: 0.2,</div>
+<div class='del'>-        &quot;min_hole_to_hole&quot;: 0.205,</div>
+<div class='add'>+        &quot;min_hole_clearance&quot;: 0.25,</div>
+<div class='add'>+        &quot;min_hole_to_hole&quot;: 0.254,</div>
+<div class='ctx'>         &quot;min_microvia_diameter&quot;: 0.2,</div>
+<div class='ctx'>         &quot;min_microvia_drill&quot;: 0.1,</div>
+<div class='ctx'>         &quot;min_resolved_spokes&quot;: 1,</div>
+<div class='dh'>a/run-2/0p5x1-cob/mezzanine-0p5x1.kicad_pro b/run-2/0p5x1-cob/mezzanine-0p5x1.kicad_pro</div>
+<div class='hdr'>--- a/run-2/0p5x1-cob/mezzanine-0p5x1.kicad_pro</div>
+<div class='hdr'>+++ b/run-2/0p5x1-cob/mezzanine-0p5x1.kicad_pro</div>
+<div class='hunk'>@@ -148,10 +148,10 @@</div>
+<div class='ctx'>         &quot;max_error&quot;: 0.005,</div>
+<div class='ctx'>         &quot;min_clearance&quot;: 0.1,</div>
+<div class='ctx'>         &quot;min_connection&quot;: 0.1,</div>
+<div class='del'>-        &quot;min_copper_edge_clearance&quot;: 0.5,</div>
+<div class='add'>+        &quot;min_copper_edge_clearance&quot;: 0.45,</div>
+<div class='ctx'>         &quot;min_groove_width&quot;: 0.0,</div>
+<div class='del'>-        &quot;min_hole_clearance&quot;: 0.2,</div>
+<div class='del'>-        &quot;min_hole_to_hole&quot;: 0.205,</div>
+<div class='add'>+        &quot;min_hole_clearance&quot;: 0.25,</div>
+<div class='add'>+        &quot;min_hole_to_hole&quot;: 0.254,</div>
+<div class='ctx'>         &quot;min_microvia_diameter&quot;: 0.2,</div>
+<div class='ctx'>         &quot;min_microvia_drill&quot;: 0.1,</div>
+<div class='ctx'>         &quot;min_resolved_spokes&quot;: 1,</div>
+<div class='dh'>a/run-2/1x0p5-cob/mezzanine-1x0p5.kicad_pro b/run-2/1x0p5-cob/mezzanine-1x0p5.kicad_pro</div>
+<div class='hdr'>--- a/run-2/1x0p5-cob/mezzanine-1x0p5.kicad_pro</div>
+<div class='hdr'>+++ b/run-2/1x0p5-cob/mezzanine-1x0p5.kicad_pro</div>
+<div class='hunk'>@@ -150,8 +150,8 @@</div>
+<div class='ctx'>         &quot;min_connection&quot;: 0.1,</div>
+<div class='ctx'>         &quot;min_copper_edge_clearance&quot;: 0.5,</div>
+<div class='ctx'>         &quot;min_groove_width&quot;: 0.0,</div>
+<div class='del'>-        &quot;min_hole_clearance&quot;: 0.205,</div>
+<div class='del'>-        &quot;min_hole_to_hole&quot;: 0.205,</div>
+<div class='add'>+        &quot;min_hole_clearance&quot;: 0.25,</div>
+<div class='add'>+        &quot;min_hole_to_hole&quot;: 0.254,</div>
+<div class='ctx'>         &quot;min_microvia_diameter&quot;: 0.2,</div>
+<div class='ctx'>         &quot;min_microvia_drill&quot;: 0.1,</div>
+<div class='ctx'>         &quot;min_resolved_spokes&quot;: 1,</div>
+<div class='dh'>a/run-2/0p5x0p5-cob/0p5x0p5-cob.kicad_dru b/run-2/0p5x0p5-cob/0p5x0p5-cob.kicad_dru</div>
+<div class='hdr'>--- /dev/null</div>
+<div class='hdr'>+++ b/run-2/0p5x0p5-cob/0p5x0p5-cob.kicad_dru</div>
+<div class='hunk'>@@ -0,0 +1,13 @@</div>
+<div class='add'>+(version 1)</div>
+<div class='add'>+</div>
+<div class='add'>+# --- rev0fix rules (generated by tools/rev0fix/rev0fix.py) ---</div>
+<div class='add'>+# NextPCB Rev 0 flagged pad holes at 0.233 and 0.253 mm from a trace while passing vias at 0.23 mm,</div>
+<div class='add'>+# so pad (component) holes get their own, larger hole clearance.</div>
+<div class='add'>+(rule &quot;rev0_pad_hole_to_copper&quot;</div>
+<div class='add'>+  (condition &quot;(A.Type == &#x27;Pad&#x27; &amp;&amp; A.Pad_Type == &#x27;Through-hole&#x27;) || (B.Type == &#x27;Pad&#x27; &amp;&amp; B.Pad_Type == &#x27;Through-hole&#x27;)&quot;)</div>
+<div class='add'>+  (constraint hole_clearance (min 0.31mm)))</div>
+<div class='add'>+</div>
+<div class='add'>+(rule &quot;rev0_hole_to_hole_diff_net&quot;</div>
+<div class='add'>+  (condition &quot;A.NetName != B.NetName&quot;)</div>
+<div class='add'>+  (constraint hole_to_hole (min 0.3048mm)))</div>
+<div class='add'>+# --- end rev0fix rules ---</div>
+<div class='dh'>a/run-2/1x0p5-cob/mezzanine-1x0p5.kicad_dru b/run-2/1x0p5-cob/mezzanine-1x0p5.kicad_dru</div>
+<div class='hdr'>--- /dev/null</div>
+<div class='hdr'>+++ b/run-2/1x0p5-cob/mezzanine-1x0p5.kicad_dru</div>
+<div class='hunk'>@@ -0,0 +1,13 @@</div>
+<div class='add'>+(version 1)</div>
+<div class='add'>+</div>
+<div class='add'>+# --- rev0fix rules (generated by tools/rev0fix/rev0fix.py) ---</div>
+<div class='add'>+# NextPCB Rev 0 flagged pad holes at 0.233 and 0.253 mm from a trace while passing vias at 0.23 mm,</div>
+<div class='add'>+# so pad (component) holes get their own, larger hole clearance.</div>
+<div class='add'>+(rule &quot;rev0_pad_hole_to_copper&quot;</div>
+<div class='add'>+  (condition &quot;(A.Type == &#x27;Pad&#x27; &amp;&amp; A.Pad_Type == &#x27;Through-hole&#x27;) || (B.Type == &#x27;Pad&#x27; &amp;&amp; B.Pad_Type == &#x27;Through-hole&#x27;)&quot;)</div>
+<div class='add'>+  (constraint hole_clearance (min 0.31mm)))</div>
+<div class='add'>+</div>
+<div class='add'>+(rule &quot;rev0_hole_to_hole_diff_net&quot;</div>
+<div class='add'>+  (condition &quot;A.NetName != B.NetName&quot;)</div>
+<div class='add'>+  (constraint hole_to_hole (min 0.3048mm)))</div>
+<div class='add'>+# --- end rev0fix rules ---</div>
+<div class='dh'>a/run-2/0p5x1-cob/mezzanine-0p5x1.kicad_dru b/run-2/0p5x1-cob/mezzanine-0p5x1.kicad_dru</div>
+<div class='hdr'>--- /dev/null</div>
+<div class='hdr'>+++ b/run-2/0p5x1-cob/mezzanine-0p5x1.kicad_dru</div>
+<div class='hunk'>@@ -0,0 +1,25 @@</div>
+<div class='add'>+(version 1)</div>
+<div class='add'>+</div>
+<div class='add'>+# --- rev0fix rules (generated by tools/rev0fix/rev0fix.py) ---</div>
+<div class='add'>+# NextPCB Rev 0 flagged pad holes at 0.233 and 0.253 mm from a trace while passing vias at 0.23 mm,</div>
+<div class='add'>+# so pad (component) holes get their own, larger hole clearance.</div>
+<div class='add'>+(rule &quot;rev0_pad_hole_to_copper&quot;</div>
+<div class='add'>+  (condition &quot;(A.Type == &#x27;Pad&#x27; &amp;&amp; A.Pad_Type == &#x27;Through-hole&#x27;) || (B.Type == &#x27;Pad&#x27; &amp;&amp; B.Pad_Type == &#x27;Through-hole&#x27;)&quot;)</div>
+<div class='add'>+  (constraint hole_clearance (min 0.31mm)))</div>
+<div class='add'>+</div>
+<div class='add'>+(rule &quot;rev0_hole_to_hole_diff_net&quot;</div>
+<div class='add'>+  (condition &quot;A.NetName != B.NetName&quot;)</div>
+<div class='add'>+  (constraint hole_to_hole (min 0.3048mm)))</div>
+<div class='add'>+</div>
+<div class='add'>+# Hole spacing on U102 is disregarded by request (--ignore-fp U102). Copper clearance still applies.</div>
+<div class='add'>+(rule &quot;rev0_ignore_U102&quot;</div>
+<div class='add'>+  (condition &quot;A.memberOfFootprint(&#x27;U102&#x27;) || B.memberOfFootprint(&#x27;U102&#x27;)&quot;)</div>
+<div class='add'>+  (constraint hole_clearance (min 0mm))</div>
+<div class='add'>+  (constraint hole_to_hole (min 0mm)))</div>
+<div class='add'>+</div>
+<div class='add'>+# Vias and tracks may sit 0.45 mm from the edge (--edge); NextPCB&#x27;s V-cut limit is 0.4 mm.</div>
+<div class='add'>+# The pour keeps the board&#x27;s original 0.5 mm, so zone outlines don&#x27;t change.</div>
+<div class='add'>+(rule &quot;rev0_zone_edge&quot;</div>
+<div class='add'>+  (condition &quot;A.Type == &#x27;Zone&#x27;&quot;)</div>
+<div class='add'>+  (constraint edge_clearance (min 0.5mm)))</div>
+<div class='add'>+# --- end rev0fix rules ---</div></pre>
+
+<h2 id='tools'>Tool diff</h2>
+<p class='mut'>Changes to the repo tools since the 1x1 commit. Most were needed for the 0p5x1, which is much denser around U102 than the other boards. The 0p5x0p5 and 1x0p5 were done first, with the earlier tools.</p>
+<ul class='notes'><li><b><code>solve.py</code> sees more obstacles.</b> It now sees copper graphics, such as the logo on the 1x0p5 that a via had been moved into, and pad-specific clearances (U102&#x27;s die-pad holes need 0.18 mm). It also catches two tracks that would cross after a move, not only ends that come too close.</li><li><b><code>solve.py</code> keeps the pour connected.</b> A via may not move closer to a pad that only the pour feeds (17 such pads on the 0p5x1). An item near the board edge may move toward it only while the pour strip between them stays 0.25 mm wide. Without these, the 0p5x1&#x27;s bottom GND strip was cut and U101&#x27;s MP pads were stranded.</li><li><b>New <code>rev0fix.py</code> options.</b> <code>--ignore-fp REF</code> (U102 exemption), <code>--ignore-cu</code>, <code>--edge</code> (vias and tracks to 0.45 mm, pour kept at 0.5 mm), <code>--near</code>, <code>--reach</code>. When DRC is already clean, <code>--export</code> runs no rounds, so hand fixes are kept.</li><li><b>New hand-fix scripts.</b> <code>movefp.py</code> moves a footprint and drags its track ends (C108). <code>nudge.py</code> moves one via or corner and drags its track ends (the two 0p5x1 hand fixes).</li><li><b><code>pcbdiff/extract.py</code></b> now records each pad&#x27;s own clearance and the copper graphics, for the solver and the diff.</li></ul>
+<details><summary>Show the code diff</summary><pre class='diff'><div class='dh'>a/tools/pcbdiff/extract.py b/tools/pcbdiff/extract.py</div>
+<div class='hdr'>--- a/tools/pcbdiff/extract.py</div>
+<div class='hdr'>+++ b/tools/pcbdiff/extract.py</div>
+<div class='hunk'>@@ -92,8 +92,37 @@ for fp in b.GetFootprints():</div>
+<div class='ctx'>         if pad.GetDrillSize().x &gt; 0:</div>
+<div class='ctx'>             hs = pad.GetEffectiveHoleShape(); sg = hs.GetSeg()</div>
+<div class='ctx'>             hole = [mm(sg.A.x), mm(sg.A.y), mm(sg.B.x), mm(sg.B.y), mm(hs.GetWidth())]</div>
+<div class='add'>+        clr = 0.0</div>
+<div class='add'>+        for l in cu_layers:</div>
+<div class='add'>+            if pad.IsOnLayer(l):</div>
+<div class='add'>+                try:</div>
+<div class='add'>+                    clr = max(clr, mm(pad.GetOwnClearance(l)))</div>
+<div class='add'>+                except Exception:</div>
+<div class='add'>+                    pass</div>
+<div class='ctx'>         out[&quot;pads&quot;].append(dict(uuid=uid(pad), ref=fp.GetReference(), num=pad.GetNumber(),</div>
+<div class='del'>-                                x=mm(pp.x), y=mm(pp.y), net=pad.GetNetname(), polys=polys, hole=hole))</div>
+<div class='add'>+                                x=mm(pp.x), y=mm(pp.y), net=pad.GetNetname(), polys=polys, hole=hole, clr=clr))</div>
+<div class='add'>+</div>
+<div class='add'>+# copper graphics (logos, shapes, text on copper layers) in footprints and on the board: fixed obstacles</div>
+<div class='add'>+out[&quot;graphics&quot;] = []</div>
+<div class='add'>+_cu_ids = set(cu_layers)</div>
+<div class='add'>+for owner, items in [(fp.GetReference(), list(fp.GraphicalItems())) for fp in b.GetFootprints()] + \</div>
+<div class='add'>+                    [(&quot;&quot;, list(b.GetDrawings()))]:</div>
+<div class='add'>+    for g in items:</div>
+<div class='add'>+        l = g.GetLayer()</div>
+<div class='add'>+        if l not in _cu_ids:</div>
+<div class='add'>+            continue</div>
+<div class='add'>+        sps = pcbnew.SHAPE_POLY_SET()</div>
+<div class='add'>+        try:</div>
+<div class='add'>+            g.TransformShapeToPolygon(sps, l, 0, pcbnew.FromMM(0.002), pcbnew.ERROR_INSIDE)</div>
+<div class='add'>+        except Exception:</div>
+<div class='add'>+            continue</div>
+<div class='add'>+        try:</div>
+<div class='add'>+            sps.Simplify()</div>
+<div class='add'>+        except Exception:</div>
+<div class='add'>+            pass</div>
+<div class='add'>+        if sps.OutlineCount():</div>
+<div class='add'>+            out[&quot;graphics&quot;].append(dict(uuid=uid(g), ref=owner, layer=L(l), net=g.GetNetname() if hasattr(g, &quot;GetNetname&quot;) else &quot;&quot;,</div>
+<div class='add'>+                                        polys=polyset(sps)))</div>
+<div class='ctx'> </div>
+<div class='ctx'> for z in b.Zones():</div>
+<div class='ctx'>     fills = {}</div>
+<div class='dh'>a/tools/rev0fix/README.md b/tools/rev0fix/README.md</div>
+<div class='hdr'>--- a/tools/rev0fix/README.md</div>
+<div class='hdr'>+++ b/tools/rev0fix/README.md</div>
+<div class='hunk'>@@ -16,6 +16,14 @@ Options (all in mm):</div>
+<div class='ctx'> | `--hh-diff` | 0.3048 | hole to hole, different nets |</div>
+<div class='ctx'> | `--rounds` | 4 | solve, apply and DRC rounds before giving up |</div>
+<div class='ctx'> | `--export TAG` | off | write `production/&lt;board&gt;_REV0-UPLOAD_&lt;date&gt;_&lt;TAG&gt;.zip` |</div>
+<div class='add'>+| `--reach` | 0.2 | most a via or corner may move per axis, per round |</div>
+<div class='add'>+| `--near` | 0.15 | how far beyond its aim a pair is still watched. Raise it (to about 2 to 3 × reach) on dense boards, so tracks that start far apart can&#x27;t be moved into each other. Slower. |</div>
+<div class='add'>+| `--ignore-fp REF` | none | disregard hole spacing (hole clearance, hole to hole) to this footprint. Repeatable. Used for `U102` on the 0p5x1. |</div>
+<div class='add'>+| `--ignore-cu MM` | 0.10 | copper clearance to the `--ignore-fp` footprints. Lowers Board Setup&#x27;s minimum clearance to match, because custom rules can&#x27;t go under it. The netclass clearance still holds everywhere else. A pad&#x27;s own larger clearance (the die-pad holes&#x27; 0.18) is kept. |</div>
+<div class='add'>+</div>
+<div class='add'>+| `--edge MM` | board&#x27;s own (0.5) | copper-to-edge clearance for vias and tracks. Zones keep the board&#x27;s original value through a custom rule, so the pour doesn&#x27;t move. NextPCB&#x27;s own limit to a V-cut is 0.4 mm. |</div>
+<div class='add'>+</div>
+<div class='add'>+Copper graphics, such as the rocket logo, are fixed obstacles that need copper clearance. Each pad&#x27;s own clearance is kept if it is larger than 0.10.</div>
+<div class='ctx'> </div>
+<div class='ctx'> ## Why two hole clearances</div>
+<div class='ctx'> </div>
+<div class='hunk'>@@ -34,6 +42,14 @@ Rev 0 flagged component (pad) holes at 0.233 mm and then at 0.253 mm from a trac</div>
+<div class='ctx'> </div>
+<div class='ctx'> If the solver reports `NEEDS HAND REROUTE`, a track that runs pad to pad sits too close to a hole and has no free corner to move. Fix those in KiCad and run again.</div>
+<div class='ctx'> </div>
+<div class='add'>+Two guards keep the pour connected. A via may not move closer to a pad that only the pour feeds. An item near the board edge may move toward it only while the pour strip between them stays 0.25 mm wide, or as wide as it is now if it is already narrower.</div>
+<div class='add'>+</div>
+<div class='add'>+### Hand fixes</div>
+<div class='add'>+</div>
+<div class='add'>+- `movefp.py board REF DX DY` moves a footprint and drags the track ends on its pads. On the 0p5x1 it moved C108 0.095 mm left, so the solver had room.</div>
+<div class='add'>+- `nudge.py board X,Y,DX,DY ...` moves the via or track corner at (X, Y) and drags the track ends on it. Run `kicad-cli pcb drc --refill-zones --save-board` afterwards.</div>
+<div class='add'>+- When DRC is already clean, `rev0fix.py --export TAG` runs no rounds. It exports the board as it is, so the hand fixes are kept.</div>
+<div class='add'>+</div>
+<div class='ctx'> Work files go to `.rev0fix/&lt;board&gt;/`. Run `git pcbdiff` afterwards to see what moved.</div>
+<div class='ctx'> </div>
+<div class='ctx'> Needs KiCad 10 at `C:\Program Files\KiCad\10.0` (or set `KICAD_BIN`), `numpy` and `scipy`, and Fabrication Toolkit for `--export`.</div>
+<div class='dh'>a/tools/rev0fix/rev0fix.py b/tools/rev0fix/rev0fix.py</div>
+<div class='hdr'>--- a/tools/rev0fix/rev0fix.py</div>
+<div class='hdr'>+++ b/tools/rev0fix/rev0fix.py</div>
+<div class='hunk'>@@ -32,6 +32,15 @@ ap.add_argument(&quot;--hh&quot;, type=float, default=0.254, help=&quot;hole to hole, same net,</div>
+<div class='ctx'> ap.add_argument(&quot;--hh-diff&quot;, type=float, default=0.3048, help=&quot;hole to hole, different nets, mm&quot;)</div>
+<div class='ctx'> ap.add_argument(&quot;--rounds&quot;, type=int, default=4)</div>
+<div class='ctx'> ap.add_argument(&quot;--export&quot;, metavar=&quot;TAG&quot;, help=&quot;export an upload zip with this tag in its name&quot;)</div>
+<div class='add'>+ap.add_argument(&quot;--reach&quot;, type=float, default=0.2, help=&quot;max move per axis per round, mm&quot;)</div>
+<div class='add'>+ap.add_argument(&quot;--near&quot;, type=float, default=0.15, help=&quot;solver watch distance beyond each aim, mm (see solve.py)&quot;)</div>
+<div class='add'>+ap.add_argument(&quot;--ignore-fp&quot;, action=&quot;append&quot;, default=[], metavar=&quot;REF&quot;,</div>
+<div class='add'>+                help=&quot;footprint (by reference) whose hole spacing is disregarded; repeatable&quot;)</div>
+<div class='add'>+ap.add_argument(&quot;--ignore-cu&quot;, type=float, default=None, metavar=&quot;MM&quot;,</div>
+<div class='add'>+                help=&quot;copper clearance to --ignore-fp footprints (default: unchanged, 0.10 mm)&quot;)</div>
+<div class='add'>+ap.add_argument(&quot;--edge&quot;, type=float, default=None, metavar=&quot;MM&quot;,</div>
+<div class='add'>+                help=&quot;copper-to-edge clearance for vias and tracks (default: the board&#x27;s own). &quot;</div>
+<div class='add'>+                     &quot;Zones keep the board&#x27;s original value through a custom rule.&quot;)</div>
+<div class='ctx'> A = ap.parse_args()</div>
+<div class='ctx'> </div>
+<div class='ctx'> board = os.path.abspath(A.board)</div>
+<div class='hunk'>@@ -53,6 +62,20 @@ pro = stem + &quot;.kicad_pro&quot;</div>
+<div class='ctx'> t = open(pro, encoding=&quot;utf-8-sig&quot;).read()</div>
+<div class='ctx'> t = re.sub(r&#x27;(&quot;min_hole_clearance&quot;:\s*)[\d.]+&#x27;, rf&quot;\g&lt;1&gt;{A.via}&quot;, t)</div>
+<div class='ctx'> t = re.sub(r&#x27;(&quot;min_hole_to_hole&quot;:\s*)[\d.]+&#x27;, rf&quot;\g&lt;1&gt;{A.hh}&quot;, t)</div>
+<div class='add'>+edge0 = float(re.search(r&#x27;&quot;min_copper_edge_clearance&quot;:\s*([\d.]+)&#x27;, t).group(1))</div>
+<div class='add'>+GIT_EDGE = re.search(r&#x27;&quot;min_copper_edge_clearance&quot;:\s*([\d.]+)&#x27;,</div>
+<div class='add'>+                     subprocess.run([&quot;git&quot;, &quot;show&quot;, &quot;HEAD:&quot; + os.path.relpath(pro, ROOT).replace(&quot;\\&quot;, &quot;/&quot;)],</div>
+<div class='add'>+                                    cwd=ROOT, capture_output=True, text=True).stdout or t)</div>
+<div class='add'>+zone_edge = float(GIT_EDGE.group(1)) if GIT_EDGE else edge0       # the board&#x27;s own value, before any --edge run</div>
+<div class='add'>+if A.edge is not None:</div>
+<div class='add'>+    t = re.sub(r&#x27;(&quot;min_copper_edge_clearance&quot;:\s*)[\d.]+&#x27;, rf&quot;\g&lt;1&gt;{A.edge}&quot;, t)</div>
+<div class='add'>+if A.ignore_cu is not None:</div>
+<div class='add'>+    # Board Setup&#x27;s minimum clearance is a floor that custom rules can&#x27;t go under. Lower it only</div>
+<div class='add'>+    # as far as --ignore-cu; the netclass clearance (0.10) still holds everywhere else.</div>
+<div class='add'>+    i = t.index(&#x27;&quot;rules&quot;: {&#x27;)</div>
+<div class='add'>+    t = t[:i] + re.sub(r&#x27;(&quot;min_clearance&quot;:\s*)[\d.]+&#x27;,</div>
+<div class='add'>+                       lambda m: m.group(1) + str(min(float(m.group(0).split(&quot;:&quot;)[1]), A.ignore_cu)),</div>
+<div class='add'>+                       t[i:], count=1)</div>
+<div class='ctx'> open(pro, &quot;w&quot;, encoding=&quot;utf-8&quot;, newline=&quot;\n&quot;).write(t)</div>
+<div class='ctx'> </div>
+<div class='ctx'> BEGIN, END = &quot;# --- rev0fix rules (generated by tools/rev0fix/rev0fix.py) ---&quot;, &quot;# --- end rev0fix rules ---&quot;</div>
+<div class='hunk'>@@ -66,13 +89,33 @@ block = f&quot;&quot;&quot;{BEGIN}</div>
+<div class='ctx'> (rule &quot;rev0_hole_to_hole_diff_net&quot;</div>
+<div class='ctx'>   (condition &quot;A.NetName != B.NetName&quot;)</div>
+<div class='ctx'>   (constraint hole_to_hole (min {A.hh_diff}mm)))</div>
+<div class='del'>-{END}</div>
+<div class='ctx'> &quot;&quot;&quot;</div>
+<div class='add'>+for ref in A.ignore_fp:</div>
+<div class='add'>+    cu_note = (f&quot;Copper clearance to it is {A.ignore_cu} mm (--ignore-cu).&quot; if A.ignore_cu is not None</div>
+<div class='add'>+               else &quot;Copper clearance still applies.&quot;)</div>
+<div class='add'>+    cu_line = f&quot;\n  (constraint clearance (min {A.ignore_cu}mm))&quot; if A.ignore_cu is not None else &quot;&quot;</div>
+<div class='add'>+    block += f&quot;&quot;&quot;</div>
+<div class='add'>+# Hole spacing on {ref} is disregarded by request (--ignore-fp {ref}). {cu_note}</div>
+<div class='add'>+(rule &quot;rev0_ignore_{ref}&quot;</div>
+<div class='add'>+  (condition &quot;A.memberOfFootprint(&#x27;{ref}&#x27;) || B.memberOfFootprint(&#x27;{ref}&#x27;)&quot;)</div>
+<div class='add'>+  (constraint hole_clearance (min 0mm))</div>
+<div class='add'>+  (constraint hole_to_hole (min 0mm)){cu_line})</div>
+<div class='add'>+&quot;&quot;&quot;</div>
+<div class='add'>+if A.edge is not None and A.edge &lt; zone_edge:</div>
+<div class='add'>+    block += f&quot;&quot;&quot;</div>
+<div class='add'>+# Vias and tracks may sit {A.edge} mm from the edge (--edge); NextPCB&#x27;s V-cut limit is 0.4 mm.</div>
+<div class='add'>+# The pour keeps the board&#x27;s original {zone_edge} mm, so zone outlines don&#x27;t change.</div>
+<div class='add'>+(rule &quot;rev0_zone_edge&quot;</div>
+<div class='add'>+  (condition &quot;A.Type == &#x27;Zone&#x27;&quot;)</div>
+<div class='add'>+  (constraint edge_clearance (min {zone_edge}mm)))</div>
+<div class='add'>+&quot;&quot;&quot;</div>
+<div class='add'>+block += END + &quot;\n&quot;</div>
+<div class='ctx'> dru = stem + &quot;.kicad_dru&quot;</div>
+<div class='ctx'> old = open(dru, encoding=&quot;utf-8&quot;).read() if os.path.exists(dru) else &quot;(version 1)\n&quot;</div>
+<div class='ctx'> old = re.sub(re.escape(BEGIN) + r&quot;.*?&quot; + re.escape(END) + r&quot;\n?&quot;, &quot;&quot;, old, flags=re.S).rstrip() + &quot;\n\n&quot;</div>
+<div class='ctx'> open(dru, &quot;w&quot;, encoding=&quot;utf-8&quot;, newline=&quot;\n&quot;).write(old + block)</div>
+<div class='del'>-print(f&quot;rules: via hole {A.via}, pad hole {A.pth}, hole-hole {A.hh} same net / {A.hh_diff} different nets (mm)&quot;)</div>
+<div class='add'>+print(f&quot;rules: via hole {A.via}, pad hole {A.pth}, hole-hole {A.hh} same net / {A.hh_diff} different nets (mm)&quot;</div>
+<div class='add'>+      + (f&quot;; hole spacing disregarded on {&#x27;, &#x27;.join(A.ignore_fp)}&quot; if A.ignore_fp else &quot;&quot;))</div>
+<div class='ctx'> </div>
+<div class='ctx'> </div>
+<div class='ctx'> # ---------------------------------------------------------------- 2. rounds</div>
+<div class='hunk'>@@ -98,14 +141,19 @@ def show(c, unc):</div>
+<div class='ctx'> </div>
+<div class='ctx'> c0, unc0, _ = drc(save=False)</div>
+<div class='ctx'> print(&quot;DRC before:&quot;)</div>
+<div class='del'>-show(c0, unc0)</div>
+<div class='del'>-for rnd in range(1, A.rounds + 1):</div>
+<div class='add'>+already_clean = not show(c0, unc0)</div>
+<div class='add'>+if already_clean:</div>
+<div class='add'>+    print(&quot;DRC already clean of blocking types; no rounds run (hand fixes stay as they are).&quot;)</div>
+<div class='add'>+for rnd in range(1, 0 if already_clean else A.rounds + 1):</div>
+<div class='ctx'>     ex = os.path.join(work, f&quot;extract_{rnd}.json&quot;)</div>
+<div class='ctx'>     mv = os.path.join(work, f&quot;moves_{rnd}.json&quot;)</div>
+<div class='ctx'>     run([KPY, EXTRACT, board, ex])</div>
+<div class='ctx'>     print(f&quot;round {rnd}:&quot;)</div>
+<div class='ctx'>     out = run([sys.executable, &quot;-u&quot;, os.path.join(HERE, &quot;solve.py&quot;), ex, mv, &quot;--via&quot;, str(A.via),</div>
+<div class='del'>-               &quot;--pth&quot;, str(A.pth), &quot;--hh&quot;, str(A.hh)])</div>
+<div class='add'>+               &quot;--pth&quot;, str(A.pth), &quot;--hh&quot;, str(A.hh), &quot;--reach&quot;, str(A.reach), &quot;--near&quot;, str(A.near)]</div>
+<div class='add'>+              + [a for r in A.ignore_fp for a in (&quot;--ignore-fp&quot;, r)]</div>
+<div class='add'>+              + ([&quot;--ignore-cu&quot;, str(A.ignore_cu)] if A.ignore_cu is not None else [])</div>
+<div class='add'>+              + ([&quot;--edge&quot;, str(A.edge)] if A.edge is not None else []))</div>
+<div class='ctx'>     for line in out.splitlines():</div>
+<div class='ctx'>         if not line.startswith(&quot;K=&quot;):</div>
+<div class='ctx'>             print(&quot;    &quot; + line)</div>
+<div class='hunk'>@@ -126,7 +174,8 @@ for rnd in range(1, A.rounds + 1):</div>
+<div class='ctx'>                 print(f&quot;      {v[&#x27;type&#x27;]}: {v[&#x27;description&#x27;]} | &quot; + &quot; / &quot;.join(i[&quot;description&quot;] for i in v[&quot;items&quot;]))</div>
+<div class='ctx'>         sys.exit(1)</div>
+<div class='ctx'> else:</div>
+<div class='del'>-    sys.exit(&quot;still blocking items after the last round&quot;)</div>
+<div class='add'>+    if not already_clean:</div>
+<div class='add'>+        sys.exit(&quot;still blocking items after the last round&quot;)</div>
+<div class='ctx'> </div>
+<div class='ctx'> # ---------------------------------------------------------------- 3. export</div>
+<div class='ctx'> if A.export:</div>
+<div class='dh'>a/tools/rev0fix/solve.py b/tools/rev0fix/solve.py</div>
+<div class='hdr'>--- a/tools/rev0fix/solve.py</div>
+<div class='hdr'>+++ b/tools/rev0fix/solve.py</div>
+<div class='hunk'>@@ -25,17 +25,57 @@ ap.add_argument(&quot;--hh&quot;, type=float, default=0.254, help=&quot;same-net hole to hole,</div>
+<div class='ctx'> ap.add_argument(&quot;--cu&quot;, type=float, default=0.10, help=&quot;copper to copper, mm&quot;)</div>
+<div class='ctx'> ap.add_argument(&quot;--edge&quot;, type=float, default=0.5, help=&quot;copper to board edge, mm&quot;)</div>
+<div class='ctx'> ap.add_argument(&quot;--reach&quot;, type=float, default=0.2, help=&quot;max move per axis, mm&quot;)</div>
+<div class='add'>+ap.add_argument(&quot;--zone-edge&quot;, type=float, default=0.5, help=&quot;the pour&#x27;s clearance to the board edge, mm&quot;)</div>
+<div class='ctx'> ap.add_argument(&quot;--samples&quot;, type=int, default=15, help=&quot;points checked along each track&quot;)</div>
+<div class='add'>+ap.add_argument(&quot;--near&quot;, type=float, default=0.15,</div>
+<div class='add'>+                help=&quot;pairs this much beyond their aim at the start are also watched, mm; &quot;</div>
+<div class='add'>+                     &quot;raise it (to about 3 x reach) when moves are large so unrelated tracks can&#x27;t collide&quot;)</div>
+<div class='add'>+ap.add_argument(&quot;--ignore-fp&quot;, action=&quot;append&quot;, default=[], metavar=&quot;REF&quot;,</div>
+<div class='add'>+                help=&quot;footprint whose hole spacing is disregarded (its pads keep copper clearance only)&quot;)</div>
+<div class='add'>+ap.add_argument(&quot;--ignore-cu&quot;, type=float, default=None, metavar=&quot;MM&quot;,</div>
+<div class='add'>+                help=&quot;copper clearance to --ignore-fp pads (default: the normal --cu)&quot;)</div>
+<div class='ctx'> A = ap.parse_args()</div>
+<div class='add'>+IGNORE = set(A.ignore_fp)</div>
+<div class='ctx'> </div>
+<div class='ctx'> D = json.load(open(A.extract))</div>
+<div class='ctx'> M = 0.003</div>
+<div class='ctx'> G, PG, CU, HH = A.via + M, A.pth + M, A.cu + M, A.hh + M</div>
+<div class='del'>-NEAR = 0.15</div>
+<div class='add'>+NEAR = A.near</div>
+<div class='ctx'> HOT_R = 1.0</div>
+<div class='ctx'> </div>
+<div class='ctx'> vias = D[&quot;vias&quot;]</div>
+<div class='ctx'> nv = len(vias)</div>
+<div class='add'>+</div>
+<div class='add'>+</div>
+<div class='add'>+def _in_poly(pt, ring):</div>
+<div class='add'>+    x, y = pt; c = False; j = len(ring) - 1</div>
+<div class='add'>+    for i in range(len(ring)):</div>
+<div class='add'>+        xi, yi = ring[i]; xj, yj = ring[j]</div>
+<div class='add'>+        if (yi &gt; y) != (yj &gt; y) and x &lt; (xj - xi) * (y - yi) / (yj - yi) + xi:</div>
+<div class='add'>+            c = not c</div>
+<div class='add'>+        j = i</div>
+<div class='add'>+    return c</div>
+<div class='add'>+</div>
+<div class='add'>+</div>
+<div class='add'>+# pads that reach their net only through the pour (no track or via in them): a via of another net must</div>
+<div class='add'>+# not get closer than it is now, or its knockout can cut the pad off (seen on U101&#x27;s MP pad, 0p5x1)</div>
+<div class='add'>+_zone_nets = {z[&quot;net&quot;] for z in D.get(&quot;zones&quot;, []) if not z.get(&quot;teardrop&quot;) and z.get(&quot;net&quot;)}</div>
+<div class='add'>+</div>
+<div class='add'>+</div>
+<div class='add'>+def zone_only(p):</div>
+<div class='add'>+    if p[&quot;net&quot;] not in _zone_nets or not any(p[&quot;polys&quot;].values()):</div>
+<div class='add'>+        return False</div>
+<div class='add'>+    for t in D[&quot;tracks&quot;]:</div>
+<div class='add'>+        if t[&quot;net&quot;] == p[&quot;net&quot;] and t[&quot;layer&quot;] in p[&quot;polys&quot;]:</div>
+<div class='add'>+            for e in ((t[&quot;x1&quot;], t[&quot;y1&quot;]), (t[&quot;x2&quot;], t[&quot;y2&quot;])):</div>
+<div class='add'>+                if any(_in_poly(e, poly[0]) for poly in p[&quot;polys&quot;][t[&quot;layer&quot;]]):</div>
+<div class='add'>+                    return False</div>
+<div class='add'>+    for v in D[&quot;vias&quot;]:</div>
+<div class='add'>+        if v[&quot;net&quot;] == p[&quot;net&quot;] and any(_in_poly((v[&quot;x&quot;], v[&quot;y&quot;]), poly[0]) for pl in p[&quot;polys&quot;].values() for poly in pl):</div>
+<div class='add'>+            return False</div>
+<div class='add'>+    return True</div>
+<div class='add'>+</div>
+<div class='add'>+</div>
+<div class='ctx'> pads = []</div>
+<div class='ctx'> for p in D[&quot;pads&quot;]:</div>
+<div class='ctx'>     rings = {l: [np.array(poly[0]) for poly in pl] for l, pl in p[&quot;polys&quot;].items()}</div>
+<div class='hunk'>@@ -45,8 +85,22 @@ for p in D[&quot;pads&quot;]:</div>
+<div class='ctx'>     allr = [r for rs in rings.values() for r in rs]</div>
+<div class='ctx'>     if allr or hole:</div>
+<div class='ctx'>         allpts = np.vstack(allr) if allr else hole[0][None, :]</div>
+<div class='del'>-        pads.append(dict(net=p[&quot;net&quot;], rings=rings, allrings=allr, hole=hole,</div>
+<div class='del'>-                         bb=(allpts.min(0) - 0.01, allpts.max(0) + 0.01), name=f&quot;{p[&#x27;ref&#x27;]}.{p[&#x27;num&#x27;]}&quot;))</div>
+<div class='add'>+        pads.append(dict(net=p[&quot;net&quot;], rings=rings, allrings=allr, hole=hole, ignore=p[&quot;ref&quot;] in IGNORE,</div>
+<div class='add'>+                         # pad&#x27;s own clearance if it has a larger one; ignored footprints may use --ignore-cu</div>
+<div class='add'>+                         # (a pad&#x27;s own larger clearance, like the die-pad holes&#x27; 0.18, always stays)</div>
+<div class='add'>+                         cu=(A.ignore_cu if p[&quot;ref&quot;] in IGNORE and A.ignore_cu is not None and p.get(&quot;clr&quot;, 0) &lt;= A.cu</div>
+<div class='add'>+                             else max(A.cu, p.get(&quot;clr&quot;, 0.0))) + M,</div>
+<div class='add'>+                         bb=(allpts.min(0) - 0.01, allpts.max(0) + 0.01), name=f&quot;{p[&#x27;ref&#x27;]}.{p[&#x27;num&#x27;]}&quot;,</div>
+<div class='add'>+                         zone_only=zone_only(p)))</div>
+<div class='add'>+print(f&quot;pads fed only by the pour (vias may not get closer): {sum(p[&#x27;zone_only&#x27;] for p in pads)}&quot;)</div>
+<div class='add'>+# copper graphics (e.g. a copper logo): fixed obstacles that only need copper clearance</div>
+<div class='add'>+for g in D.get(&quot;graphics&quot;, []):</div>
+<div class='add'>+    rings = {g[&quot;layer&quot;]: [np.array(poly[0]) for poly in g[&quot;polys&quot;]]}</div>
+<div class='add'>+    allr = rings[g[&quot;layer&quot;]]</div>
+<div class='add'>+    allpts = np.vstack(allr)</div>
+<div class='add'>+    pads.append(dict(net=g[&quot;net&quot;] or &quot;&lt;no net&gt;&quot;, rings=rings, allrings=allr, hole=None, ignore=False, cu=A.cu + M,</div>
+<div class='add'>+                     zone_only=False,</div>
+<div class='add'>+                     bb=(allpts.min(0) - 0.01, allpts.max(0) + 0.01), name=f&quot;{g[&#x27;ref&#x27;] or &#x27;board&#x27;} copper graphic&quot;))</div>
+<div class='ctx'> </div>
+<div class='ctx'> </div>
+<div class='ctx'> def pt_seg(p, a, b):</div>
+<div class='hunk'>@@ -68,6 +122,14 @@ def inside(p, ring):</div>
+<div class='ctx'>     return c</div>
+<div class='ctx'> </div>
+<div class='ctx'> </div>
+<div class='add'>+def crosses(a, b, c, d):</div>
+<div class='add'>+    &quot;&quot;&quot;True if segments ab and cd properly intersect.&quot;&quot;&quot;</div>
+<div class='add'>+    def orient(p, q, r):</div>
+<div class='add'>+        return (q[0] - p[0]) * (r[1] - p[1]) - (q[1] - p[1]) * (r[0] - p[0])</div>
+<div class='add'>+    o1, o2, o3, o4 = orient(a, b, c), orient(a, b, d), orient(c, d, a), orient(c, d, b)</div>
+<div class='add'>+    return (o1 &gt; 0) != (o2 &gt; 0) and (o3 &gt; 0) != (o4 &gt; 0) and o1 * o2 != 0 and o3 * o4 != 0</div>
+<div class='add'>+</div>
+<div class='add'>+</div>
+<div class='ctx'> def seg_seg(a, b, c, d):</div>
+<div class='ctx'>     &quot;&quot;&quot;Exact distance between segments ab and cd (they never cross on one layer of a DRC-clean board).&quot;&quot;&quot;</div>
+<div class='ctx'>     return min(pt_seg(a, c, d)[0], pt_seg(b, c, d)[0], pt_seg(c, a, b)[0], pt_seg(d, a, b)[0])</div>
+<div class='hunk'>@@ -175,13 +237,18 @@ for i in range(nv):</div>
+<div class='ctx'>         if p[&quot;net&quot;] != via_net(i):</div>
+<div class='ctx'>             for r in p[&quot;allrings&quot;]:</div>
+<div class='ctx'>                 d0 = pt_poly(X0[i], r)[0]</div>
+<div class='del'>-                req = max(vias[i][&quot;drill&quot;] / 2 + G, min(vias[i][&quot;d&quot;] / 2 + CU, d0 - 1e-6))</div>
+<div class='add'>+                # aim for the margin where there&#x27;s room, never under the copper rule + 1 um</div>
+<div class='add'>+                req = max(min(vias[i][&quot;d&quot;] / 2 + p[&quot;cu&quot;], d0 - 1e-6), vias[i][&quot;d&quot;] / 2 + p[&quot;cu&quot;] - M + 0.001)</div>
+<div class='add'>+                if not p[&quot;ignore&quot;]:</div>
+<div class='add'>+                    req = max(vias[i][&quot;drill&quot;] / 2 + G, req)</div>
+<div class='add'>+                if p[&quot;zone_only&quot;] and d0 &lt; 0.9:</div>
+<div class='add'>+                    req = max(req, d0 - 1e-6)</div>
+<div class='ctx'>                 if d0 &lt; req + NEAR:</div>
+<div class='ctx'>                     T_vp.append((i, r, req))</div>
+<div class='del'>-            if p[&quot;hole&quot;]:</div>
+<div class='add'>+            if p[&quot;hole&quot;] and not p[&quot;ignore&quot;]:</div>
+<div class='ctx'>                 T_vh.append((i, p[&quot;hole&quot;][0], max(vias[i][&quot;d&quot;] / 2 + p[&quot;hole&quot;][1] + PG,</div>
+<div class='ctx'>                                                    vias[i][&quot;drill&quot;] / 2 + p[&quot;hole&quot;][1] + G)))</div>
+<div class='del'>-        elif p[&quot;hole&quot;]:</div>
+<div class='add'>+        elif p[&quot;hole&quot;] and not p[&quot;ignore&quot;]:</div>
+<div class='ctx'>             T_vh.append((i, p[&quot;hole&quot;][0], vias[i][&quot;drill&quot;] / 2 + p[&quot;hole&quot;][1] + HH))</div>
+<div class='ctx'>     for ti, t in enumerate(tracks):</div>
+<div class='ctx'>         if t[&quot;net&quot;] == via_net(i):</div>
+<div class='hunk'>@@ -200,7 +267,7 @@ for ti, t in enumerate(tracks):</div>
+<div class='ctx'>         plo, phi = p[&quot;bb&quot;]</div>
+<div class='ctx'>         if (phi &lt; lo).any() or (plo &gt; hi).any():</div>
+<div class='ctx'>             continue</div>
+<div class='del'>-        if p[&quot;hole&quot;]:</div>
+<div class='add'>+        if p[&quot;hole&quot;] and not p[&quot;ignore&quot;]:</div>
+<div class='ctx'>             need = t[&quot;w&quot;] / 2 + p[&quot;hole&quot;][1] + PG</div>
+<div class='ctx'>             d0 = pt_seg(p[&quot;hole&quot;][0], t[&quot;a0&quot;], t[&quot;b0&quot;])[0]</div>
+<div class='ctx'>             if fixed and d0 &lt; need - M:</div>
+<div class='hunk'>@@ -211,8 +278,8 @@ for ti, t in enumerate(tracks):</div>
+<div class='ctx'>             continue</div>
+<div class='ctx'>         for r in p[&quot;rings&quot;].get(t[&quot;layer&quot;], []):</div>
+<div class='ctx'>             d0 = seg_poly(t[&quot;a0&quot;], t[&quot;b0&quot;], r, S)</div>
+<div class='del'>-            req = min(t[&quot;w&quot;] / 2 + CU, d0 - 1e-6)</div>
+<div class='del'>-            if d0 &lt; t[&quot;w&quot;] / 2 + CU + NEAR:</div>
+<div class='add'>+            req = max(min(t[&quot;w&quot;] / 2 + p[&quot;cu&quot;], d0 - 1e-6), t[&quot;w&quot;] / 2 + p[&quot;cu&quot;] - M + 0.001)</div>
+<div class='add'>+            if d0 &lt; t[&quot;w&quot;] / 2 + p[&quot;cu&quot;] + NEAR:</div>
+<div class='ctx'>                 T_tp.append((ti, r, req))</div>
+<div class='ctx'>     if fixed:</div>
+<div class='ctx'>         continue</div>
+<div class='hunk'>@@ -222,7 +289,7 @@ for ti, t in enumerate(tracks):</div>
+<div class='ctx'>         if tj &lt; ti and any(e[0] is not None for e in u[&quot;ends&quot;]):</div>
+<div class='ctx'>             continue</div>
+<div class='ctx'>         d0 = seg_seg(t[&quot;a0&quot;], t[&quot;b0&quot;], u[&quot;a0&quot;], u[&quot;b0&quot;])</div>
+<div class='del'>-        req = min(t[&quot;w&quot;] / 2 + u[&quot;w&quot;] / 2 + CU, d0 - 1e-6)</div>
+<div class='add'>+        req = max(min(t[&quot;w&quot;] / 2 + u[&quot;w&quot;] / 2 + CU, d0 - 1e-6), t[&quot;w&quot;] / 2 + u[&quot;w&quot;] / 2 + A.cu + 0.001)</div>
+<div class='ctx'>         if d0 &lt; t[&quot;w&quot;] / 2 + u[&quot;w&quot;] / 2 + CU + NEAR:</div>
+<div class='ctx'>             T_tt.append((ti, tj, req))</div>
+<div class='ctx'> </div>
+<div class='hunk'>@@ -303,10 +370,16 @@ def energy(x, K, collect=None):</div>
+<div class='ctx'>     for ti, tj, req in T_tt:</div>
+<div class='ctx'>         t, w = tracks[ti], tracks[tj]</div>
+<div class='ctx'>         a, b = endpoints(t, P); c1, c2 = endpoints(w, P)</div>
+<div class='del'>-        # exact segment-segment distance: each end of one track against the other track</div>
+<div class='del'>-        for (p, which, own, other, o1, o2) in ((a, 0, t, w, c1, c2), (b, 1, t, w, c1, c2),</div>
+<div class='del'>-                                               (c1, 0, w, t, a, b), (c2, 1, w, t, a, b)):</div>
+<div class='del'>-            d, u, s2 = pt_seg(p, o1, o2)</div>
+<div class='add'>+        # exact segment-segment distance: each end of one track against the other track.</div>
+<div class='add'>+        # If the two have crossed, the end nearest the other track has passed through it:</div>
+<div class='add'>+        # its distance counts as negative and its push points back, so crossing is never a way out.</div>
+<div class='add'>+        ends4 = ((a, 0, t, w, c1, c2), (b, 1, t, w, c1, c2), (c1, 0, w, t, a, b), (c2, 1, w, t, a, b))</div>
+<div class='add'>+        ds = [pt_seg(e[0], e[4], e[5]) for e in ends4]</div>
+<div class='add'>+        flip = int(np.argmin([q[0] for q in ds])) if crosses(a, b, c1, c2) else -1</div>
+<div class='add'>+        for k4, (p, which, own, other, o1, o2) in enumerate(ends4):</div>
+<div class='add'>+            d, u, s2 = ds[k4]</div>
+<div class='add'>+            if k4 == flip:</div>
+<div class='add'>+                d, u = -d, -u</div>
+<div class='ctx'>             if d &lt; req:</div>
+<div class='ctx'>                 def g(c, own=own, other=other, which=which, u=u, s2=s2):</div>
+<div class='ctx'>                     add(grad, own, which, c * u)</div>
+<div class='hunk'>@@ -360,6 +433,17 @@ for t in tracks:</div>
+<div class='ctx'>             reach[k] = max(reach[k], t[&quot;w&quot;] / 2)</div>
+<div class='ctx'> bounds = []</div>
+<div class='ctx'> R = A.reach</div>
+<div class='add'>+# pour between an item and the board edge: if a strip of pour runs there now, the item may only move</div>
+<div class='add'>+# toward that edge while the strip stays STRIP_KEEP wide (or as wide as it is, if narrower), or the</div>
+<div class='add'>+# strip can be cut and leave pads on it stranded (U101&#x27;s MP pads, 0p5x1).</div>
+<div class='add'>+STRIP_KEEP = 0.25</div>
+<div class='add'>+ZEDGE = A.zone_edge + 0.025</div>
+<div class='add'>+pour_gap = np.zeros(N)</div>
+<div class='add'>+for i in range(nv):</div>
+<div class='add'>+    pour_gap[i] = vias[i][&quot;drill&quot;] / 2 + A.via          # pour keeps the hole clearance from a via</div>
+<div class='add'>+for k in range(nv, N):</div>
+<div class='add'>+    pour_gap[k] = reach[k] + A.cu</div>
+<div class='add'>+guarded = 0</div>
+<div class='ctx'> for k in range(N):</div>
+<div class='ctx'>     if not movable[k]:</div>
+<div class='ctx'>         bounds += [(X0[k][0], X0[k][0]), (X0[k][1], X0[k][1])]</div>
+<div class='hunk'>@@ -367,8 +451,21 @@ for k in range(N):</div>
+<div class='ctx'>     lo_x, hi_x = L0 + EDGE + reach[k], R0 - EDGE - reach[k]</div>
+<div class='ctx'>     lo_y, hi_y = T0 + EDGE + reach[k], B0 - EDGE - reach[k]</div>
+<div class='ctx'>     px_, py_ = X0[k]</div>
+<div class='add'>+    need = pour_gap[k] + ZEDGE                     # item-to-edge distance at which the strip is gone</div>
+<div class='add'>+    def keep(dist):</div>
+<div class='add'>+        s = dist - need</div>
+<div class='add'>+        return None if s &lt;= 0.1 else need + min(s, STRIP_KEEP)</div>
+<div class='add'>+    d = keep(px_ - L0)</div>
+<div class='add'>+    if d is not None and px_ - L0 - d &lt; R: lo_x = max(lo_x, L0 + d); guarded += 1</div>
+<div class='add'>+    d = keep(R0 - px_)</div>
+<div class='add'>+    if d is not None and px_ + d &gt; R0 - R: hi_x = min(hi_x, R0 - d); guarded += 1</div>
+<div class='add'>+    d = keep(py_ - T0)</div>
+<div class='add'>+    if d is not None and py_ - T0 - d &lt; R: lo_y = max(lo_y, T0 + d); guarded += 1</div>
+<div class='add'>+    d = keep(B0 - py_)</div>
+<div class='add'>+    if d is not None and py_ + d &gt; B0 - R: hi_y = min(hi_y, B0 - d); guarded += 1</div>
+<div class='ctx'>     bounds.append((max(px_ - R, min(lo_x, px_)), min(px_ + R, max(hi_x, px_))))</div>
+<div class='ctx'>     bounds.append((max(py_ - R, min(lo_y, py_)), min(py_ + R, max(hi_y, py_))))</div>
+<div class='add'>+print(f&quot;edge sides limited to keep a pour strip open: {guarded}&quot;, flush=True)</div>
+<div class='ctx'> if init:</div>
+<div class='ctx'>     for K in (1e3, 1e5, 1e6):</div>
+<div class='ctx'>         r = minimize(energy, x, args=(K,), jac=True, method=&quot;L-BFGS-B&quot;, bounds=bounds, options=dict(maxiter=1500))</div>
+<div class='dh'>a/tools/rev0fix/movefp.py b/tools/rev0fix/movefp.py</div>
+<div class='hdr'>--- /dev/null</div>
+<div class='hdr'>+++ b/tools/rev0fix/movefp.py</div>
+<div class='hunk'>@@ -0,0 +1,32 @@</div>
+<div class='add'>+&quot;&quot;&quot;Move a footprint and drag the track ends that sit in its pads. Run under KiCad 10&#x27;s Python:</div>
+<div class='add'>+</div>
+<div class='add'>+    python.exe movefp.py board.kicad_pcb REF DX DY        (mm)</div>
+<div class='add'>+</div>
+<div class='add'>+Used for small passives that pin a dense spot, like C108 on the 0p5x1. Run rev0fix afterwards: it</div>
+<div class='add'>+refills, rebuilds the teardrops and checks DRC.</div>
+<div class='add'>+&quot;&quot;&quot;</div>
+<div class='add'>+import sys</div>
+<div class='add'>+import wx</div>
+<div class='add'>+app = wx.App(False); wx.Log.SetActiveTarget(wx.LogStderr())   # stops KiCad&#x27;s font pop-up</div>
+<div class='add'>+import pcbnew</div>
+<div class='add'>+</div>
+<div class='add'>+board, ref, dx, dy = sys.argv[1], sys.argv[2], pcbnew.FromMM(float(sys.argv[3])), pcbnew.FromMM(float(sys.argv[4]))</div>
+<div class='add'>+b = pcbnew.LoadBoard(board)</div>
+<div class='add'>+fp = b.FindFootprintByReference(ref)</div>
+<div class='add'>+if fp is None:</div>
+<div class='add'>+    sys.exit(f&quot;no footprint {ref}&quot;)</div>
+<div class='add'>+plan = []</div>
+<div class='add'>+for pad in fp.Pads():</div>
+<div class='add'>+    for t in b.GetTracks():</div>
+<div class='add'>+        if t.GetClass() != &quot;PCB_TRACK&quot; or t.GetNetCode() != pad.GetNetCode():</div>
+<div class='add'>+            continue</div>
+<div class='add'>+        for get, set_ in ((t.GetStart, t.SetStart), (t.GetEnd, t.SetEnd)):</div>
+<div class='add'>+            p = get()</div>
+<div class='add'>+            if pad.GetBoundingBox().Contains(p) and pad.GetLayerSet().Contains(t.GetLayer()):</div>
+<div class='add'>+                plan.append((set_, pcbnew.VECTOR2I(p.x + dx, p.y + dy)))</div>
+<div class='add'>+p = fp.GetPosition()</div>
+<div class='add'>+fp.SetPosition(pcbnew.VECTOR2I(p.x + dx, p.y + dy))</div>
+<div class='add'>+for set_, q in plan:</div>
+<div class='add'>+    set_(q)</div>
+<div class='add'>+pcbnew.SaveBoard(board, b)</div>
+<div class='add'>+print(f&quot;moved {ref} by ({sys.argv[3]}, {sys.argv[4]}) mm with {len(plan)} track ends&quot;)</div>
+<div class='dh'>a/tools/rev0fix/nudge.py b/tools/rev0fix/nudge.py</div>
+<div class='hdr'>--- /dev/null</div>
+<div class='hdr'>+++ b/tools/rev0fix/nudge.py</div>
+<div class='hunk'>@@ -0,0 +1,39 @@</div>
+<div class='add'>+&quot;&quot;&quot;Hand fix: move a via or a track corner by a small offset, dragging the track ends that sit on it.</div>
+<div class='add'>+</div>
+<div class='add'>+    &quot;C:\\Program Files\\KiCad\\10.0\\bin\\python.exe&quot; nudge.py board.kicad_pcb X,Y,DX,DY [X,Y,DX,DY ...]</div>
+<div class='add'>+</div>
+<div class='add'>+Every via centred at (X, Y) and every track end at (X, Y) (within 1 um) moves by (DX, DY) mm.</div>
+<div class='add'>+Run `kicad-cli pcb drc --refill-zones --save-board` afterwards to refill the pour and rebuild teardrops.</div>
+<div class='add'>+&quot;&quot;&quot;</div>
+<div class='add'>+import sys</div>
+<div class='add'>+import wx</div>
+<div class='add'>+app = wx.App(False); wx.Log.SetActiveTarget(wx.LogStderr())   # keeps KiCad&#x27;s font pop-up from hanging the run</div>
+<div class='add'>+import pcbnew</div>
+<div class='add'>+</div>
+<div class='add'>+board_path = sys.argv[1]</div>
+<div class='add'>+b = pcbnew.LoadBoard(board_path)</div>
+<div class='add'>+F = pcbnew.FromMM</div>
+<div class='add'>+TOL = F(0.001)</div>
+<div class='add'>+</div>
+<div class='add'>+</div>
+<div class='add'>+def near(p, x, y):</div>
+<div class='add'>+    return abs(p.x - x) &lt;= TOL and abs(p.y - y) &lt;= TOL</div>
+<div class='add'>+</div>
+<div class='add'>+</div>
+<div class='add'>+for arg in sys.argv[2:]:</div>
+<div class='add'>+    x, y, dx, dy = (float(v) for v in arg.split(&quot;,&quot;))</div>
+<div class='add'>+    X, Y, DX, DY = F(x), F(y), F(dx), F(dy)</div>
+<div class='add'>+    nv = nt = 0</div>
+<div class='add'>+    for t in b.GetTracks():</div>
+<div class='add'>+        if t.GetClass() == &quot;PCB_VIA&quot;:</div>
+<div class='add'>+            if near(t.GetPosition(), X, Y):</div>
+<div class='add'>+                t.SetPosition(pcbnew.VECTOR2I(X + DX, Y + DY)); nv += 1</div>
+<div class='add'>+            continue</div>
+<div class='add'>+        if near(t.GetStart(), X, Y):</div>
+<div class='add'>+            t.SetStart(pcbnew.VECTOR2I(t.GetStart().x + DX, t.GetStart().y + DY)); nt += 1</div>
+<div class='add'>+        if near(t.GetEnd(), X, Y):</div>
+<div class='add'>+            t.SetEnd(pcbnew.VECTOR2I(t.GetEnd().x + DX, t.GetEnd().y + DY)); nt += 1</div>
+<div class='add'>+    print(f&quot;({x}, {y}) by ({dx}, {dy}): {nv} via, {nt} track ends&quot;)</div>
+<div class='add'>+    if nv + nt == 0:</div>
+<div class='add'>+        sys.exit(f&quot;nothing found at ({x}, {y})&quot;)</div>
+<div class='add'>+pcbnew.SaveBoard(board_path, b)</div></pre></details>
+
+
+<section id='0p5x0p5'>
+  <h2>0p5x0p5 <span class='pill ok'>Ready</span></h2>
+  <p class='mut'><code>run-2/0p5x0p5-cob/0p5x0p5-cob.kicad_pcb</code></p>
+  <table class='facts'><tr><th>DRC hole items</th><td>78 hole clearance + 10 hole to hole → <b>0</b></td></tr><tr><th>Moved</th><td>51 vias (largest 0.084 mm, mean 0.035 mm) and 270 track pieces (largest corner move 0.137 mm), in one round</td></tr><tr><th>Unchanged</th><td>via drills, track widths, pads, footprints, board edge rules</td></tr><tr><th>Teardrops</th><td>134 → 133 (one no longer fits after the moves)</td></tr><tr><th>Pour</th><td>refilled; 0 unconnected items</td></tr><tr><th>Other DRC items</th><td>14 before, 14 after</td></tr><tr><th>Upload zip</th><td><code>run-2/0p5x0p5-cob/production/0p5x0p5-cob_REV0-UPLOAD_2026-11-12_v1.zip</code> (12 files)</td></tr></table>
+  
+  <p><a class='btn' href='0p5x0p5/index.html'>Full geometry diff for this board →</a>
+     <span class='mut'>every moved via and track, every hole gap before → after, zoomed crops</span></p>
+  <div class='layers'><figure><a href='0p5x0p5/B_Cu.png'><img src='0p5x0p5/B_Cu.png' loading='lazy'></a><figcaption>B.Cu</figcaption></figure><figure><a href='0p5x0p5/F_Cu.png'><img src='0p5x0p5/F_Cu.png' loading='lazy'></a><figcaption>F.Cu</figcaption></figure><figure><a href='0p5x0p5/In1_Cu.png'><img src='0p5x0p5/In1_Cu.png' loading='lazy'></a><figcaption>In1.Cu</figcaption></figure><figure><a href='0p5x0p5/In2_Cu.png'><img src='0p5x0p5/In2_Cu.png' loading='lazy'></a><figcaption>In2.Cu</figcaption></figure></div>
+  <p class='mut small'>Overlays: grey unchanged, red only in the committed board (removed), green only in the new board (added).</p>
+</section>
+<section id='1x0p5'>
+  <h2>1x0p5 <span class='pill ok'>Ready</span></h2>
+  <p class='mut'><code>run-2/1x0p5-cob/mezzanine-1x0p5.kicad_pcb</code></p>
+  <table class='facts'><tr><th>DRC hole items</th><td>117 hole clearance + 23 hole to hole → <b>0</b></td></tr><tr><th>Moved</th><td>61 vias (largest 0.227 mm, mean 0.045 mm) and 334 track pieces, in two rounds</td></tr><tr><th>Unchanged</th><td>via drills, track widths, pads, footprints, board edge rules</td></tr><tr><th>Teardrops</th><td>138 → 139</td></tr><tr><th>Pour</th><td>refilled; 0 unconnected items</td></tr><tr><th>Other DRC items</th><td>20 before, 21 after: one new <code>track_dangling</code> warning (below)</td></tr><tr><th>Upload zip</th><td><code>run-2/1x0p5-cob/production/mezzanine-1x0p5_REV0-UPLOAD_2026-11-12_v1.zip</code> (12 files)</td></tr></table>
+  <ul class="notes"><li><b>New warning, harmless:</b> a 0.35 mm GND track on B.Cu runs from U101&#x27;s MP pad to (139.61, 87.23). Its free end used to sit inside the GND pour. After the nearby /bidir_35 via moved, the pour no longer reaches it, so KiCad reports an unconnected end. The MP pad is still connected (0 unconnected items). The stub can be left or deleted.</li></ul>
+  <p><a class='btn' href='1x0p5/index.html'>Full geometry diff for this board →</a>
+     <span class='mut'>every moved via and track, every hole gap before → after, zoomed crops</span></p>
+  <div class='layers'><figure><a href='1x0p5/B_Cu.png'><img src='1x0p5/B_Cu.png' loading='lazy'></a><figcaption>B.Cu</figcaption></figure><figure><a href='1x0p5/F_Cu.png'><img src='1x0p5/F_Cu.png' loading='lazy'></a><figcaption>F.Cu</figcaption></figure><figure><a href='1x0p5/In1_Cu.png'><img src='1x0p5/In1_Cu.png' loading='lazy'></a><figcaption>In1.Cu</figcaption></figure><figure><a href='1x0p5/In2_Cu.png'><img src='1x0p5/In2_Cu.png' loading='lazy'></a><figcaption>In2.Cu</figcaption></figure></div>
+  <p class='mut small'>Overlays: grey unchanged, red only in the committed board (removed), green only in the new board (added).</p>
+</section>
+<section id='0p5x1'>
+  <h2>0p5x1 <span class='pill warn'>Needs your OK</span></h2>
+  <p class='mut'><code>run-2/0p5x1-cob/mezzanine-0p5x1.kicad_pcb</code></p>
+  <table class='facts'><tr><th>DRC hole items</th><td>162 hole clearance + 32 hole to hole → <b>0</b> (hole spacing at U102 disregarded, as you asked)</td></tr><tr><th>Moved</th><td>75 vias (largest 0.209 mm, mean 0.058 mm) and 426 track pieces (largest corner move 0.41 mm over four rounds); footprint C108 0.095 mm left</td></tr><tr><th>Board edge</th><td>vias and tracks: 0.45 mm (was 0.5). Pour: still 0.5 mm, through a custom rule</td></tr><tr><th>Hand fixes after the solver</th><td>one VDD_CORE_1 corner by U102 pad 78 moved 4 µm left; /bidir_22 via moved from (86.360, 85.948) to (86.165, 85.990)</td></tr><tr><th>Teardrops</th><td>136 → 136</td></tr><tr><th>Pour</th><td>refilled; 0 unconnected items; no narrow necks</td></tr><tr><th>Other DRC items</th><td>18 before, 20 after: two new <code>silk_over_copper</code> (below)</td></tr><tr><th>Upload zip</th><td><code>run-2/0p5x1-cob/production/mezzanine-0p5x1_REV0-UPLOAD_2026-11-14_v1.zip</code> (12 files)</td></tr></table>
+  <ul class="notes"><li><b>Your call 1, the U102 exemption.</b> U102&#x27;s hole-clearance and hole-to-hole checks are off (rule <code>rev0_ignore_U102</code>). Seven via-to-U102-pad hole gaps stay under 0.25 mm; the smallest is 0.177 mm, a PWR_AUX_1 via by pad 59. Copper clearance at U102 still passes DRC (0.10 mm, and 0.18 mm at the die-pad holes). The geometry diff lists these as 3 &quot;new failure&quot; and 4 &quot;worse&quot;: all seven are these U102 gaps.</li><li><b>Your call 2, C108 moved 0.095 mm left.</b> Without the move, the vias between C108 and U102 had no position that met every rule at once. That held across every solver setting tried.</li><li><b>Your call 3, via/track edge clearance 0.45 mm instead of 0.5 mm.</b> Vias and tracks needed the extra 0.05 mm along the edge. That is still above NextPCB&#x27;s 0.4 mm limit to a V-cut, and the pour stays at 0.5 mm.</li><li><b>Hand fix, /bidir_22 via.</b> The higher hole clearance pulled the B.Cu GND pour back from this via. That left a dead-end GND spur 0.088 mm wide between it and U101&#x27;s pads, and KiCad flagged it as too narrow (minimum 0.1). The via moved 0.2 mm left, to a spot found by grid search with at least 5 µm margin to everything. The spur is gone.</li><li><b>Hand fix, U102 pad 78.</b> The VDD_CORE_1 track was 0.5 µm inside the pad&#x27;s 0.18 mm clearance, because the solver saw the round pad as a 12-sided polygon. Moving its corner 4 µm cleared it.</li><li><b>New cosmetic items:</b> the VDD_IO_3 via at (86.52, 98.01) now sits under U101&#x27;s B.Silk outline (2 silk-over-copper items). The fab clips silk off exposed copper.</li></ul>
+  <p><a class='btn' href='0p5x1/index.html'>Full geometry diff for this board →</a>
+     <span class='mut'>every moved via and track, every hole gap before → after, zoomed crops</span></p>
+  <div class='layers'><figure><a href='0p5x1/B_Cu.png'><img src='0p5x1/B_Cu.png' loading='lazy'></a><figcaption>B.Cu</figcaption></figure><figure><a href='0p5x1/F_Cu.png'><img src='0p5x1/F_Cu.png' loading='lazy'></a><figcaption>F.Cu</figcaption></figure><figure><a href='0p5x1/In1_Cu.png'><img src='0p5x1/In1_Cu.png' loading='lazy'></a><figcaption>In1.Cu</figcaption></figure><figure><a href='0p5x1/In2_Cu.png'><img src='0p5x1/In2_Cu.png' loading='lazy'></a><figcaption>In2.Cu</figcaption></figure></div>
+  <p class='mut small'>Overlays: grey unchanged, red only in the committed board (removed), green only in the new board (added).</p>
+</section>
+
+<h2 id='pcb'>Board file stats</h2>
+<p class='mut'>The <code>.kicad_pcb</code> text diff is tens of thousands of lines of coordinates and regenerated zone fill, so it's summarised here. The geometry diff per board (links above) is the readable version of it. To see the raw text: <code>git diff HEAD -- run-2/</code></p>
+<pre class='diff'><div class='ctx'> run-2/0p5x0p5-cob/0p5x0p5-cob.kicad_pcb   |  9009 +++++++++++++++++++++++-----------------------
+ run-2/0p5x1-cob/mezzanine-0p5x1.kicad_pcb | 12623 ++++++++++++++++++++++++++++++++--------------------------------
+ run-2/1x0p5-cob/mezzanine-1x0p5.kicad_pcb | 13267 ++++++++++++++++++++++++++++++++++----------------------------------
+ 3 files changed, 17747 insertions(+), 17152 deletions(-)
+</div></pre>
+</main></body></html>

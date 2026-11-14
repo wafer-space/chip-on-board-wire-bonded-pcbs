@@ -92,8 +92,37 @@ for fp in b.GetFootprints():
         if pad.GetDrillSize().x > 0:
             hs = pad.GetEffectiveHoleShape(); sg = hs.GetSeg()
             hole = [mm(sg.A.x), mm(sg.A.y), mm(sg.B.x), mm(sg.B.y), mm(hs.GetWidth())]
+        clr = 0.0
+        for l in cu_layers:
+            if pad.IsOnLayer(l):
+                try:
+                    clr = max(clr, mm(pad.GetOwnClearance(l)))
+                except Exception:
+                    pass
         out["pads"].append(dict(uuid=uid(pad), ref=fp.GetReference(), num=pad.GetNumber(),
-                                x=mm(pp.x), y=mm(pp.y), net=pad.GetNetname(), polys=polys, hole=hole))
+                                x=mm(pp.x), y=mm(pp.y), net=pad.GetNetname(), polys=polys, hole=hole, clr=clr))
+
+# copper graphics (logos, shapes, text on copper layers) in footprints and on the board: fixed obstacles
+out["graphics"] = []
+_cu_ids = set(cu_layers)
+for owner, items in [(fp.GetReference(), list(fp.GraphicalItems())) for fp in b.GetFootprints()] + \
+                    [("", list(b.GetDrawings()))]:
+    for g in items:
+        l = g.GetLayer()
+        if l not in _cu_ids:
+            continue
+        sps = pcbnew.SHAPE_POLY_SET()
+        try:
+            g.TransformShapeToPolygon(sps, l, 0, pcbnew.FromMM(0.002), pcbnew.ERROR_INSIDE)
+        except Exception:
+            continue
+        try:
+            sps.Simplify()
+        except Exception:
+            pass
+        if sps.OutlineCount():
+            out["graphics"].append(dict(uuid=uid(g), ref=owner, layer=L(l), net=g.GetNetname() if hasattr(g, "GetNetname") else "",
+                                        polys=polyset(sps)))
 
 for z in b.Zones():
     fills = {}

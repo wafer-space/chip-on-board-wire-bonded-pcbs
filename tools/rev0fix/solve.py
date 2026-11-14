@@ -25,17 +25,57 @@ ap.add_argument("--hh", type=float, default=0.254, help="same-net hole to hole, 
 ap.add_argument("--cu", type=float, default=0.10, help="copper to copper, mm")
 ap.add_argument("--edge", type=float, default=0.5, help="copper to board edge, mm")
 ap.add_argument("--reach", type=float, default=0.2, help="max move per axis, mm")
+ap.add_argument("--zone-edge", type=float, default=0.5, help="the pour's clearance to the board edge, mm")
 ap.add_argument("--samples", type=int, default=15, help="points checked along each track")
+ap.add_argument("--near", type=float, default=0.15,
+                help="pairs this much beyond their aim at the start are also watched, mm; "
+                     "raise it (to about 3 x reach) when moves are large so unrelated tracks can't collide")
+ap.add_argument("--ignore-fp", action="append", default=[], metavar="REF",
+                help="footprint whose hole spacing is disregarded (its pads keep copper clearance only)")
+ap.add_argument("--ignore-cu", type=float, default=None, metavar="MM",
+                help="copper clearance to --ignore-fp pads (default: the normal --cu)")
 A = ap.parse_args()
+IGNORE = set(A.ignore_fp)
 
 D = json.load(open(A.extract))
 M = 0.003
 G, PG, CU, HH = A.via + M, A.pth + M, A.cu + M, A.hh + M
-NEAR = 0.15
+NEAR = A.near
 HOT_R = 1.0
 
 vias = D["vias"]
 nv = len(vias)
+
+
+def _in_poly(pt, ring):
+    x, y = pt; c = False; j = len(ring) - 1
+    for i in range(len(ring)):
+        xi, yi = ring[i]; xj, yj = ring[j]
+        if (yi > y) != (yj > y) and x < (xj - xi) * (y - yi) / (yj - yi) + xi:
+            c = not c
+        j = i
+    return c
+
+
+# pads that reach their net only through the pour (no track or via in them): a via of another net must
+# not get closer than it is now, or its knockout can cut the pad off (seen on U101's MP pad, 0p5x1)
+_zone_nets = {z["net"] for z in D.get("zones", []) if not z.get("teardrop") and z.get("net")}
+
+
+def zone_only(p):
+    if p["net"] not in _zone_nets or not any(p["polys"].values()):
+        return False
+    for t in D["tracks"]:
+        if t["net"] == p["net"] and t["layer"] in p["polys"]:
+            for e in ((t["x1"], t["y1"]), (t["x2"], t["y2"])):
+                if any(_in_poly(e, poly[0]) for poly in p["polys"][t["layer"]]):
+                    return False
+    for v in D["vias"]:
+        if v["net"] == p["net"] and any(_in_poly((v["x"], v["y"]), poly[0]) for pl in p["polys"].values() for poly in pl):
+            return False
+    return True
+
+
 pads = []
 for p in D["pads"]:
     rings = {l: [np.array(poly[0]) for poly in pl] for l, pl in p["polys"].items()}
@@ -45,8 +85,22 @@ for p in D["pads"]:
     allr = [r for rs in rings.values() for r in rs]
     if allr or hole:
         allpts = np.vstack(allr) if allr else hole[0][None, :]
-        pads.append(dict(net=p["net"], rings=rings, allrings=allr, hole=hole,
-                         bb=(allpts.min(0) - 0.01, allpts.max(0) + 0.01), name=f"{p['ref']}.{p['num']}"))
+        pads.append(dict(net=p["net"], rings=rings, allrings=allr, hole=hole, ignore=p["ref"] in IGNORE,
+                         # pad's own clearance if it has a larger one; ignored footprints may use --ignore-cu
+                         # (a pad's own larger clearance, like the die-pad holes' 0.18, always stays)
+                         cu=(A.ignore_cu if p["ref"] in IGNORE and A.ignore_cu is not None and p.get("clr", 0) <= A.cu
+                             else max(A.cu, p.get("clr", 0.0))) + M,
+                         bb=(allpts.min(0) - 0.01, allpts.max(0) + 0.01), name=f"{p['ref']}.{p['num']}",
+                         zone_only=zone_only(p)))
+print(f"pads fed only by the pour (vias may not get closer): {sum(p['zone_only'] for p in pads)}")
+# copper graphics (e.g. a copper logo): fixed obstacles that only need copper clearance
+for g in D.get("graphics", []):
+    rings = {g["layer"]: [np.array(poly[0]) for poly in g["polys"]]}
+    allr = rings[g["layer"]]
+    allpts = np.vstack(allr)
+    pads.append(dict(net=g["net"] or "<no net>", rings=rings, allrings=allr, hole=None, ignore=False, cu=A.cu + M,
+                     zone_only=False,
+                     bb=(allpts.min(0) - 0.01, allpts.max(0) + 0.01), name=f"{g['ref'] or 'board'} copper graphic"))
 
 
 def pt_seg(p, a, b):
@@ -66,6 +120,14 @@ def inside(p, ring):
             c = not c
         j = i
     return c
+
+
+def crosses(a, b, c, d):
+    """True if segments ab and cd properly intersect."""
+    def orient(p, q, r):
+        return (q[0] - p[0]) * (r[1] - p[1]) - (q[1] - p[1]) * (r[0] - p[0])
+    o1, o2, o3, o4 = orient(a, b, c), orient(a, b, d), orient(c, d, a), orient(c, d, b)
+    return (o1 > 0) != (o2 > 0) and (o3 > 0) != (o4 > 0) and o1 * o2 != 0 and o3 * o4 != 0
 
 
 def seg_seg(a, b, c, d):
@@ -175,13 +237,18 @@ for i in range(nv):
         if p["net"] != via_net(i):
             for r in p["allrings"]:
                 d0 = pt_poly(X0[i], r)[0]
-                req = max(vias[i]["drill"] / 2 + G, min(vias[i]["d"] / 2 + CU, d0 - 1e-6))
+                # aim for the margin where there's room, never under the copper rule + 1 um
+                req = max(min(vias[i]["d"] / 2 + p["cu"], d0 - 1e-6), vias[i]["d"] / 2 + p["cu"] - M + 0.001)
+                if not p["ignore"]:
+                    req = max(vias[i]["drill"] / 2 + G, req)
+                if p["zone_only"] and d0 < 0.9:
+                    req = max(req, d0 - 1e-6)
                 if d0 < req + NEAR:
                     T_vp.append((i, r, req))
-            if p["hole"]:
+            if p["hole"] and not p["ignore"]:
                 T_vh.append((i, p["hole"][0], max(vias[i]["d"] / 2 + p["hole"][1] + PG,
                                                    vias[i]["drill"] / 2 + p["hole"][1] + G)))
-        elif p["hole"]:
+        elif p["hole"] and not p["ignore"]:
             T_vh.append((i, p["hole"][0], vias[i]["drill"] / 2 + p["hole"][1] + HH))
     for ti, t in enumerate(tracks):
         if t["net"] == via_net(i):
@@ -200,7 +267,7 @@ for ti, t in enumerate(tracks):
         plo, phi = p["bb"]
         if (phi < lo).any() or (plo > hi).any():
             continue
-        if p["hole"]:
+        if p["hole"] and not p["ignore"]:
             need = t["w"] / 2 + p["hole"][1] + PG
             d0 = pt_seg(p["hole"][0], t["a0"], t["b0"])[0]
             if fixed and d0 < need - M:
@@ -211,8 +278,8 @@ for ti, t in enumerate(tracks):
             continue
         for r in p["rings"].get(t["layer"], []):
             d0 = seg_poly(t["a0"], t["b0"], r, S)
-            req = min(t["w"] / 2 + CU, d0 - 1e-6)
-            if d0 < t["w"] / 2 + CU + NEAR:
+            req = max(min(t["w"] / 2 + p["cu"], d0 - 1e-6), t["w"] / 2 + p["cu"] - M + 0.001)
+            if d0 < t["w"] / 2 + p["cu"] + NEAR:
                 T_tp.append((ti, r, req))
     if fixed:
         continue
@@ -222,7 +289,7 @@ for ti, t in enumerate(tracks):
         if tj < ti and any(e[0] is not None for e in u["ends"]):
             continue
         d0 = seg_seg(t["a0"], t["b0"], u["a0"], u["b0"])
-        req = min(t["w"] / 2 + u["w"] / 2 + CU, d0 - 1e-6)
+        req = max(min(t["w"] / 2 + u["w"] / 2 + CU, d0 - 1e-6), t["w"] / 2 + u["w"] / 2 + A.cu + 0.001)
         if d0 < t["w"] / 2 + u["w"] / 2 + CU + NEAR:
             T_tt.append((ti, tj, req))
 
@@ -303,10 +370,16 @@ def energy(x, K, collect=None):
     for ti, tj, req in T_tt:
         t, w = tracks[ti], tracks[tj]
         a, b = endpoints(t, P); c1, c2 = endpoints(w, P)
-        # exact segment-segment distance: each end of one track against the other track
-        for (p, which, own, other, o1, o2) in ((a, 0, t, w, c1, c2), (b, 1, t, w, c1, c2),
-                                               (c1, 0, w, t, a, b), (c2, 1, w, t, a, b)):
-            d, u, s2 = pt_seg(p, o1, o2)
+        # exact segment-segment distance: each end of one track against the other track.
+        # If the two have crossed, the end nearest the other track has passed through it:
+        # its distance counts as negative and its push points back, so crossing is never a way out.
+        ends4 = ((a, 0, t, w, c1, c2), (b, 1, t, w, c1, c2), (c1, 0, w, t, a, b), (c2, 1, w, t, a, b))
+        ds = [pt_seg(e[0], e[4], e[5]) for e in ends4]
+        flip = int(np.argmin([q[0] for q in ds])) if crosses(a, b, c1, c2) else -1
+        for k4, (p, which, own, other, o1, o2) in enumerate(ends4):
+            d, u, s2 = ds[k4]
+            if k4 == flip:
+                d, u = -d, -u
             if d < req:
                 def g(c, own=own, other=other, which=which, u=u, s2=s2):
                     add(grad, own, which, c * u)
@@ -360,6 +433,17 @@ for t in tracks:
             reach[k] = max(reach[k], t["w"] / 2)
 bounds = []
 R = A.reach
+# pour between an item and the board edge: if a strip of pour runs there now, the item may only move
+# toward that edge while the strip stays STRIP_KEEP wide (or as wide as it is, if narrower), or the
+# strip can be cut and leave pads on it stranded (U101's MP pads, 0p5x1).
+STRIP_KEEP = 0.25
+ZEDGE = A.zone_edge + 0.025
+pour_gap = np.zeros(N)
+for i in range(nv):
+    pour_gap[i] = vias[i]["drill"] / 2 + A.via          # pour keeps the hole clearance from a via
+for k in range(nv, N):
+    pour_gap[k] = reach[k] + A.cu
+guarded = 0
 for k in range(N):
     if not movable[k]:
         bounds += [(X0[k][0], X0[k][0]), (X0[k][1], X0[k][1])]
@@ -367,8 +451,21 @@ for k in range(N):
     lo_x, hi_x = L0 + EDGE + reach[k], R0 - EDGE - reach[k]
     lo_y, hi_y = T0 + EDGE + reach[k], B0 - EDGE - reach[k]
     px_, py_ = X0[k]
+    need = pour_gap[k] + ZEDGE                     # item-to-edge distance at which the strip is gone
+    def keep(dist):
+        s = dist - need
+        return None if s <= 0.1 else need + min(s, STRIP_KEEP)
+    d = keep(px_ - L0)
+    if d is not None and px_ - L0 - d < R: lo_x = max(lo_x, L0 + d); guarded += 1
+    d = keep(R0 - px_)
+    if d is not None and px_ + d > R0 - R: hi_x = min(hi_x, R0 - d); guarded += 1
+    d = keep(py_ - T0)
+    if d is not None and py_ - T0 - d < R: lo_y = max(lo_y, T0 + d); guarded += 1
+    d = keep(B0 - py_)
+    if d is not None and py_ + d > B0 - R: hi_y = min(hi_y, B0 - d); guarded += 1
     bounds.append((max(px_ - R, min(lo_x, px_)), min(px_ + R, max(hi_x, px_))))
     bounds.append((max(py_ - R, min(lo_y, py_)), min(py_ + R, max(hi_y, py_))))
+print(f"edge sides limited to keep a pour strip open: {guarded}", flush=True)
 if init:
     for K in (1e3, 1e5, 1e6):
         r = minimize(energy, x, args=(K,), jac=True, method="L-BFGS-B", bounds=bounds, options=dict(maxiter=1500))
